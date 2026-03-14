@@ -895,50 +895,13 @@
       <li><a onclick="showPage('about')" id="nav-about">About</a></li>
     </ul>
     <div class="nav-right">
-      <button class="btn-login" onclick="showPage('login')">Log In</button>
-      <button class="btn-cta" onclick="document.getElementById('waitlist-form') && document.getElementById('waitlist-form').scrollIntoView({behavior:'smooth'})">Join Waitlist</button>
+      <button class="btn-login" onclick="window.location.href='https://app.questionpilot.com'">Log In</button>
+      <button class="btn-cta" onclick="window.location.href='https://app.questionpilot.com'">Get Started</button>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- ═══════════ HOME PAGE ═══════════ -->
-<div class="page active" id="page-home">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-content-left">
-        <div class="hero-badge">Transaction Diligence Q&A Portal</div>
-        <h1>The deal portal your process <span>deserves.</span></h1>
-        <p class="hero-sub">Question Pilot provides a purpose-built portal to manage transaction diligence Q&A, replacing spreadsheets and email chains with a user-friendly, professional experience.</p>
-        <div class="hero-btns">
-          <button class="btn-primary" onclick="document.getElementById('waitlist-form').scrollIntoView({behavior:'smooth'})">Join the Waitlist</button>
-          <button class="btn-secondary" onclick="document.getElementById('demo-anchor').scrollIntoView({behavior:'smooth'})">See It in Action</button>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="hv-bar">
-          <div class="hv-dot" style="background:#ff5f57"></div>
-          <div class="hv-dot" style="background:#febc2e"></div>
-          <div class="hv-dot" style="background:#28c840"></div>
-          <div class="hv-url">app.questionpilot.com / deals / project-atlas</div>
-        </div>
-        <div class="hv-tabs">
-          <div class="hv-tab on">All Questions</div>
-          <div class="hv-tab">Buyer A</div>
-          <div class="hv-tab">Buyer B</div>
-          <div class="hv-tab">Buyer C</div>
-        </div>
-        <div class="hv-stats">
-          <div class="hv-stat"><div class="hv-stat-n" style="color:#1e40af">12</div><div class="hv-stat-l">Open</div></div>
-          <div class="hv-stat"><div class="hv-stat-n" style="color:#92400e">8</div><div class="hv-stat-l">In Review</div></div>
-          <div class="hv-stat"><div class="hv-stat-n" style="color:#6b7280">5</div><div class="hv-stat-l">Draft</div></div>
-          <div class="hv-stat"><div class="hv-stat-n" style="color:#065f46">22</div><div class="hv-stat-l">Published</div></div>
-        </div>
-        <table class="hv-table">
-          <thead><tr><th>Party</th><th>Cat.</th><th>Q#</th><th>Question</th><th>Status</th></tr></thead>
-          <tbody>
-            <tr><td><span class="cp cp-a">Buyer A</span></td><td><span class="cat">Financial</span></td><td><span class="qnum">2.1</span></td><td style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Audited financials FY2021–2023</td><td><span class="sp sp-pub">Published</span></td></tr>
+  <!-- HERO TICKER (restored) -->
+  <div class="ticker-wrap"><div class="ticker">Audited financials FY2021–2023</td><td><span class="sp sp-pub">Published</span></td></tr>
             <tr><td><span class="cp cp-a">Buyer A</span></td><td><span class="cat">Legal</span></td><td><span class="qnum">3.4</span></td><td style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Pending or threatened litigation</td><td><span class="sp sp-rev">In Review</span></td></tr>
             <tr><td><span class="cp cp-b">Buyer B</span></td><td><span class="cat">Operations</span></td><td><span class="qnum">4.2</span></td><td style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Customer concentration risks</td><td><span class="sp sp-dft">Draft</span></td></tr>
             <tr><td><span class="cp cp-b">Buyer B</span></td><td><span class="cat">HR</span></td><td><span class="qnum">5.16</span></td><td style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Org chart and retention agreements</td><td><span class="sp sp-open">Open</span></td></tr>
@@ -1262,7 +1225,7 @@
         <p class="eyebrow">Pricing</p>
         <h2 class="section-h">Pay per tracker.<br>Not per seat.</h2>
         <p class="section-sub">No subscriptions, no annual commitments, no per-user overhead. Question Pilot is priced the way you work. Need it on an ongoing basis? Volume and subscription arrangements are available.</p>
-        <button class="btn-primary" style="margin-top:1.75rem;" onclick="document.getElementById('waitlist-form').scrollIntoView({behavior:'smooth'})">Join the Waitlist</button>
+        <button class="btn-primary" style="margin-top:1.75rem;" href="https://app.questionpilot.com").scrollIntoView({behavior:'smooth'})">Get Started</button>
       </div>
       <div class="pricing-items">
         <div class="pricing-item">
@@ -1293,23 +1256,16 @@
   <!-- CTA BANNER -->
   <section class="cta-banner">
     <div class="cta-banner-inner">
-      <p class="eyebrow">Get Early Access</p>
-      <h2>Be first in line when <span>we launch.</span></h2>
-      <p>Question Pilot is currently in private beta. Join the waitlist and we will be in touch directly.</p>
-      <form name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="waitlist-form">
-        <input type="hidden" name="form-name" value="waitlist"/>
-        <p style="display:none;"><input name="bot-field"/></p>
-        <div class="cta-form">
-          <input type="email" name="email" placeholder="you@yourfirm.com" required/>
-          <button type="submit">Join Waitlist</button>
-        </div>
-      </form>
-      <div id="waitlist-thanks" style="display:none; color:rgba(255,255,255,0.8); font-size:0.9rem; margin-top:1rem;">
-        You are on the list. We will be in touch soon.
+      <p class="eyebrow">Get Started Today</p>
+      <h2>Ready to streamline your <span>deal process?</span></h2>
+      <p>Question Pilot is live. Create an account and launch your first deal in minutes.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem">
+        <a href="https://app.questionpilot.com" style="display:inline-block;padding:.9rem 2.25rem;background:var(--teal,#2a5c59);color:#fff;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none">Create Account</a>
+        <a href="https://app.questionpilot.com" style="display:inline-block;padding:.9rem 2.25rem;background:transparent;color:var(--teal,#2a5c59);border:2px solid var(--teal,#2a5c59);border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none">Sign In</a>
       </div>
-      <p class="cta-note">No spam. No commitment. We reach out personally to every firm on the list.</p>
     </div>
   </section>
+
 
   <!-- FOOTER -->
   <footer>
@@ -1323,12 +1279,12 @@
         <a onclick="showPage('home')">Home</a>
         <a onclick="showPage('solutions')">Solutions</a>
         <a onclick="showPage('pricing')">Pricing</a>
-        <a onclick="showPage('signup')">Get Started</a>
+        <a onclick="window.location.href='https://app.questionpilot.com'">Get Started</a>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <a onclick="showPage('about')">About</a>
-        <a href="mailto:hello@questionpilot.com">Contact</a>
+        <a href="/cdn-cgi/l/email-protection#4028252c2c2f003135253334292f2e30292c2f346e232f2d">Contact</a>
         <a>Privacy Policy</a>
         <a>Terms of Service</a>
       </div>
@@ -1408,11 +1364,11 @@
   </section>
   <section class="cta-banner">
     <div class="cta-banner-inner">
-      <p class="eyebrow">Get Early Access</p>
+      <p class="eyebrow">Get Started</p>
       <h2>Ready to run a <span>better process?</span></h2>
-      <p>Question Pilot is in private beta. Join the waitlist and we will reach out directly.</p>
+      <p>Question Pilot is live. Create an account and start your first deal today.</p>
       <div style="display:flex; gap:0.75rem; justify-content:center; margin-top:0.5rem;">
-        <button class="btn-primary" onclick="showPage('home'); setTimeout(()=>document.getElementById('waitlist-form').scrollIntoView({behavior:'smooth'}),100)">Join the Waitlist</button>
+        <button class="btn-primary" href="https://app.questionpilot.com").scrollIntoView({behavior:'smooth'}),100)">Get Started</button>
         <button class="btn-secondary" style="color:rgba(255,255,255,0.7); border-color:rgba(255,255,255,0.2);" onclick="showPage('pricing')">View Pricing</button>
       </div>
     </div>
@@ -1451,7 +1407,7 @@
           <li>Full audit trail</li>
           <li>Email support</li>
         </ul>
-        <button class="btn-tier btn-tier-outline" onclick="showPage('signup')">Get Started</button>
+        <button class="btn-tier btn-tier-outline" onclick="window.location.href='https://app.questionpilot.com'">Get Started</button>
       </div>
       <div class="price-card featured">
         <div class="price-badge">Most Popular</div>
@@ -1467,7 +1423,7 @@
           <li>Full audit trail</li>
           <li>Priority support</li>
         </ul>
-        <button class="btn-tier btn-tier-solid" onclick="showPage('signup')">Get Started</button>
+        <button class="btn-tier btn-tier-solid" onclick="window.location.href='https://app.questionpilot.com'">Get Started</button>
       </div>
       <div class="price-card">
         <div class="price-tier">Enterprise</div>
@@ -1481,7 +1437,7 @@
           <li>Volume discounts</li>
           <li>Priority onboarding</li>
         </ul>
-        <button class="btn-tier btn-tier-outline" onclick="showPage('signup')">Contact Us</button>
+        <button class="btn-tier btn-tier-outline" onclick="window.location.href='https://app.questionpilot.com'">Contact Us</button>
       </div>
     </div>
     <div class="pricing-note-box">
@@ -1490,11 +1446,11 @@
   </section>
   <section class="cta-banner">
     <div class="cta-banner-inner">
-      <p class="eyebrow">Get Early Access</p>
-      <h2>Join the <span>waitlist today.</span></h2>
+      <p class="eyebrow">Get Started</p>
+      <h2>Start your first <span>deal today.</span></h2>
       <p>Question Pilot is in private beta. We are onboarding firms personally. Join the list and we will be in touch.</p>
       <div style="display:flex; gap:0.75rem; justify-content:center; margin-top:0.5rem;">
-        <button class="btn-primary" onclick="showPage('home'); setTimeout(()=>document.getElementById('waitlist-form').scrollIntoView({behavior:'smooth'}),100)">Join the Waitlist</button>
+        <button class="btn-primary" href="https://app.questionpilot.com").scrollIntoView({behavior:'smooth'}),100)">Get Started</button>
       </div>
     </div>
   </section>
@@ -1542,7 +1498,7 @@
       <h2>Questions? <span>We are here.</span></h2>
       <p>Reach out with questions about the product, pricing, or your specific use case.</p>
       <div style="display:flex; gap:0.75rem; justify-content:center; margin-top:0.5rem;">
-        <button class="btn-primary" onclick="showPage('signup')">Get Started</button>
+        <button class="btn-primary" onclick="window.location.href='https://app.questionpilot.com'">Get Started</button>
         <button class="btn-secondary" style="color:rgba(255,255,255,0.7); border-color:rgba(255,255,255,0.2);">Contact Us</button>
       </div>
     </div>
@@ -1576,7 +1532,7 @@
       <button class="btn-form">Sign In</button>
       <div class="auth-divider">or</div>
       <button class="btn-form" style="background:var(--bg); color:var(--ink); border:1px solid var(--rule-mid);">Continue with Google</button>
-      <p class="auth-link">Don't have an account? <a onclick="showPage('signup')">Sign up free</a></p>
+      <p class="auth-link">Don't have an account? <a onclick="window.location.href='https://app.questionpilot.com'">Sign up free</a></p>
       <p class="auth-link" style="margin-top:0.5rem;"><a style="color:var(--ink-faint); font-weight:400;">Forgot password?</a></p>
     </div>
   </div>
@@ -1623,22 +1579,14 @@
         <input class="form-input" type="password" placeholder="Create a password"/>
       </div>
       <button class="btn-form">Create Account</button>
-      <p class="auth-link">Already have an account? <a onclick="showPage('login')">Sign in</a></p>
+      <p class="auth-link">Already have an account? <a onclick="window.location.href='https://app.questionpilot.com'">Sign in</a></p>
     </div>
   </div>
 </div>
 
-<script>
-  // Waitlist form handler
-  const wForm = document.querySelector('form[name="waitlist"]');
-  if (wForm) {
-    wForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const data = new FormData(wForm);
-      await fetch('/', { method: 'POST', body: data });
-      wForm.style.display = 'none';
-      document.getElementById('waitlist-thanks').style.display = 'block';
-    });
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// App redirect handler
+document.querySelectorAll('[data-app-link]').forEach(function(el) { el.href = "https://app.questionpilot.com"; });
   }
 
   function showPage(name) {
@@ -1653,11 +1601,4 @@
   // Plan selector on signup
   document.querySelectorAll('.plan-opt').forEach(opt => {
     opt.addEventListener('click', () => {
-      document.querySelectorAll('.plan-opt').forEach(o => o.classList.remove('sel'));
-      opt.classList.add('sel');
-    });
-  });
-</script>
-
-</body>
-</html>
+     
