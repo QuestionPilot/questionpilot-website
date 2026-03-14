@@ -19,8 +19,6 @@
       --ink-faint:  #8fa5a3;
       --gold:       #a87c2a;
       --gold-light: #c49840;
-      --gold-bg:    #faf5eb;
-      --gold-rule:  rgba(168,124,42,0.2);
       --rule:       rgba(0,0,0,0.08);
       --rule-mid:   rgba(0,0,0,0.12);
       --white:      #ffffff;
@@ -29,7 +27,6 @@
     }
 
     html { scroll-behavior: smooth; }
-
     body {
       background: var(--bg);
       color: var(--ink);
@@ -51,56 +48,29 @@
     }
     .nav-inner {
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0 5%;
-      height: 64px;
-      max-width: 1280px;
-      margin: 0 auto;
+      padding: 0 5%; height: 64px;
+      max-width: 1280px; margin: 0 auto;
     }
-    .nav-logo {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--ink);
-      cursor: pointer;
-      letter-spacing: -0.02em;
-    }
+    .nav-logo { font-size: 1.15rem; font-weight: 700; color: var(--ink); cursor: pointer; letter-spacing: -0.02em; }
     .nav-logo span { color: var(--teal); }
     .nav-links { display: flex; gap: 0.25rem; list-style: none; }
     .nav-links a {
-      color: var(--ink-soft);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 500;
-      padding: 0.4rem 0.85rem;
-      border-radius: 6px;
-      transition: color 0.15s, background 0.15s;
-      cursor: pointer;
-      display: block;
+      color: var(--ink-soft); text-decoration: none; font-size: 0.875rem; font-weight: 500;
+      padding: 0.4rem 0.85rem; border-radius: 6px; transition: color 0.15s, background 0.15s;
+      cursor: pointer; display: block;
     }
     .nav-links a:hover, .nav-links a.active { color: var(--ink); background: rgba(0,0,0,0.05); }
     .nav-right { display: flex; gap: 0.75rem; align-items: center; }
     .btn-login {
-      background: transparent;
-      color: var(--ink-soft);
-      border: 1px solid var(--rule-mid);
-      padding: 0.45rem 1.1rem;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 500;
-      font-size: 0.85rem;
-      cursor: pointer;
-      border-radius: 6px;
-      transition: all 0.15s;
+      background: transparent; color: var(--ink-soft); border: 1px solid var(--rule-mid);
+      padding: 0.45rem 1.1rem; font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 500; font-size: 0.85rem; cursor: pointer; border-radius: 6px; transition: all 0.15s;
     }
     .btn-login:hover { background: var(--white); color: var(--ink); }
     .btn-cta {
-      background: var(--teal);
-      color: var(--white);
-      border: none;
-      padding: 0.5rem 1.25rem;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 600;
-      font-size: 0.85rem;
-      cursor: pointer;
-      border-radius: 6px;
+      background: var(--teal); color: var(--white); border: none;
+      padding: 0.5rem 1.25rem; font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600; font-size: 0.85rem; cursor: pointer; border-radius: 6px;
       transition: background 0.15s, transform 0.1s;
     }
     .btn-cta:hover { background: var(--teal-light); transform: translateY(-1px); }
@@ -108,43 +78,35 @@
     /* ─── SHARED ─── */
     .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
     .eyebrow {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 0.85rem;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 0.85rem;
     }
     h2.section-h {
-      font-size: clamp(1.75rem, 3vw, 2.6rem);
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      color: var(--ink);
-      margin-bottom: 1rem;
+      font-size: clamp(1.75rem, 3vw, 2.6rem); font-weight: 700; line-height: 1.15;
+      letter-spacing: -0.03em; color: var(--ink); margin-bottom: 1rem;
     }
     .section-sub { color: var(--ink-soft); font-size: 1rem; line-height: 1.75; max-width: 520px; }
 
-    /* ─── HERO ─── */
+    /* ─── HERO (centered, no mockup) ─── */
     .hero {
-      padding: 9rem 0 5rem;
+      padding: 9rem 0 5.5rem;
       background: var(--white);
       border-bottom: 1px solid var(--rule);
       position: relative;
       overflow: hidden;
+      text-align: center;
     }
     .hero::before {
       content: '';
-      position: absolute;
-      top: -40%; right: -10%;
-      width: 700px; height: 700px;
+      position: absolute; top: -30%; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 600px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(42,92,89,0.06) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(42,92,89,0.055) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero-inner {
-      max-width: 1200px; margin: 0 auto; padding: 0 5%;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+      max-width: 760px; margin: 0 auto; padding: 0 5%;
+      position: relative; z-index: 1;
     }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 0.5rem;
@@ -152,152 +114,77 @@
       background: rgba(42,92,89,0.08);
       border: 1px solid rgba(42,92,89,0.2);
       color: var(--teal);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border-radius: 100px;
-      margin-bottom: 1.75rem;
-      width: fit-content;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      border-radius: 100px; margin-bottom: 1.75rem; width: fit-content; margin-left: auto; margin-right: auto;
     }
     .hero-badge::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--teal); }
     .hero h1 {
-      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
-      font-weight: 700;
-      line-height: 1.08;
-      letter-spacing: -0.04em;
-      color: var(--ink);
-      margin-bottom: 1.5rem;
+      font-size: clamp(2rem, 3.8vw, 2.75rem);
+      font-weight: 700; line-height: 1.12; letter-spacing: -0.035em;
+      color: var(--ink); margin-bottom: 1.35rem;
     }
     .hero h1 span { color: var(--teal); }
     .hero-sub {
-      font-size: 1.05rem;
-      color: var(--ink-soft);
-      line-height: 1.8;
-      margin-bottom: 2.25rem;
-      font-weight: 400;
+      font-size: 1.05rem; color: var(--ink-soft); line-height: 1.8;
+      margin-bottom: 2.25rem; font-weight: 400;
+      max-width: 580px; margin-left: auto; margin-right: auto;
     }
-    .hero-btns { display: flex; gap: 0.75rem; }
+    .hero-btns { display: flex; gap: 0.75rem; justify-content: center; margin-bottom: 3rem; }
     .btn-primary {
-      background: var(--teal);
-      color: var(--white);
-      border: none;
-      padding: 0.8rem 1.75rem;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 600;
-      font-size: 0.9rem;
-      cursor: pointer;
-      border-radius: 7px;
+      background: var(--teal); color: var(--white); border: none;
+      padding: 0.8rem 1.75rem; font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600; font-size: 0.9rem; cursor: pointer; border-radius: 7px;
       transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
     }
     .btn-primary:hover { background: var(--teal-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(42,92,89,0.25); }
     .btn-secondary {
-      background: transparent;
-      color: var(--ink-mid);
-      border: 1px solid var(--rule-mid);
-      padding: 0.8rem 1.75rem;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 500;
-      font-size: 0.9rem;
-      cursor: pointer;
-      border-radius: 7px;
-      transition: all 0.15s;
+      background: transparent; color: var(--ink-mid); border: 1px solid var(--rule-mid);
+      padding: 0.8rem 1.75rem; font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 500; font-size: 0.9rem; cursor: pointer; border-radius: 7px; transition: all 0.15s;
     }
     .btn-secondary:hover { background: var(--bg); border-color: var(--ink-faint); }
 
-    /* Hero visual mockup */
-    .hero-visual {
-      background: var(--white);
-      border: 1px solid var(--rule-mid);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.06);
+    /* Hero stats strip */
+    .hero-stats {
+      display: flex; justify-content: center; align-items: center;
+      gap: 0; border: 1px solid var(--rule-mid); border-radius: 10px;
+      overflow: hidden; background: var(--bg);
+      max-width: 560px; margin: 0 auto;
     }
-    .hv-bar {
-      padding: 0.7rem 1rem;
-      background: var(--bg);
-      border-bottom: 1px solid var(--rule);
-      display: flex; align-items: center; gap: 0.5rem;
+    .hero-stat {
+      flex: 1; padding: 1rem 1.25rem; text-align: center;
+      border-right: 1px solid var(--rule-mid);
     }
-    .hv-dot { width: 9px; height: 9px; border-radius: 50%; }
-    .hv-url {
-      flex: 1; text-align: center;
-      font-size: 0.68rem; color: var(--ink-faint);
-      background: var(--white);
-      padding: 0.25rem 0.75rem;
-      border-radius: 4px;
-      border: 1px solid var(--rule);
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-n {
+      font-size: 1.35rem; font-weight: 800; color: var(--teal);
+      letter-spacing: -0.04em; line-height: 1;
     }
-    .hv-tabs {
-      display: flex; border-bottom: 1px solid var(--rule);
-      background: var(--bg);
+    .hero-stat-l {
+      font-size: 0.67rem; color: var(--ink-faint); font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.25rem;
     }
-    .hv-tab {
-      padding: 0.55rem 1rem;
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: var(--ink-faint);
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      transition: color 0.15s;
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
-    .hv-tab.on { color: var(--teal); border-bottom-color: var(--teal); background: var(--white); }
-    .hv-stats {
-      display: flex;
-      background: var(--white);
-      border-bottom: 1px solid var(--rule);
-    }
-    .hv-stat {
-      flex: 1; padding: 0.65rem 1rem; text-align: center;
-      border-right: 1px solid var(--rule);
-    }
-    .hv-stat:last-child { border-right: none; }
-    .hv-stat-n { font-size: 1.2rem; font-weight: 700; color: var(--ink); line-height: 1; }
-    .hv-stat-l { font-size: 0.6rem; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.15rem; }
-    .hv-table { width: 100%; border-collapse: collapse; }
-    .hv-table th {
-      text-align: left; font-size: 0.6rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--ink-faint); padding: 0.5rem 0.75rem;
-      border-bottom: 1px solid var(--rule);
-      background: var(--bg);
-    }
-    .hv-table td {
-      padding: 0.6rem 0.75rem; font-size: 0.73rem;
-      border-bottom: 1px solid var(--rule);
-      color: var(--ink-mid);
-    }
-    .hv-table tr:last-child td { border-bottom: none; }
-    .hv-table tr:hover td { background: rgba(42,92,89,0.03); }
-    .cp { display: inline-block; padding: 0.15rem 0.45rem; font-size: 0.6rem; font-weight: 600; border-radius: 3px; letter-spacing: 0.04em; }
-    .cp-a { background: #e8f0fe; color: #3b5bdb; }
-    .cp-b { background: #f3e8ff; color: #7c3aed; }
-    .cp-c { background: #e8fef0; color: #1a7f4b; }
-    .cat { display: inline-block; padding: 0.12rem 0.4rem; font-size: 0.6rem; background: var(--bg); color: var(--ink-soft); border-radius: 3px; }
-    .qnum { font-size: 0.68rem; color: var(--teal); font-weight: 600; }
-    .sp { display: inline-block; padding: 0.15rem 0.5rem; font-size: 0.6rem; font-weight: 600; border-radius: 3px; letter-spacing: 0.05em; text-transform: uppercase; }
-    .sp-pub  { background: #d1fae5; color: #065f46; }
-    .sp-rev  { background: #fef3c7; color: #92400e; }
-    .sp-dft  { background: #f3f4f6; color: #6b7280; }
-    .sp-open { background: #dbeafe; color: #1e40af; }
+    .hero-inner > * { opacity: 0; animation: fadeUp 0.55s forwards; }
+    .hero-inner > *:nth-child(1) { animation-delay: 0.08s; }
+    .hero-inner > *:nth-child(2) { animation-delay: 0.18s; }
+    .hero-inner > *:nth-child(3) { animation-delay: 0.28s; }
+    .hero-inner > *:nth-child(4) { animation-delay: 0.38s; }
+    .hero-inner > *:nth-child(5) { animation-delay: 0.48s; }
 
     /* ─── LOGO BAR ─── */
-    .logo-bar {
-      padding: 2.5rem 0;
-      background: var(--bg);
-      border-bottom: 1px solid var(--rule);
-      text-align: center;
-    }
+    .logo-bar { padding: 2.5rem 0; background: var(--bg); border-bottom: 1px solid var(--rule); text-align: center; }
     .logo-bar p { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1.5rem; }
     .logo-row { display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; }
     .logo-item { font-size: 0.8rem; font-weight: 600; color: var(--ink-faint); letter-spacing: 0.03em; }
 
     /* ─── PROBLEM ─── */
-    .problem {
-      padding: 6rem 0;
-      border-bottom: 1px solid var(--rule);
-      background: var(--white);
-    }
+    .problem { padding: 6rem 0; border-bottom: 1px solid var(--rule); background: var(--white); }
     .problem-inner {
       max-width: 1200px; margin: 0 auto; padding: 0 5%;
       display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
@@ -305,98 +192,31 @@
     .pain-list { list-style: none; margin-top: 2rem; }
     .pain-list li {
       display: flex; gap: 0.85rem; align-items: flex-start;
-      padding: 0.9rem 0;
-      border-bottom: 1px solid var(--rule);
-      font-size: 0.875rem;
-      color: var(--ink-mid);
-      line-height: 1.6;
+      padding: 0.9rem 0; border-bottom: 1px solid var(--rule);
+      font-size: 0.875rem; color: var(--ink-mid); line-height: 1.6;
     }
     .pain-list li:last-child { border-bottom: none; }
     .pain-icon {
-      width: 20px; height: 20px;
-      background: rgba(168,124,42,0.1);
-      border-radius: 50%;
+      width: 20px; height: 20px; background: rgba(168,124,42,0.1); border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      margin-top: 0.1rem;
-      font-size: 0.65rem;
-      color: var(--gold);
+      flex-shrink: 0; margin-top: 0.1rem; font-size: 0.65rem; color: var(--gold);
     }
-
-    /* Inbox widget */
     .inbox-card {
-      background: var(--white);
-      border: 1px solid var(--rule-mid);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-      position: sticky; top: 7rem;
+      background: var(--white); border: 1px solid var(--rule-mid); border-radius: 10px;
+      overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.07); position: sticky; top: 7rem;
     }
-    .inbox-titlebar {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0.65rem 1rem;
-      background: #f6f6f6;
-      border-bottom: 1px solid var(--rule);
-    }
+    .inbox-titlebar { display: flex; align-items: center; justify-content: space-between; padding: 0.65rem 1rem; background: #f6f6f6; border-bottom: 1px solid var(--rule); }
     .inbox-dots { display: flex; gap: 5px; }
     .inbox-dots span { width: 10px; height: 10px; border-radius: 50%; display: block; }
     .inbox-titlebar-name { font-size: 0.72rem; font-weight: 600; color: #555; }
-    .inbox-toolbar {
-      display: flex; align-items: center; gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      background: var(--white);
-      border-bottom: 1px solid var(--rule);
-    }
-    .inbox-toolbar-btn {
-      font-size: 0.68rem; color: #666;
-      padding: 0.2rem 0.6rem;
-      background: #f0f0f0;
-      border-radius: 4px;
-      cursor: default;
-      font-weight: 500;
-    }
-    .inbox-search {
-      flex: 1;
-      font-size: 0.68rem;
-      padding: 0.25rem 0.6rem;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      background: #fafafa;
-      color: #aaa;
-    }
-    .inbox-folders {
-      display: flex; border-bottom: 1px solid var(--rule);
-      background: #fafafa;
-    }
-    .inbox-folder {
-      padding: 0.4rem 0.85rem;
-      font-size: 0.68rem;
-      color: #888;
-      font-weight: 500;
-      cursor: default;
-      border-right: 1px solid var(--rule);
-    }
+    .inbox-toolbar { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--white); border-bottom: 1px solid var(--rule); }
+    .inbox-toolbar-btn { font-size: 0.68rem; color: #666; padding: 0.2rem 0.6rem; background: #f0f0f0; border-radius: 4px; cursor: default; font-weight: 500; }
+    .inbox-search { flex: 1; font-size: 0.68rem; padding: 0.25rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; background: #fafafa; color: #aaa; }
+    .inbox-folders { display: flex; border-bottom: 1px solid var(--rule); background: #fafafa; }
+    .inbox-folder { padding: 0.4rem 0.85rem; font-size: 0.68rem; color: #888; font-weight: 500; cursor: default; border-right: 1px solid var(--rule); }
     .inbox-folder.sel { color: #1a73e8; border-bottom: 2px solid #1a73e8; background: var(--white); }
-    .inbox-folder .cnt {
-      display: inline-block;
-      background: #1a73e8;
-      color: white;
-      font-size: 0.58rem;
-      padding: 0 4px;
-      border-radius: 10px;
-      margin-left: 4px;
-    }
-    .inbox-msg {
-      display: grid;
-      grid-template-columns: 100px 1fr 60px;
-      gap: 0.5rem;
-      padding: 0.6rem 1rem;
-      border-bottom: 1px solid var(--rule);
-      font-size: 0.73rem;
-      cursor: default;
-      transition: background 0.1s;
-      align-items: center;
-    }
+    .inbox-folder .cnt { display: inline-block; background: #1a73e8; color: white; font-size: 0.58rem; padding: 0 4px; border-radius: 10px; margin-left: 4px; }
+    .inbox-msg { display: grid; grid-template-columns: 100px 1fr 60px; gap: 0.5rem; padding: 0.6rem 1rem; border-bottom: 1px solid var(--rule); font-size: 0.73rem; cursor: default; transition: background 0.1s; align-items: center; }
     .inbox-msg:hover { background: #f0f7ff; }
     .inbox-msg.unread { background: #f4f8ff; }
     .inbox-msg:last-child { border-bottom: none; }
@@ -406,262 +226,101 @@
     .msg-body strong { color: #222; font-weight: 600; }
     .inbox-msg:not(.unread) .msg-body strong { font-weight: 400; }
     .msg-attach { font-size: 0.65rem; color: #1a73e8; text-align: right; white-space: nowrap; }
-    .inbox-footer-bar {
-      padding: 0.5rem 1rem;
-      background: #fff8e6;
-      border-top: 1px solid #ffe0a0;
-      font-size: 0.68rem;
-      color: #b45309;
-      display: flex; align-items: center; gap: 0.4rem;
-    }
+    .inbox-footer-bar { padding: 0.5rem 1rem; background: #fff8e6; border-top: 1px solid #ffe0a0; font-size: 0.68rem; color: #b45309; display: flex; align-items: center; gap: 0.4rem; }
 
     /* ─── FEATURES ─── */
-    .features {
-      padding: 6rem 0;
-      background: var(--bg);
-      border-bottom: 1px solid var(--rule);
-    }
+    .features { padding: 6rem 0; background: var(--bg); border-bottom: 1px solid var(--rule); }
     .features-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
     .features-header .section-sub { margin: 0 auto; }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--rule-mid);
-      border: 1px solid var(--rule-mid);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .feat-card {
-      background: var(--white);
-      padding: 2.25rem;
-      transition: background 0.2s;
-    }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule-mid); border: 1px solid var(--rule-mid); border-radius: 10px; overflow: hidden; }
+    .feat-card { background: var(--white); padding: 2.25rem; transition: background 0.2s; }
     .feat-card:hover { background: #f8fffe; }
-    .feat-icon {
-      width: 42px; height: 42px;
-      background: rgba(42,92,89,0.08);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem;
-      margin-bottom: 1.25rem;
-    }
-    .feat-card h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 0.6rem;
-      letter-spacing: -0.01em;
-      line-height: 1.3;
-    }
+    .feat-icon { width: 42px; height: 42px; background: rgba(42,92,89,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; margin-bottom: 1.25rem; }
+    .feat-card h3 { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.6rem; letter-spacing: -0.01em; line-height: 1.3; }
     .feat-card p { color: var(--ink-soft); font-size: 0.855rem; line-height: 1.72; }
-    .feat-tag {
-      display: inline-block;
-      margin-top: 1.25rem;
-      padding: 0.22rem 0.6rem;
-      background: rgba(42,92,89,0.08);
-      color: var(--teal);
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border-radius: 4px;
-    }
+    .feat-tag { display: inline-block; margin-top: 1.25rem; padding: 0.22rem 0.6rem; background: rgba(42,92,89,0.08); color: var(--teal); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 4px; }
 
     /* ─── HOW IT WORKS ─── */
-    .how {
-      padding: 6rem 0;
-      background: var(--white);
-      border-bottom: 1px solid var(--rule);
-    }
-    .how-inner {
-      max-width: 1200px; margin: 0 auto; padding: 0 5%;
-      display: grid; grid-template-columns: 340px 1fr; gap: 6rem; align-items: start;
-    }
+    .how { padding: 6rem 0; background: var(--white); border-bottom: 1px solid var(--rule); }
+    .how-inner { max-width: 1200px; margin: 0 auto; padding: 0 5%; display: grid; grid-template-columns: 340px 1fr; gap: 6rem; align-items: start; }
     .steps { margin-top: 2.5rem; }
-    .step {
-      display: flex; gap: 1.25rem;
-      padding: 1.25rem 0;
-      border-bottom: 1px solid var(--rule);
-      cursor: default;
-    }
+    .step { display: flex; gap: 1.25rem; padding: 1.25rem 0; border-bottom: 1px solid var(--rule); cursor: default; }
     .step:last-child { border-bottom: none; }
     .step:hover .step-title { color: var(--teal); }
-    .step-icon {
-      width: 32px; height: 32px;
-      background: rgba(42,92,89,0.08);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.9rem;
-      flex-shrink: 0;
-      margin-top: 0.1rem;
-    }
+    .step-icon { width: 32px; height: 32px; background: rgba(42,92,89,0.08); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; margin-top: 0.1rem; }
     .step-title { font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; transition: color 0.15s; }
     .step-desc { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.65; }
-
-    /* Tracker demo */
-    .tracker {
-      border: 1px solid var(--rule-mid);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 6px 32px rgba(0,0,0,0.08);
-      background: var(--white);
-    }
-    .tracker-top {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0.75rem 1.1rem;
-      background: var(--bg);
-      border-bottom: 1px solid var(--rule);
-    }
+    .tracker { border: 1px solid var(--rule-mid); border-radius: 10px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.08); background: var(--white); }
+    .tracker-top { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.1rem; background: var(--bg); border-bottom: 1px solid var(--rule); }
     .tracker-deal { font-size: 0.8rem; font-weight: 700; color: var(--ink); }
     .tracker-meta { font-size: 0.68rem; color: var(--ink-faint); margin-top: 0.1rem; font-weight: 400; }
-    .tv-badge {
-      font-size: 0.62rem; font-weight: 600; padding: 0.22rem 0.6rem;
-      background: rgba(42,92,89,0.1); color: var(--teal);
-      border-radius: 100px; letter-spacing: 0.04em;
-    }
-    .tracker-stats {
-      display: flex;
-      background: var(--white);
-      border-bottom: 1px solid var(--rule);
-      padding: 0.6rem 1.1rem;
-      gap: 1.5rem;
-    }
+    .tv-badge { font-size: 0.62rem; font-weight: 600; padding: 0.22rem 0.6rem; background: rgba(42,92,89,0.1); color: var(--teal); border-radius: 100px; letter-spacing: 0.04em; }
+    .tracker-stats { display: flex; background: var(--white); border-bottom: 1px solid var(--rule); padding: 0.6rem 1.1rem; gap: 1.5rem; }
     .ts { display: flex; align-items: center; gap: 0.4rem; }
     .ts-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
     .ts-label { font-size: 0.68rem; color: var(--ink-soft); }
     .ts-n { font-size: 0.68rem; font-weight: 700; color: var(--ink); }
     .tracker-tbl { width: 100%; border-collapse: collapse; }
-    .tracker-tbl th {
-      text-align: left; font-size: 0.6rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--ink-faint); padding: 0.5rem 0.85rem;
-      border-bottom: 1px solid var(--rule);
-      background: var(--bg);
-    }
-    .tracker-tbl td {
-      padding: 0.65rem 0.85rem; font-size: 0.74rem;
-      border-bottom: 1px solid var(--rule);
-      color: var(--ink-mid);
-    }
+    .tracker-tbl th { text-align: left; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); padding: 0.5rem 0.85rem; border-bottom: 1px solid var(--rule); background: var(--bg); }
+    .tracker-tbl td { padding: 0.65rem 0.85rem; font-size: 0.74rem; border-bottom: 1px solid var(--rule); color: var(--ink-mid); }
     .tracker-tbl tr:last-child td { border-bottom: none; }
     .tracker-tbl tr:hover td { background: rgba(42,92,89,0.02); }
+    .cp { display: inline-block; padding: 0.15rem 0.45rem; font-size: 0.6rem; font-weight: 600; border-radius: 3px; letter-spacing: 0.04em; }
+    .cp-a { background: #e8f0fe; color: #3b5bdb; }
+    .cp-b { background: #f3e8ff; color: #7c3aed; }
+    .cp-c { background: #e8fef0; color: #1a7f4b; }
+    .cat { display: inline-block; padding: 0.12rem 0.4rem; font-size: 0.6rem; background: var(--bg); color: var(--ink-soft); border-radius: 3px; }
+    .qnum { font-size: 0.68rem; color: var(--teal); font-weight: 600; }
+    .sp { display: inline-block; padding: 0.15rem 0.5rem; font-size: 0.6rem; font-weight: 600; border-radius: 3px; letter-spacing: 0.05em; text-transform: uppercase; }
+    .sp-pub { background: #d1fae5; color: #065f46; }
+    .sp-rev { background: #fef3c7; color: #92400e; }
+    .sp-dft { background: #f3f4f6; color: #6b7280; }
+    .sp-open { background: #dbeafe; color: #1e40af; }
 
     /* ─── PROOF ─── */
-    .proof {
-      padding: 6rem 0;
-      background: var(--bg);
-      border-bottom: 1px solid var(--rule);
-    }
+    .proof { padding: 6rem 0; background: var(--bg); border-bottom: 1px solid var(--rule); }
     .proof-inner { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
-    .proof-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem; margin-top: 3.5rem;
-    }
-    .proof-card {
-      background: var(--white);
-      border: 1px solid var(--rule);
-      border-radius: 10px;
-      padding: 2rem;
-      transition: box-shadow 0.2s;
-    }
+    .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3.5rem; }
+    .proof-card { background: var(--white); border: 1px solid var(--rule); border-radius: 10px; padding: 2rem; transition: box-shadow 0.2s; }
     .proof-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
     .stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 0.1em; margin-bottom: 1rem; }
-    .proof-quote {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: var(--ink-mid);
-      margin-bottom: 1.5rem;
-      font-style: italic;
-    }
+    .proof-quote { font-size: 0.9rem; line-height: 1.7; color: var(--ink-mid); margin-bottom: 1.5rem; font-style: italic; }
     .proof-rule { width: 20px; height: 2px; background: var(--teal); opacity: 0.4; margin-bottom: 0.85rem; }
     .proof-name { font-size: 0.82rem; font-weight: 700; color: var(--ink); }
     .proof-title { font-size: 0.75rem; color: var(--ink-faint); margin-top: 0.1rem; }
 
     /* ─── PRICING STRIP ─── */
-    .pricing-strip {
-      padding: 5rem 0;
-      background: var(--white);
-      border-bottom: 1px solid var(--rule);
-    }
-    .pricing-strip-inner {
-      max-width: 1200px; margin: 0 auto; padding: 0 5%;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
-    }
+    .pricing-strip { padding: 5rem 0; background: var(--white); border-bottom: 1px solid var(--rule); }
+    .pricing-strip-inner { max-width: 1200px; margin: 0 auto; padding: 0 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
     .pricing-items { display: flex; flex-direction: column; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
-    .pricing-item {
-      background: var(--bg);
-      padding: 1.5rem 1.75rem;
-      display: flex; gap: 1rem; align-items: flex-start;
-      transition: background 0.15s;
-    }
+    .pricing-item { background: var(--bg); padding: 1.5rem 1.75rem; display: flex; gap: 1rem; align-items: flex-start; transition: background 0.15s; }
     .pricing-item:hover { background: var(--white); }
-    .pi-icon {
-      width: 36px; height: 36px; border-radius: 8px;
-      background: rgba(42,92,89,0.1);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem;
-    }
+    .pi-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(42,92,89,0.1); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
     .pi-title { font-size: 0.88rem; font-weight: 700; color: var(--ink); margin-bottom: 0.3rem; }
     .pi-desc { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.6; }
 
     /* ─── CTA BANNER ─── */
-    .cta-banner {
-      padding: 7rem 0;
-      background: var(--bg-dark);
-      color: var(--white);
-      text-align: center;
-      position: relative; overflow: hidden;
-    }
-    .cta-banner::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(58,118,115,0.2) 0%, transparent 70%);
-      pointer-events: none;
-    }
+    .cta-banner { padding: 7rem 0; background: var(--bg-dark); color: var(--white); text-align: center; position: relative; overflow: hidden; }
+    .cta-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(58,118,115,0.2) 0%, transparent 70%); pointer-events: none; }
     .cta-banner-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; padding: 0 5%; }
     .cta-banner .eyebrow { color: rgba(255,255,255,0.5); }
-    .cta-banner h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      color: var(--white);
-      margin-bottom: 1rem;
-      line-height: 1.15;
-    }
+    .cta-banner h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.03em; color: var(--white); margin-bottom: 1rem; line-height: 1.15; }
     .cta-banner h2 span { color: #6ecfcb; }
     .cta-banner p { color: rgba(255,255,255,0.55); font-size: 0.95rem; margin-bottom: 2.5rem; }
 
     /* ─── FOOTER ─── */
-    footer {
-      padding: 3rem 0 2rem;
-      background: var(--bg-dark-2);
-      color: rgba(255,255,255,0.4);
-    }
-    .footer-inner {
-      max-width: 1200px; margin: 0 auto; padding: 0 5%;
-      display: grid; grid-template-columns: 200px 1fr 1fr 1fr; gap: 3rem;
-    }
+    footer { padding: 3rem 0 2rem; background: var(--bg-dark-2); color: rgba(255,255,255,0.4); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 5%; display: grid; grid-template-columns: 200px 1fr 1fr 1fr; gap: 3rem; }
     .footer-logo { font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
     .footer-logo span { color: #6ecfcb; }
     .footer-tagline { font-size: 0.78rem; line-height: 1.6; }
     .footer-col h4 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 1rem; }
     .footer-col a { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.4); text-decoration: none; margin-bottom: 0.5rem; cursor: pointer; transition: color 0.15s; }
     .footer-col a:hover { color: rgba(255,255,255,0.8); }
-    .footer-bottom {
-      max-width: 1200px; margin: 2rem auto 0; padding: 1.5rem 5% 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      font-size: 0.75rem;
-      display: flex; justify-content: space-between; align-items: center;
-    }
+    .footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding: 1.5rem 5% 0; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.75rem; display: flex; justify-content: space-between; align-items: center; }
 
     /* ─── SOLUTIONS PAGE ─── */
-    .solutions-hero {
-      padding: 8rem 0 5rem;
-      background: var(--white);
-      border-bottom: 1px solid var(--rule);
-      text-align: center;
-    }
+    .solutions-hero { padding: 8rem 0 5rem; background: var(--white); border-bottom: 1px solid var(--rule); text-align: center; }
     .solutions-hero h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 1rem; color: var(--ink); }
     .solutions-hero p { color: var(--ink-soft); max-width: 560px; margin: 0 auto; font-size: 1rem; }
     .solutions-cards { padding: 5rem 0; background: var(--bg); }
@@ -716,47 +375,18 @@
     .about-mission p { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.85; margin-bottom: 1rem; }
 
     /* ─── AUTH PAGES ─── */
-    .auth-page {
-      min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
-      padding: 6rem 1rem 3rem;
-      background: var(--bg);
-    }
-    .auth-card {
-      background: var(--white);
-      border: 1px solid var(--rule-mid);
-      border-radius: 12px;
-      padding: 2.5rem;
-      width: 100%; max-width: 420px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-    }
+    .auth-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 6rem 1rem 3rem; background: var(--bg); }
+    .auth-card { background: var(--white); border: 1px solid var(--rule-mid); border-radius: 12px; padding: 2.5rem; width: 100%; max-width: 420px; box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
     .auth-logo { font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 1.75rem; text-align: center; }
     .auth-logo span { color: var(--teal); }
     .auth-card h2 { font-size: 1.4rem; font-weight: 700; color: var(--ink); margin-bottom: 0.35rem; letter-spacing: -0.02em; }
     .auth-card .sub { font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 1.75rem; }
     .form-group { margin-bottom: 1.1rem; }
     .form-label { font-size: 0.78rem; font-weight: 600; color: var(--ink-mid); margin-bottom: 0.4rem; display: block; }
-    .form-input {
-      width: 100%; padding: 0.7rem 0.9rem;
-      border: 1px solid var(--rule-mid);
-      border-radius: 7px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 0.875rem; color: var(--ink);
-      background: var(--white);
-      transition: border-color 0.15s, box-shadow 0.15s;
-      outline: none;
-    }
+    .form-input { width: 100%; padding: 0.7rem 0.9rem; border: 1px solid var(--rule-mid); border-radius: 7px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.875rem; color: var(--ink); background: var(--white); transition: border-color 0.15s, box-shadow 0.15s; outline: none; }
     .form-input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(42,92,89,0.1); }
     .form-input::placeholder { color: var(--ink-faint); }
-    .btn-form {
-      width: 100%; padding: 0.8rem;
-      background: var(--teal); color: var(--white);
-      border: none; border-radius: 7px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 700; font-size: 0.9rem; cursor: pointer;
-      transition: background 0.15s;
-      margin-top: 0.5rem;
-    }
+    .btn-form { width: 100%; padding: 0.8rem; background: var(--teal); color: var(--white); border: none; border-radius: 7px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: background 0.15s; margin-top: 0.5rem; }
     .btn-form:hover { background: var(--teal-light); }
     .auth-divider { text-align: center; font-size: 0.78rem; color: var(--ink-faint); margin: 1.25rem 0; }
     .auth-link { text-align: center; font-size: 0.82rem; color: var(--ink-soft); margin-top: 1.5rem; }
@@ -769,108 +399,22 @@
     .plan-opt-price { font-size: 0.68rem; color: var(--ink-faint); margin-top: 0.15rem; }
 
     /* ─── CLICKWRAP ─── */
-    .clickwrap {
-      display: flex;
-      gap: 0.7rem;
-      align-items: flex-start;
-      padding: 0.9rem 1rem;
-      background: var(--bg);
-      border: 1px solid var(--rule-mid);
-      border-radius: 7px;
-      margin-bottom: 0.5rem;
-      transition: border-color 0.15s, box-shadow 0.15s;
-    }
-    .clickwrap.error {
-      border-color: #b91c1c;
-      box-shadow: 0 0 0 3px rgba(185,28,28,0.08);
-    }
-    .clickwrap.accepted {
-      border-color: var(--teal);
-      box-shadow: 0 0 0 3px rgba(42,92,89,0.08);
-    }
-    .clickwrap-check {
-      appearance: none;
-      -webkit-appearance: none;
-      width: 17px; height: 17px;
-      min-width: 17px;
-      border: 1.5px solid var(--ink-faint);
-      border-radius: 4px;
-      background: var(--white);
-      cursor: pointer;
-      margin-top: 2px;
-      flex-shrink: 0;
-      transition: all 0.15s;
-      position: relative;
-    }
-    .clickwrap-check:checked {
-      background: var(--teal);
-      border-color: var(--teal);
-    }
-    .clickwrap-check:checked::after {
-      content: '';
-      position: absolute;
-      left: 4px; top: 1px;
-      width: 5px; height: 9px;
-      border: 2px solid #fff;
-      border-top: none;
-      border-left: none;
-      transform: rotate(45deg);
-    }
-    .clickwrap-label {
-      font-size: 0.79rem;
-      color: var(--ink-soft);
-      line-height: 1.55;
-      cursor: pointer;
-      user-select: none;
-    }
-    .clickwrap-label a {
-      color: var(--teal);
-      font-weight: 600;
-      text-decoration: none;
-    }
+    .clickwrap { display: flex; gap: 0.7rem; align-items: flex-start; padding: 0.9rem 1rem; background: var(--bg); border: 1px solid var(--rule-mid); border-radius: 7px; margin-bottom: 0.5rem; transition: border-color 0.15s, box-shadow 0.15s; }
+    .clickwrap.error { border-color: #b91c1c; box-shadow: 0 0 0 3px rgba(185,28,28,0.08); }
+    .clickwrap.accepted { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(42,92,89,0.08); }
+    .clickwrap-check { appearance: none; -webkit-appearance: none; width: 17px; height: 17px; min-width: 17px; border: 1.5px solid var(--ink-faint); border-radius: 4px; background: var(--white); cursor: pointer; margin-top: 2px; flex-shrink: 0; transition: all 0.15s; position: relative; }
+    .clickwrap-check:checked { background: var(--teal); border-color: var(--teal); }
+    .clickwrap-check:checked::after { content: ''; position: absolute; left: 4px; top: 1px; width: 5px; height: 9px; border: 2px solid #fff; border-top: none; border-left: none; transform: rotate(45deg); }
+    .clickwrap-label { font-size: 0.79rem; color: var(--ink-soft); line-height: 1.55; cursor: pointer; user-select: none; }
+    .clickwrap-label a { color: var(--teal); font-weight: 600; text-decoration: none; }
     .clickwrap-label a:hover { text-decoration: underline; }
-    .clickwrap-error {
-      display: none;
-      font-size: 0.75rem;
-      color: #b91c1c;
-      margin-top: 0.3rem;
-      margin-bottom: 0.75rem;
-      padding-left: 0.25rem;
-    }
+    .clickwrap-error { display: none; font-size: 0.75rem; color: #b91c1c; margin-top: 0.3rem; margin-bottom: 0.75rem; padding-left: 0.25rem; }
     .clickwrap-error.visible { display: block; }
 
-    /* ─── ANIMATIONS ─── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .hero-content-left > * { opacity: 0; animation: fadeUp 0.55s forwards; }
-    .hero-content-left > *:nth-child(1) { animation-delay: 0.1s; }
-    .hero-content-left > *:nth-child(2) { animation-delay: 0.2s; }
-    .hero-content-left > *:nth-child(3) { animation-delay: 0.3s; }
-    .hero-content-left > *:nth-child(4) { animation-delay: 0.4s; }
-
     /* ─── RESPONSIVE ─── */
-    @media (max-width: 1024px) {
-      .how-inner { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-visual { display: none; }
-      .problem-inner { grid-template-columns: 1fr; }
-      .features-grid { grid-template-columns: 1fr 1fr; }
-      .proof-grid { grid-template-columns: 1fr; }
-      .pricing-strip-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .pricing-grid { grid-template-columns: 1fr; }
-      .about-inner { grid-template-columns: 1fr; }
-      .sol-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-    }
-    @media (max-width: 600px) {
-      .features-grid { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr 1fr; }
-    }
+    @media (max-width: 1024px) { .how-inner { grid-template-columns: 1fr; } .footer-inner { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 900px) { .problem-inner { grid-template-columns: 1fr; } .features-grid { grid-template-columns: 1fr 1fr; } .proof-grid { grid-template-columns: 1fr; } .pricing-strip-inner { grid-template-columns: 1fr; gap: 2.5rem; } .pricing-grid { grid-template-columns: 1fr; } .about-inner { grid-template-columns: 1fr; } .sol-grid { grid-template-columns: 1fr; } .nav-links { display: none; } .hero-stats { max-width: 100%; } }
+    @media (max-width: 600px) { .features-grid { grid-template-columns: 1fr; } .footer-inner { grid-template-columns: 1fr 1fr; } .hero-btns { flex-direction: column; align-items: center; } .hero-stats { flex-direction: column; } .hero-stat { border-right: none; border-bottom: 1px solid var(--rule-mid); } .hero-stat:last-child { border-bottom: none; } }
   </style>
 </head>
 <body>
@@ -892,89 +436,35 @@
   </div>
 </nav>
 
-<!-- ═══════════ HOME PAGE ═══════════ -->
+<!-- ═══════════ HOME ═══════════ -->
 <div class="page active" id="page-home">
 
-  <!-- HERO -->
+  <!-- HERO — centered, tighter type, no mockup -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-content-left">
-        <div class="hero-badge">Purpose-Built for Transaction Professionals</div>
-        <h1>The Q&A portal your <span>deal process</span> deserves.</h1>
-        <p class="hero-sub">Question Pilot replaces the spreadsheet-and-email chaos of buy-side diligence with a clean, secure portal. Every buyer isolated. Every response controlled. Every answer published on your timeline.</p>
-        <div class="hero-btns">
-          <button class="btn-primary" onclick="showPage('signup')">Get Started</button>
-          <button class="btn-secondary" onclick="document.getElementById('demo-anchor').scrollIntoView({behavior:'smooth'})">See How It Works</button>
-        </div>
+      <div class="hero-badge">Purpose-Built for Transaction Professionals</div>
+      <h1>The Q&amp;A portal your<br><span>deal process</span> deserves.</h1>
+      <p class="hero-sub">Question Pilot replaces the spreadsheet-and-email chaos of diligence with a clean, secure portal. Every buyer isolated. Every response controlled. Every answer published on your timeline.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="showPage('signup')">Get Started</button>
+        <button class="btn-secondary" onclick="document.getElementById('demo-anchor').scrollIntoView({behavior:'smooth'})">See How It Works</button>
       </div>
-      <div class="hero-visual">
-        <div class="hv-bar">
-          <div class="hv-dot" style="background:#ff5f57"></div>
-          <div class="hv-dot" style="background:#febc2e"></div>
-          <div class="hv-dot" style="background:#28c840"></div>
-          <div class="hv-url">app.questionpilot.com — Project Atlas</div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-n">100%</div>
+          <div class="hero-stat-l">Buyer isolation</div>
         </div>
-        <div class="hv-tabs">
-          <div class="hv-tab on">Advisor View</div>
-          <div class="hv-tab">Buyer A</div>
-          <div class="hv-tab">Buyer B</div>
-          <div class="hv-tab">Buyer C</div>
+        <div class="hero-stat">
+          <div class="hero-stat-n">0</div>
+          <div class="hero-stat-l">Spreadsheets needed</div>
         </div>
-        <div class="hv-stats">
-          <div class="hv-stat"><div class="hv-stat-n">47</div><div class="hv-stat-l">Total</div></div>
-          <div class="hv-stat"><div class="hv-stat-n" style="color:#1e40af">12</div><div class="hv-stat-l">Open</div></div>
-          <div class="hv-stat"><div class="hv-stat-n" style="color:#92400e">8</div><div class="hv-stat-l">Review</div></div>
-          <div class="hv-stat"><div class="hv-stat-n" style="color:#065f46">22</div><div class="hv-stat-l">Published</div></div>
+        <div class="hero-stat">
+          <div class="hero-stat-n">Per deal</div>
+          <div class="hero-stat-l">Simple pricing</div>
         </div>
-        <div style="overflow-x:auto;">
-          <table class="hv-table">
-            <thead>
-              <tr>
-                <th>Buyer</th>
-                <th>Category</th>
-                <th>Q #</th>
-                <th>Question</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="cp cp-a">Buyer A</span></td>
-                <td><span class="cat">Financial</span></td>
-                <td><span class="qnum">2.1</span></td>
-                <td>Audited financials FY2021–2023</td>
-                <td><span class="sp sp-pub">Published</span></td>
-              </tr>
-              <tr>
-                <td><span class="cp cp-a">Buyer A</span></td>
-                <td><span class="cat">Legal</span></td>
-                <td><span class="qnum">3.4</span></td>
-                <td>Pending or threatened litigation</td>
-                <td><span class="sp sp-rev">In Review</span></td>
-              </tr>
-              <tr>
-                <td><span class="cp cp-b">Buyer B</span></td>
-                <td><span class="cat">Operations</span></td>
-                <td><span class="qnum">4.2</span></td>
-                <td>Customer concentration risks</td>
-                <td><span class="sp sp-dft">Draft</span></td>
-              </tr>
-              <tr>
-                <td><span class="cp cp-b">Buyer B</span></td>
-                <td><span class="cat">HR</span></td>
-                <td><span class="qnum">5.16</span></td>
-                <td>Org chart and retention agreements</td>
-                <td><span class="sp sp-open">Open</span></td>
-              </tr>
-              <tr>
-                <td><span class="cp cp-c">Buyer C</span></td>
-                <td><span class="cat">Financial</span></td>
-                <td><span class="qnum">2.7</span></td>
-                <td>Off-balance sheet obligations</td>
-                <td><span class="sp sp-open">Open</span></td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="hero-stat">
+          <div class="hero-stat-n">&lt; 5 min</div>
+          <div class="hero-stat-l">To first deal</div>
         </div>
       </div>
     </div>
@@ -1002,66 +492,34 @@
         <ul class="pain-list">
           <li><span class="pain-icon">!</span>Version management issues arise from back-and-forth emails across internal deal teams, sellers, and buyers, each working from their own copy of the file.</li>
           <li><span class="pain-icon">!</span>No audit trail. Who responded, when, and what was shared is impossible to reconstruct cleanly after the fact.</li>
-          <li><span class="pain-icon">!</span>Getting answers from your client requires a separate email thread. They are not living in your tracker, and coordinating responses across parties adds significant overhead to every deal.</li>
+          <li><span class="pain-icon">!</span>Getting answers from your client requires a separate email thread. They are not living in your tracker, and coordinating responses adds significant overhead to every deal.</li>
           <li><span class="pain-icon">!</span>Exchanging spreadsheets with multiple parties via email lacks security controls and creates ongoing opportunity for misdirected files and data errors.</li>
-          <li><span class="pain-icon">!</span>Buyers ask the same questions across multiple groups. Without a shared system, your team answers them multiple times, with no guarantee of consistency.</li>
+          <li><span class="pain-icon">!</span>Buyers ask the same questions across multiple groups. Without a shared system, your team answers them multiple times with no guarantee of consistency.</li>
           <li><span class="pain-icon">!</span>Your process is a direct reflection of your firm. Counterparties notice when an advisor is organized, professional, and running a clean deal.</li>
         </ul>
       </div>
       <div>
-        <p style="font-size:0.7rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:1rem;">A familiar inbox, without Question Pilot</p>
+        <p style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:1rem;">A familiar inbox, without Question Pilot</p>
         <div class="inbox-card">
           <div class="inbox-titlebar">
-            <div class="inbox-dots">
-              <span style="background:#ff5f57"></span>
-              <span style="background:#febc2e"></span>
-              <span style="background:#28c840"></span>
-            </div>
+            <div class="inbox-dots"><span style="background:#ff5f57"></span><span style="background:#febc2e"></span><span style="background:#28c840"></span></div>
             <span class="inbox-titlebar-name">Inbox</span>
-            <span style="font-size:0.65rem; color:#aaa;">yourfirm.com</span>
+            <span style="font-size:0.65rem;color:#aaa;">yourfirm.com</span>
           </div>
           <div class="inbox-toolbar">
-            <span class="inbox-toolbar-btn">Compose</span>
-            <span class="inbox-toolbar-btn">Reply</span>
-            <span class="inbox-toolbar-btn">Forward</span>
+            <span class="inbox-toolbar-btn">Compose</span><span class="inbox-toolbar-btn">Reply</span><span class="inbox-toolbar-btn">Forward</span>
             <span class="inbox-search">Search mail...</span>
           </div>
           <div class="inbox-folders">
             <div class="inbox-folder sel">Inbox <span class="cnt">4</span></div>
-            <div class="inbox-folder">Sent</div>
-            <div class="inbox-folder">Drafts</div>
-            <div class="inbox-folder">All Mail</div>
+            <div class="inbox-folder">Sent</div><div class="inbox-folder">Drafts</div><div class="inbox-folder">All Mail</div>
           </div>
-          <div class="inbox-msg unread">
-            <span class="msg-from">Buyer A</span>
-            <span class="msg-body"><strong>RE: Tracker_BuyerA_v4_FINAL</strong> &mdash; See updated questions attached</span>
-            <span class="msg-attach">📎 .xlsx</span>
-          </div>
-          <div class="inbox-msg unread">
-            <span class="msg-from">Client / Seller</span>
-            <span class="msg-body"><strong>Which questions has Buyer B sent?</strong> &mdash; Can you forward their list?</span>
-            <span class="msg-attach"></span>
-          </div>
-          <div class="inbox-msg unread">
-            <span class="msg-from">Buyer B</span>
-            <span class="msg-body"><strong>Updated list — see attached</strong> &mdash; Added 6 follow-ups to Tab 3</span>
-            <span class="msg-attach">📎 .xlsx</span>
-          </div>
-          <div class="inbox-msg">
-            <span class="msg-from">Buyer C</span>
-            <span class="msg-body"><strong>RE: Tracker_BuyerC — wrong version</strong> &mdash; This has last week's responses</span>
-            <span class="msg-attach">📎 .xlsx</span>
-          </div>
-          <div class="inbox-msg">
-            <span class="msg-from">Buyer A</span>
-            <span class="msg-body">Did you receive my follow-up questions from Tuesday?</span>
-            <span class="msg-attach"></span>
-          </div>
-          <div class="inbox-msg" style="border-bottom:none;">
-            <span class="msg-from">Buyer D</span>
-            <span class="msg-body"><strong>Tracker_BuyerD_FINAL_v2_revised</strong> &mdash; Please confirm receipt</span>
-            <span class="msg-attach">📎 .xlsx</span>
-          </div>
+          <div class="inbox-msg unread"><span class="msg-from">Buyer A</span><span class="msg-body"><strong>RE: Tracker_BuyerA_v4_FINAL</strong> &mdash; See updated questions attached</span><span class="msg-attach">📎 .xlsx</span></div>
+          <div class="inbox-msg unread"><span class="msg-from">Client / Seller</span><span class="msg-body"><strong>Which questions has Buyer B sent?</strong> &mdash; Can you forward their list?</span><span class="msg-attach"></span></div>
+          <div class="inbox-msg unread"><span class="msg-from">Buyer B</span><span class="msg-body"><strong>Updated list — see attached</strong> &mdash; Added 6 follow-ups to Tab 3</span><span class="msg-attach">📎 .xlsx</span></div>
+          <div class="inbox-msg"><span class="msg-from">Buyer C</span><span class="msg-body"><strong>RE: Tracker_BuyerC — wrong version</strong> &mdash; This has last week's responses</span><span class="msg-attach">📎 .xlsx</span></div>
+          <div class="inbox-msg"><span class="msg-from">Buyer A</span><span class="msg-body">Did you receive my follow-up questions from Tuesday?</span><span class="msg-attach"></span></div>
+          <div class="inbox-msg" style="border-bottom:none;"><span class="msg-from">Buyer D</span><span class="msg-body"><strong>Tracker_BuyerD_FINAL_v2_revised</strong> &mdash; Please confirm receipt</span><span class="msg-attach">📎 .xlsx</span></div>
           <div class="inbox-footer-bar">⚠ 4 separate trackers, all managed over email</div>
         </div>
       </div>
@@ -1077,42 +535,12 @@
         <p class="section-sub">Purpose-built for M&A advisors, QoE teams, transaction counsel, real estate professionals, and anyone managing structured Q&A across multiple parties.</p>
       </div>
       <div class="features-grid">
-        <div class="feat-card">
-          <div class="feat-icon">🔒</div>
-          <h3>Isolated Buyer Portals</h3>
-          <p>Each buyer accesses their own secure, isolated portal via email invitation or direct link. No party sees another's questions, responses, or activity.</p>
-          <span class="feat-tag">Compliance Ready</span>
-        </div>
-        <div class="feat-card">
-          <div class="feat-icon">🤝</div>
-          <h3>Advisor and Client Collaboration</h3>
-          <p>Most answers come from the seller, not the advisor. Question Pilot gives your client a dedicated workspace to draft and contribute responses directly. Your team reviews before anything reaches buyers.</p>
-          <span class="feat-tag">Client Workflow</span>
-        </div>
-        <div class="feat-card">
-          <div class="feat-icon">⚡</div>
-          <h3>Tools That Eliminate Repetitive Work</h3>
-          <p>Buyers routinely ask the same questions. Question Pilot flags duplicates across buyer groups and surfaces prior answers as suggestions. Uploads are also auto-categorized by topic on ingestion.</p>
-          <span class="feat-tag">Smart Automation</span>
-        </div>
-        <div class="feat-card">
-          <div class="feat-icon">✅</div>
-          <h3>Controlled Publish Workflow</h3>
-          <p>Responses move through a draft, review, and publish flow. Nothing surfaces to buyers until your team is ready. No responses go out prematurely or without senior review.</p>
-          <span class="feat-tag">Process Control</span>
-        </div>
-        <div class="feat-card">
-          <div class="feat-icon">📋</div>
-          <h3>Full Audit Trail</h3>
-          <p>Every question, response, and status change is timestamped and logged. Know exactly who asked what, when each response was published, and what each buyer has accessed.</p>
-          <span class="feat-tag">VDR-Grade Tracking</span>
-        </div>
-        <div class="feat-card">
-          <div class="feat-icon">🏆</div>
-          <h3>A Process That Reflects Your Firm</h3>
-          <p>A clean, professional portal signals competence to buyers and sellers alike. Question Pilot is the experience your clients expect and the one that sets your firm apart.</p>
-          <span class="feat-tag">Client Experience</span>
-        </div>
+        <div class="feat-card"><div class="feat-icon">🔒</div><h3>Isolated Buyer Portals</h3><p>Each buyer accesses their own secure, isolated portal via email invitation or direct link. No party sees another's questions, responses, or activity.</p><span class="feat-tag">Compliance Ready</span></div>
+        <div class="feat-card"><div class="feat-icon">🤝</div><h3>Advisor and Client Collaboration</h3><p>Most answers come from the seller, not the advisor. Question Pilot gives your client a dedicated workspace to draft and contribute responses directly. Your team reviews before anything reaches buyers.</p><span class="feat-tag">Client Workflow</span></div>
+        <div class="feat-card"><div class="feat-icon">⚡</div><h3>Tools That Eliminate Repetitive Work</h3><p>Buyers routinely ask the same questions. Question Pilot flags duplicates across buyer groups and surfaces prior answers as suggestions. Uploads are also auto-categorized by topic on ingestion.</p><span class="feat-tag">Smart Automation</span></div>
+        <div class="feat-card"><div class="feat-icon">✅</div><h3>Controlled Publish Workflow</h3><p>Responses move through a draft, review, and publish flow. Nothing surfaces to buyers until your team is ready. No responses go out prematurely or without senior review.</p><span class="feat-tag">Process Control</span></div>
+        <div class="feat-card"><div class="feat-icon">📋</div><h3>Full Audit Trail</h3><p>Every question, response, and status change is timestamped and logged. Know exactly who asked what, when each response was published, and what each buyer has accessed.</p><span class="feat-tag">VDR-Grade Tracking</span></div>
+        <div class="feat-card"><div class="feat-icon">🏆</div><h3>A Process That Reflects Your Firm</h3><p>A clean, professional portal signals competence to buyers and sellers alike. Question Pilot is the experience your clients expect and the one that sets your firm apart.</p><span class="feat-tag">Client Experience</span></div>
       </div>
     </div>
   </section>
@@ -1124,49 +552,17 @@
         <p class="eyebrow">How It Works</p>
         <h2 class="section-h">Up and running in minutes.</h2>
         <div class="steps">
-          <div class="step">
-            <div class="step-icon">📁</div>
-            <div>
-              <div class="step-title">Create a Deal</div>
-              <div class="step-desc">Set up a new transaction in seconds. Upload the diligence list and Question Pilot auto-categorizes every item by topic.</div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-icon">✉️</div>
-            <div>
-              <div class="step-title">Invite All Parties</div>
-              <div class="step-desc">Send secure email invitations or share direct links to each buyer and your client. Every party lands in their own isolated portal automatically.</div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-icon">💬</div>
-            <div>
-              <div class="step-title">Advisor and Client Collaborate</div>
-              <div class="step-desc">Buyers submit questions in their portal. Your team and client draft responses together internally, with private notes and context buyers never see.</div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-icon">👁️</div>
-            <div>
-              <div class="step-title">Review and Publish</div>
-              <div class="step-desc">Senior team member approves before anything goes live. One click to publish and parties are notified instantly.</div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-icon">🎯</div>
-            <div>
-              <div class="step-title">Close With Confidence</div>
-              <div class="step-desc">A complete, timestamped record of the entire Q&A process. Defensible, professional, and export-ready at close.</div>
-            </div>
-          </div>
+          <div class="step"><div class="step-icon">📁</div><div><div class="step-title">Create a Deal</div><div class="step-desc">Set up a new transaction in seconds. Upload the diligence list and Question Pilot auto-categorizes every item by topic.</div></div></div>
+          <div class="step"><div class="step-icon">✉️</div><div><div class="step-title">Invite All Parties</div><div class="step-desc">Send secure email invitations or share direct links to each buyer and your client. Every party lands in their own isolated portal automatically.</div></div></div>
+          <div class="step"><div class="step-icon">💬</div><div><div class="step-title">Advisor and Client Collaborate</div><div class="step-desc">Buyers submit questions in their portal. Your team and client draft responses together internally, with private notes and context buyers never see.</div></div></div>
+          <div class="step"><div class="step-icon">👁️</div><div><div class="step-title">Review and Publish</div><div class="step-desc">Senior team member approves before anything goes live. One click to publish and parties are notified instantly.</div></div></div>
+          <div class="step"><div class="step-icon">🎯</div><div><div class="step-title">Close With Confidence</div><div class="step-desc">A complete, timestamped record of the entire Q&A process. Defensible, professional, and export-ready at close.</div></div></div>
         </div>
       </div>
+      <!-- TRACKER MOCKUP lives here, not in hero -->
       <div class="tracker">
         <div class="tracker-top">
-          <div>
-            <div class="tracker-deal">Project Atlas — Diligence Tracker</div>
-            <div class="tracker-meta">3 Active Buyers &nbsp;&middot;&nbsp; 47 Questions &nbsp;&middot;&nbsp; Updated 2h ago</div>
-          </div>
+          <div><div class="tracker-deal">Project Atlas — Diligence Tracker</div><div class="tracker-meta">3 Active Buyers &nbsp;&middot;&nbsp; 47 Questions &nbsp;&middot;&nbsp; Updated 2h ago</div></div>
           <span class="tv-badge">Advisor View</span>
         </div>
         <div class="tracker-stats">
@@ -1177,57 +573,13 @@
         </div>
         <div style="overflow-x:auto;">
           <table class="tracker-tbl">
-            <thead>
-              <tr>
-                <th>Counterparty</th>
-                <th>Category</th>
-                <th>Q #</th>
-                <th>Question</th>
-                <th>VDR Ref.</th>
-                <th>Status</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Counterparty</th><th>Category</th><th>Q #</th><th>Question</th><th>VDR Ref.</th><th>Status</th></tr></thead>
             <tbody>
-              <tr>
-                <td><span class="cp cp-a">Buyer A</span></td>
-                <td><span class="cat">Financial</span></td>
-                <td><span class="qnum">2.1</span></td>
-                <td>Provide audited financials for FY2021–2023</td>
-                <td style="font-size:0.68rem;color:var(--ink-faint);font-family:monospace;">2.1</td>
-                <td><span class="sp sp-pub">Published</span></td>
-              </tr>
-              <tr>
-                <td><span class="cp cp-a">Buyer A</span></td>
-                <td><span class="cat">Legal</span></td>
-                <td><span class="qnum">3.4</span></td>
-                <td>List all pending or threatened litigation</td>
-                <td style="font-size:0.68rem;color:var(--ink-faint);font-family:monospace;">3.4</td>
-                <td><span class="sp sp-rev">In Review</span></td>
-              </tr>
-              <tr>
-                <td><span class="cp cp-b">Buyer B</span></td>
-                <td><span class="cat">Operations</span></td>
-                <td><span class="qnum">4.2</span></td>
-                <td>Customer concentration and expiring contracts</td>
-                <td style="font-size:0.68rem;color:var(--ink-faint);font-family:monospace;">4.2</td>
-                <td><span class="sp sp-dft">Draft</span></td>
-              </tr>
-              <tr>
-                <td><span class="cp cp-b">Buyer B</span></td>
-                <td><span class="cat">HR</span></td>
-                <td><span class="qnum">5.16</span></td>
-                <td>Org chart and key employee retention agreements</td>
-                <td style="font-size:0.68rem;color:var(--ink-faint);font-family:monospace;">—</td>
-                <td><span class="sp sp-open">Open</span></td>
-              </tr>
-              <tr>
-                <td><span class="cp cp-c">Buyer C</span></td>
-                <td><span class="cat">Financial</span></td>
-                <td><span class="qnum">2.7</span></td>
-                <td>Off-balance sheet obligations and contingent liabilities</td>
-                <td style="font-size:0.68rem;color:var(--ink-faint);font-family:monospace;">2.7</td>
-                <td><span class="sp sp-open">Open</span></td>
-              </tr>
+              <tr><td><span class="cp cp-a">Buyer A</span></td><td><span class="cat">Financial</span></td><td><span class="qnum">2.1</span></td><td>Provide audited financials for FY2021–2023</td><td style="font-size:0.68rem;color:var(--ink-faint);font-family:monospace;">2.1</td><td><span class="sp sp-pub">Published</span></td></tr>
+              <tr><td><span class="cp cp-a">Buyer A</span></td><td><span class="cat">Legal</span></td><td><span class="qnum">3.4</span></td><td>List all pending or threatened litigation</td><td style="font-size:0.68rem;color:var(--ink-faint);font-family:monospace;">3.4</td><td><span class="sp sp-rev">In Review</span></td></tr>
+              <tr><td><span class="cp cp-b">Buyer B</span></td><td><span class="cat">Operations</span></td><td><span class="qnum">4.2</span></td><td>Customer concentration and expiring contracts</td><td style="font-size:0.68rem;color:var(--ink-faint);font-family:monospace;">4.2</td><td><span class="sp sp-dft">Draft</span></td></tr>
+              <tr><td><span class="cp cp-b">Buyer B</span></td><td><span class="cat">HR</span></td><td><span class="qnum">5.16</span></td><td>Org chart and key employee retention agreements</td><td style="font-size:0.68rem;color:var(--ink-faint);font-family:monospace;">—</td><td><span class="sp sp-open">Open</span></td></tr>
+              <tr><td><span class="cp cp-c">Buyer C</span></td><td><span class="cat">Financial</span></td><td><span class="qnum">2.7</span></td><td>Off-balance sheet obligations and contingent liabilities</td><td style="font-size:0.68rem;color:var(--ink-faint);font-family:monospace;">2.7</td><td><span class="sp sp-open">Open</span></td></tr>
             </tbody>
           </table>
         </div>
@@ -1241,27 +593,9 @@
       <p class="eyebrow">Why It Matters</p>
       <h2 class="section-h">Built from real deal experience.</h2>
       <div class="proof-grid">
-        <div class="proof-card">
-          <div class="stars">★★★★★</div>
-          <p class="proof-quote">"The seller is where 80% of the answers come from. But getting them to work out of a tracker I built is a battle every single deal."</p>
-          <div class="proof-rule"></div>
-          <div class="proof-name">Vice President</div>
-          <div class="proof-title">Boutique M&A Advisory Firm</div>
-        </div>
-        <div class="proof-card">
-          <div class="stars">★★★★★</div>
-          <p class="proof-quote">"Managing four buyer trackers over email on a live process is pure friction, for me, for the seller, and for every buyer at the table."</p>
-          <div class="proof-rule"></div>
-          <div class="proof-name">Managing Director</div>
-          <div class="proof-title">Regional Investment Bank</div>
-        </div>
-        <div class="proof-card">
-          <div class="stars">★★★★★</div>
-          <p class="proof-quote">"How you run the process is part of your pitch. Buyers and sellers notice when an advisor is organized. A professional portal is table stakes."</p>
-          <div class="proof-rule"></div>
-          <div class="proof-name">Senior Advisor</div>
-          <div class="proof-title">Transaction Advisory Group</div>
-        </div>
+        <div class="proof-card"><div class="stars">★★★★★</div><p class="proof-quote">"The seller is where 80% of the answers come from. But getting them to work out of a tracker I built is a battle every single deal."</p><div class="proof-rule"></div><div class="proof-name">Vice President</div><div class="proof-title">Boutique M&A Advisory Firm</div></div>
+        <div class="proof-card"><div class="stars">★★★★★</div><p class="proof-quote">"Managing four buyer trackers over email on a live process is pure friction, for me, for the seller, and for every buyer at the table."</p><div class="proof-rule"></div><div class="proof-name">Managing Director</div><div class="proof-title">Regional Investment Bank</div></div>
+        <div class="proof-card"><div class="stars">★★★★★</div><p class="proof-quote">"How you run the process is part of your pitch. Buyers and sellers notice when an advisor is organized. A professional portal is table stakes."</p><div class="proof-rule"></div><div class="proof-name">Senior Advisor</div><div class="proof-title">Transaction Advisory Group</div></div>
       </div>
     </div>
   </section>
@@ -1276,27 +610,9 @@
         <button class="btn-primary" style="margin-top:1.75rem;" onclick="showPage('pricing')">See Pricing</button>
       </div>
       <div class="pricing-items">
-        <div class="pricing-item">
-          <div class="pi-icon">📊</div>
-          <div>
-            <div class="pi-title">Per-Tracker Pricing</div>
-            <div class="pi-desc">Each buyer portal is a standalone engagement. No recurring charges between deals.</div>
-          </div>
-        </div>
-        <div class="pricing-item">
-          <div class="pi-icon">♾️</div>
-          <div>
-            <div class="pi-title">Unlimited Questions</div>
-            <div class="pi-desc">No caps on questions or responses per tracker. Run the process your way.</div>
-          </div>
-        </div>
-        <div class="pricing-item">
-          <div class="pi-icon">🏢</div>
-          <div>
-            <div class="pi-title">Firm-Wide Arrangements Available</div>
-            <div class="pi-desc">Running multiple deals at once? Subscription pricing available for high-volume firms.</div>
-          </div>
-        </div>
+        <div class="pricing-item"><div class="pi-icon">📊</div><div><div class="pi-title">Per-Tracker Pricing</div><div class="pi-desc">Each buyer portal is a standalone engagement. No recurring charges between deals.</div></div></div>
+        <div class="pricing-item"><div class="pi-icon">♾️</div><div><div class="pi-title">Unlimited Questions</div><div class="pi-desc">No caps on questions or responses per tracker. Run the process your way.</div></div></div>
+        <div class="pricing-item"><div class="pi-icon">🏢</div><div><div class="pi-title">Firm-Wide Arrangements Available</div><div class="pi-desc">Running multiple deals at once? Subscription pricing available for high-volume firms.</div></div></div>
       </div>
     </div>
   </section>
@@ -1308,123 +624,16 @@
       <h2>Ready to streamline your <span>deal process?</span></h2>
       <p>Question Pilot is live. Create an account and launch your first deal in minutes.</p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem">
-        <button onclick="showPage('signup')" style="display:inline-block;padding:.9rem 2.25rem;background:var(--teal-light);color:#fff;border:none;border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;">Create Account</button>
-        <button onclick="window.location.href='https://app.questionpilot.com'" style="display:inline-block;padding:.9rem 2.25rem;background:transparent;color:rgba(255,255,255,0.8);border:2px solid rgba(255,255,255,0.3);border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;">Sign In</button>
+        <button onclick="showPage('signup')" style="padding:.9rem 2.25rem;background:var(--teal-light);color:#fff;border:none;border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;">Create Account</button>
+        <button onclick="window.location.href='https://app.questionpilot.com'" style="padding:.9rem 2.25rem;background:transparent;color:rgba(255,255,255,0.8);border:2px solid rgba(255,255,255,0.3);border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;">Sign In</button>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <div class="footer-logo">Question<span>Pilot</span></div>
-        <div class="footer-tagline">Purpose-built Q&A portals for complex transactions.</div>
-      </div>
-      <div class="footer-col">
-        <h4>Product</h4>
-        <a onclick="showPage('home')">Home</a>
-        <a onclick="showPage('solutions')">Solutions</a>
-        <a onclick="showPage('pricing')">Pricing</a>
-        <a onclick="showPage('signup')">Get Started</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a onclick="showPage('about')">About</a>
-        <a href="mailto:hello@questionpilot.com">Contact</a>
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="/terms.html">Terms of Use</a>
-      </div>
-      <div class="footer-col">
-        <h4>Use Cases</h4>
-        <a onclick="showPage('solutions')">M&amp;A Advisory</a>
-        <a onclick="showPage('solutions')">Quality of Earnings</a>
-        <a onclick="showPage('solutions')">Transaction Counsel</a>
-        <a onclick="showPage('solutions')">Real Estate</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Question Pilot LLC. All rights reserved.</span>
-      <span>Built for transaction professionals.</span>
-    </div>
-  </footer>
-
-</div><!-- end page-home -->
-
-
-<!-- ═══════════ SOLUTIONS PAGE ═══════════ -->
-<div class="page" id="page-solutions">
-  <section class="solutions-hero">
-    <div class="container">
-      <p class="eyebrow">Solutions</p>
-      <h1>Built for every side of the table.</h1>
-      <p>Question Pilot serves any professional managing structured Q&A across multiple parties. Here is how different teams use it.</p>
-    </div>
-  </section>
-  <section class="solutions-cards">
-    <div class="sol-grid">
-      <div class="sol-card">
-        <div class="sol-icon">🏦</div>
-        <h3>M&A Advisory</h3>
-        <p>Sell-side advisors running competitive processes with multiple buyers need a clean, professional Q&A workflow that keeps every party isolated and every response controlled.</p>
-        <ul class="sol-list">
-          <li>Separate portal per buyer, fully siloed</li>
-          <li>Advisor and client collaborate internally before anything goes to buyers</li>
-          <li>Duplicate question detection across buyer groups</li>
-          <li>Draft, review, and publish workflow with senior approval</li>
-          <li>Full audit trail for the entire process</li>
-        </ul>
-      </div>
-      <div class="sol-card">
-        <div class="sol-icon">📊</div>
-        <h3>Quality of Earnings Teams</h3>
-        <p>Accounting firms supporting QoE engagements manage complex information requests across management, legal, and financial workstreams. Question Pilot brings structure to the process.</p>
-        <ul class="sol-list">
-          <li>Categorized Q&A by workstream or topic</li>
-          <li>Client response tracking and status management</li>
-          <li>Internal notes and draft responses never visible to management</li>
-          <li>Timestamped record of all requests and responses</li>
-        </ul>
-      </div>
-      <div class="sol-card">
-        <div class="sol-icon">⚖️</div>
-        <h3>Transaction Counsel</h3>
-        <p>Legal teams managing diligence requests across buyers and counterparties benefit from a structured, secure portal that maintains a defensible record of all information exchanged.</p>
-        <ul class="sol-list">
-          <li>Secure counterparty isolation</li>
-          <li>Controlled information release workflow</li>
-          <li>Complete audit trail for legal defensibility</li>
-          <li>No document storage required</li>
-        </ul>
-      </div>
-      <div class="sol-card">
-        <div class="sol-icon">🏢</div>
-        <h3>Real Estate Transactions</h3>
-        <p>Real estate professionals managing investor Q&A, tenant diligence, or acquisition processes can use Question Pilot to run a more professional and organized information exchange.</p>
-        <ul class="sol-list">
-          <li>Per-party portal access via link or email</li>
-          <li>Organized Q&A by property, workstream, or phase</li>
-          <li>Client collaboration on responses</li>
-          <li>Per-tracker pricing, no subscription required</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <section class="cta-banner">
-    <div class="cta-banner-inner">
-      <p class="eyebrow">Get Started</p>
-      <h2>Ready to run a <span>better process?</span></h2>
-      <p>Question Pilot is live. Create an account and start your first deal today.</p>
-      <div style="display:flex;gap:0.75rem;justify-content:center;margin-top:1.5rem;">
-        <button class="btn-primary" onclick="showPage('signup')">Get Started</button>
-        <button class="btn-secondary" style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.2);" onclick="showPage('pricing')">View Pricing</button>
-      </div>
-    </div>
-  </section>
   <footer>
     <div class="footer-inner">
       <div><div class="footer-logo">Question<span>Pilot</span></div><div class="footer-tagline">Purpose-built Q&A portals for complex transactions.</div></div>
-      <div class="footer-col"><h4>Product</h4><a onclick="showPage('home')">Home</a><a onclick="showPage('solutions')">Solutions</a><a onclick="showPage('pricing')">Pricing</a></div>
+      <div class="footer-col"><h4>Product</h4><a onclick="showPage('home')">Home</a><a onclick="showPage('solutions')">Solutions</a><a onclick="showPage('pricing')">Pricing</a><a onclick="showPage('signup')">Get Started</a></div>
       <div class="footer-col"><h4>Company</h4><a onclick="showPage('about')">About</a><a href="mailto:hello@questionpilot.com">Contact</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
       <div class="footer-col"><h4>Use Cases</h4><a onclick="showPage('solutions')">M&amp;A Advisory</a><a onclick="showPage('solutions')">Quality of Earnings</a><a onclick="showPage('solutions')">Transaction Counsel</a><a onclick="showPage('solutions')">Real Estate</a></div>
     </div>
@@ -1432,154 +641,53 @@
   </footer>
 </div>
 
-
-<!-- ═══════════ PRICING PAGE ═══════════ -->
-<div class="page" id="page-pricing">
-  <section class="pricing-hero">
-    <div class="container">
-      <p class="eyebrow">Pricing</p>
-      <h1>Simple pricing. No surprises.</h1>
-      <p>Pay per tracker when you need it, or talk to us about a firm-wide arrangement if you run volume.</p>
+<!-- ═══════════ SOLUTIONS ═══════════ -->
+<div class="page" id="page-solutions">
+  <section class="solutions-hero"><div class="container"><p class="eyebrow">Solutions</p><h1>Built for every side of the table.</h1><p>Question Pilot serves any professional managing structured Q&A across multiple parties. Here is how different teams use it.</p></div></section>
+  <section class="solutions-cards">
+    <div class="sol-grid">
+      <div class="sol-card"><div class="sol-icon">🏦</div><h3>M&A Advisory</h3><p>Sell-side advisors running competitive processes with multiple buyers need a clean, professional Q&A workflow that keeps every party isolated and every response controlled.</p><ul class="sol-list"><li>Separate portal per buyer, fully siloed</li><li>Advisor and client collaborate internally before anything goes to buyers</li><li>Duplicate question detection across buyer groups</li><li>Draft, review, and publish workflow with senior approval</li><li>Full audit trail for the entire process</li></ul></div>
+      <div class="sol-card"><div class="sol-icon">📊</div><h3>Quality of Earnings Teams</h3><p>Accounting firms supporting QoE engagements manage complex information requests across management, legal, and financial workstreams. Question Pilot brings structure to the process.</p><ul class="sol-list"><li>Categorized Q&A by workstream or topic</li><li>Client response tracking and status management</li><li>Internal notes and draft responses never visible to management</li><li>Timestamped record of all requests and responses</li></ul></div>
+      <div class="sol-card"><div class="sol-icon">⚖️</div><h3>Transaction Counsel</h3><p>Legal teams managing diligence requests across buyers and counterparties benefit from a structured, secure portal that maintains a defensible record of all information exchanged.</p><ul class="sol-list"><li>Secure counterparty isolation</li><li>Controlled information release workflow</li><li>Complete audit trail for legal defensibility</li><li>No document storage required</li></ul></div>
+      <div class="sol-card"><div class="sol-icon">🏢</div><h3>Real Estate Transactions</h3><p>Real estate professionals managing investor Q&A, tenant diligence, or acquisition processes can use Question Pilot to run a more professional and organized information exchange.</p><ul class="sol-list"><li>Per-party portal access via link or email</li><li>Organized Q&A by property, workstream, or phase</li><li>Client collaboration on responses</li><li>Per-tracker pricing, no subscription required</li></ul></div>
     </div>
   </section>
+  <section class="cta-banner"><div class="cta-banner-inner"><p class="eyebrow">Get Started</p><h2>Ready to run a <span>better process?</span></h2><p>Question Pilot is live. Create an account and start your first deal today.</p><div style="display:flex;gap:0.75rem;justify-content:center;margin-top:1.5rem;"><button class="btn-primary" onclick="showPage('signup')">Get Started</button><button class="btn-secondary" style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.2);" onclick="showPage('pricing')">View Pricing</button></div></div></section>
+  <footer><div class="footer-inner"><div><div class="footer-logo">Question<span>Pilot</span></div><div class="footer-tagline">Purpose-built Q&A portals for complex transactions.</div></div><div class="footer-col"><h4>Product</h4><a onclick="showPage('home')">Home</a><a onclick="showPage('solutions')">Solutions</a><a onclick="showPage('pricing')">Pricing</a></div><div class="footer-col"><h4>Company</h4><a onclick="showPage('about')">About</a><a href="mailto:hello@questionpilot.com">Contact</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div><div class="footer-col"><h4>Use Cases</h4><a onclick="showPage('solutions')">M&amp;A Advisory</a><a onclick="showPage('solutions')">Quality of Earnings</a><a onclick="showPage('solutions')">Transaction Counsel</a><a onclick="showPage('solutions')">Real Estate</a></div></div><div class="footer-bottom"><span>© 2026 Question Pilot LLC. All rights reserved.</span><span>Built for transaction professionals.</span></div></footer>
+</div>
+
+<!-- ═══════════ PRICING ═══════════ -->
+<div class="page" id="page-pricing">
+  <section class="pricing-hero"><div class="container"><p class="eyebrow">Pricing</p><h1>Simple pricing. No surprises.</h1><p>Pay per tracker when you need it, or talk to us about a firm-wide arrangement if you run volume.</p></div></section>
   <section class="pricing-cards">
     <div class="pricing-grid">
-      <div class="price-card">
-        <div class="price-tier">Starter</div>
-        <div class="price-amount">$750</div>
-        <div class="price-unit">per buyer tracker</div>
-        <ul class="price-feats">
-          <li>Single buyer portal</li>
-          <li>Unlimited questions</li>
-          <li>Advisor and client collaboration</li>
-          <li>Draft and publish workflow</li>
-          <li>Full audit trail</li>
-          <li>Email support</li>
-        </ul>
-        <button class="btn-tier btn-tier-outline" onclick="showPage('signup')">Get Started</button>
-      </div>
-      <div class="price-card featured">
-        <div class="price-badge">Most Popular</div>
-        <div class="price-tier">Standard Deal</div>
-        <div class="price-amount">$1,750</div>
-        <div class="price-unit">per deal (up to 5 buyers)</div>
-        <ul class="price-feats">
-          <li>Up to 5 buyer portals</li>
-          <li>Unlimited questions</li>
-          <li>Advisor and client collaboration</li>
-          <li>Draft and publish workflow</li>
-          <li>Duplicate question detection</li>
-          <li>Full audit trail</li>
-          <li>Priority support</li>
-        </ul>
-        <button class="btn-tier btn-tier-solid" onclick="showPage('signup')">Get Started</button>
-      </div>
-      <div class="price-card">
-        <div class="price-tier">Enterprise</div>
-        <div class="price-amount">Custom</div>
-        <div class="price-unit">for high-volume firms</div>
-        <ul class="price-feats">
-          <li>Unlimited deals and buyers</li>
-          <li>Firm-wide subscription pricing</li>
-          <li>Dedicated account support</li>
-          <li>Custom branding available</li>
-          <li>Volume discounts</li>
-          <li>Priority onboarding</li>
-        </ul>
-        <button class="btn-tier btn-tier-outline" href="mailto:hello@questionpilot.com">Contact Us</button>
-      </div>
+      <div class="price-card"><div class="price-tier">Starter</div><div class="price-amount">$750</div><div class="price-unit">per buyer tracker</div><ul class="price-feats"><li>Single buyer portal</li><li>Unlimited questions</li><li>Advisor and client collaboration</li><li>Draft and publish workflow</li><li>Full audit trail</li><li>Email support</li></ul><button class="btn-tier btn-tier-outline" onclick="showPage('signup')">Get Started</button></div>
+      <div class="price-card featured"><div class="price-badge">Most Popular</div><div class="price-tier">Standard Deal</div><div class="price-amount">$1,750</div><div class="price-unit">per deal (up to 5 buyers)</div><ul class="price-feats"><li>Up to 5 buyer portals</li><li>Unlimited questions</li><li>Advisor and client collaboration</li><li>Draft and publish workflow</li><li>Duplicate question detection</li><li>Full audit trail</li><li>Priority support</li></ul><button class="btn-tier btn-tier-solid" onclick="showPage('signup')">Get Started</button></div>
+      <div class="price-card"><div class="price-tier">Enterprise</div><div class="price-amount">Custom</div><div class="price-unit">for high-volume firms</div><ul class="price-feats"><li>Unlimited deals and buyers</li><li>Firm-wide subscription pricing</li><li>Dedicated account support</li><li>Custom branding available</li><li>Volume discounts</li><li>Priority onboarding</li></ul><button class="btn-tier btn-tier-outline" onclick="window.location.href='mailto:hello@questionpilot.com'">Contact Us</button></div>
     </div>
-    <div class="pricing-note-box">
-      <p>All plans include full platform access with no hidden fees. Starter and Standard plans are charged per transaction. Enterprise subscribers pay a flat monthly or annual rate regardless of deal volume. <a href="mailto:hello@questionpilot.com">Contact us</a> to discuss the right arrangement for your firm.</p>
-    </div>
+    <div class="pricing-note-box"><p>All plans include full platform access with no hidden fees. Starter and Standard plans are charged per transaction. Enterprise subscribers pay a flat monthly or annual rate regardless of deal volume. <a href="mailto:hello@questionpilot.com">Contact us</a> to discuss the right arrangement for your firm.</p></div>
   </section>
-  <section class="cta-banner">
-    <div class="cta-banner-inner">
-      <p class="eyebrow">Get Started</p>
-      <h2>Start your first <span>deal today.</span></h2>
-      <p>Create an account and be live in minutes.</p>
-      <div style="display:flex;gap:0.75rem;justify-content:center;margin-top:1.5rem;">
-        <button class="btn-primary" onclick="showPage('signup')">Get Started</button>
-      </div>
-    </div>
-  </section>
-  <footer>
-    <div class="footer-inner">
-      <div><div class="footer-logo">Question<span>Pilot</span></div><div class="footer-tagline">Purpose-built Q&A portals for complex transactions.</div></div>
-      <div class="footer-col"><h4>Product</h4><a onclick="showPage('home')">Home</a><a onclick="showPage('solutions')">Solutions</a><a onclick="showPage('pricing')">Pricing</a></div>
-      <div class="footer-col"><h4>Company</h4><a onclick="showPage('about')">About</a><a href="mailto:hello@questionpilot.com">Contact</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
-      <div class="footer-col"><h4>Use Cases</h4><a onclick="showPage('solutions')">M&amp;A Advisory</a><a onclick="showPage('solutions')">Quality of Earnings</a><a onclick="showPage('solutions')">Transaction Counsel</a><a onclick="showPage('solutions')">Real Estate</a></div>
-    </div>
-    <div class="footer-bottom"><span>© 2026 Question Pilot LLC. All rights reserved.</span></div>
-  </footer>
+  <section class="cta-banner"><div class="cta-banner-inner"><p class="eyebrow">Get Started</p><h2>Start your first <span>deal today.</span></h2><p>Create an account and be live in minutes.</p><div style="display:flex;gap:0.75rem;justify-content:center;margin-top:1.5rem;"><button class="btn-primary" onclick="showPage('signup')">Get Started</button></div></div></section>
+  <footer><div class="footer-inner"><div><div class="footer-logo">Question<span>Pilot</span></div><div class="footer-tagline">Purpose-built Q&A portals for complex transactions.</div></div><div class="footer-col"><h4>Product</h4><a onclick="showPage('home')">Home</a><a onclick="showPage('solutions')">Solutions</a><a onclick="showPage('pricing')">Pricing</a></div><div class="footer-col"><h4>Company</h4><a onclick="showPage('about')">About</a><a href="mailto:hello@questionpilot.com">Contact</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div><div class="footer-col"><h4>Use Cases</h4><a onclick="showPage('solutions')">M&amp;A Advisory</a><a onclick="showPage('solutions')">Quality of Earnings</a><a onclick="showPage('solutions')">Transaction Counsel</a><a onclick="showPage('solutions')">Real Estate</a></div></div><div class="footer-bottom"><span>© 2026 Question Pilot LLC. All rights reserved.</span></div></footer>
 </div>
 
-
-<!-- ═══════════ ABOUT PAGE ═══════════ -->
+<!-- ═══════════ ABOUT ═══════════ -->
 <div class="page" id="page-about">
-  <section class="about-hero">
-    <div class="about-inner">
-      <div>
-        <p class="eyebrow">About Question Pilot</p>
-        <h1>Built by deal professionals, for deal professionals.</h1>
-        <p>Question Pilot was born out of firsthand experience running sell-side M&A processes and seeing how much time, energy, and professional credibility gets lost managing Q&A over email and spreadsheets.</p>
-        <p>We built the tool we always wished existed: a clean, secure portal that makes life easier for advisors, sellers, and buyers alike, and that makes the process itself look the way it should.</p>
-      </div>
-      <div class="about-stat-grid">
-        <div class="about-stat"><div class="about-stat-n">100%</div><div class="about-stat-l">Buyer isolation, guaranteed</div></div>
-        <div class="about-stat"><div class="about-stat-n">0</div><div class="about-stat-l">Spreadsheets required</div></div>
-        <div class="about-stat"><div class="about-stat-n">Per deal</div><div class="about-stat-l">Simple, transparent pricing</div></div>
-        <div class="about-stat"><div class="about-stat-n">Minutes</div><div class="about-stat-l">Time to set up your first deal</div></div>
-      </div>
-    </div>
-  </section>
-  <section class="about-mission">
-    <div class="about-mission-inner">
-      <p class="eyebrow">Our Mission</p>
-      <h2>The process is part of the product.</h2>
-      <p>In any transaction, the way you run the process is a direct signal of your firm's competence. Buyers and sellers evaluate your capabilities not just on your advice, but on how organized, professional, and clear your information management is from day one.</p>
-      <p>Question Pilot exists to raise that standard. We give advisors the infrastructure to run a cleaner, more professional diligence process without adding complexity or cost to their stack.</p>
-      <p>We are a small team based in North Carolina, and we work closely with our early clients to build exactly what the market needs. If you have feedback, we want to hear it.</p>
-    </div>
-  </section>
-  <section class="cta-banner">
-    <div class="cta-banner-inner">
-      <p class="eyebrow">Get in Touch</p>
-      <h2>Questions? <span>We are here.</span></h2>
-      <p>Reach out with questions about the product, pricing, or your specific use case.</p>
-      <div style="display:flex;gap:0.75rem;justify-content:center;margin-top:1.5rem;">
-        <button class="btn-primary" onclick="showPage('signup')">Get Started</button>
-        <button class="btn-secondary" style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.2);" onclick="window.location.href='mailto:hello@questionpilot.com'">Contact Us</button>
-      </div>
-    </div>
-  </section>
-  <footer>
-    <div class="footer-inner">
-      <div><div class="footer-logo">Question<span>Pilot</span></div><div class="footer-tagline">Purpose-built Q&A portals for complex transactions.</div></div>
-      <div class="footer-col"><h4>Product</h4><a onclick="showPage('home')">Home</a><a onclick="showPage('solutions')">Solutions</a><a onclick="showPage('pricing')">Pricing</a></div>
-      <div class="footer-col"><h4>Company</h4><a onclick="showPage('about')">About</a><a href="mailto:hello@questionpilot.com">Contact</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
-      <div class="footer-col"><h4>Use Cases</h4><a onclick="showPage('solutions')">M&amp;A Advisory</a><a onclick="showPage('solutions')">Quality of Earnings</a><a onclick="showPage('solutions')">Transaction Counsel</a><a onclick="showPage('solutions')">Real Estate</a></div>
-    </div>
-    <div class="footer-bottom"><span>© 2026 Question Pilot LLC. All rights reserved.</span></div>
-  </footer>
+  <section class="about-hero"><div class="about-inner"><div><p class="eyebrow">About Question Pilot</p><h1>Built by deal professionals, for deal professionals.</h1><p>Question Pilot was born out of firsthand experience running sell-side M&A processes and seeing how much time, energy, and professional credibility gets lost managing Q&A over email and spreadsheets.</p><p>We built the tool we always wished existed: a clean, secure portal that makes life easier for advisors, sellers, and buyers alike, and that makes the process itself look the way it should.</p></div><div class="about-stat-grid"><div class="about-stat"><div class="about-stat-n">100%</div><div class="about-stat-l">Buyer isolation, guaranteed</div></div><div class="about-stat"><div class="about-stat-n">0</div><div class="about-stat-l">Spreadsheets required</div></div><div class="about-stat"><div class="about-stat-n">Per deal</div><div class="about-stat-l">Simple, transparent pricing</div></div><div class="about-stat"><div class="about-stat-n">Minutes</div><div class="about-stat-l">Time to set up your first deal</div></div></div></div></section>
+  <section class="about-mission"><div class="about-mission-inner"><p class="eyebrow">Our Mission</p><h2>The process is part of the product.</h2><p>In any transaction, the way you run the process is a direct signal of your firm's competence. Buyers and sellers evaluate your capabilities not just on your advice, but on how organized, professional, and clear your information management is from day one.</p><p>Question Pilot exists to raise that standard. We give advisors the infrastructure to run a cleaner, more professional diligence process without adding complexity or cost to their stack.</p><p>We are a small team based in North Carolina, and we work closely with our early clients to build exactly what the market needs. If you have feedback, we want to hear it.</p></div></section>
+  <section class="cta-banner"><div class="cta-banner-inner"><p class="eyebrow">Get in Touch</p><h2>Questions? <span>We are here.</span></h2><p>Reach out with questions about the product, pricing, or your specific use case.</p><div style="display:flex;gap:0.75rem;justify-content:center;margin-top:1.5rem;"><button class="btn-primary" onclick="showPage('signup')">Get Started</button><button class="btn-secondary" style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.2);" onclick="window.location.href='mailto:hello@questionpilot.com'">Contact Us</button></div></div></section>
+  <footer><div class="footer-inner"><div><div class="footer-logo">Question<span>Pilot</span></div><div class="footer-tagline">Purpose-built Q&A portals for complex transactions.</div></div><div class="footer-col"><h4>Product</h4><a onclick="showPage('home')">Home</a><a onclick="showPage('solutions')">Solutions</a><a onclick="showPage('pricing')">Pricing</a></div><div class="footer-col"><h4>Company</h4><a onclick="showPage('about')">About</a><a href="mailto:hello@questionpilot.com">Contact</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div><div class="footer-col"><h4>Use Cases</h4><a onclick="showPage('solutions')">M&amp;A Advisory</a><a onclick="showPage('solutions')">Quality of Earnings</a><a onclick="showPage('solutions')">Transaction Counsel</a><a onclick="showPage('solutions')">Real Estate</a></div></div><div class="footer-bottom"><span>© 2026 Question Pilot LLC. All rights reserved.</span></div></footer>
 </div>
 
-
-<!-- ═══════════ LOGIN PAGE ═══════════ -->
+<!-- ═══════════ LOGIN ═══════════ -->
 <div class="page" id="page-login">
   <div class="auth-page">
     <div class="auth-card">
       <div class="auth-logo">Question<span>Pilot</span></div>
       <h2>Welcome back</h2>
       <p class="sub">Sign in to your firm's account.</p>
-      <div class="form-group">
-        <label class="form-label">Work Email</label>
-        <input class="form-input" type="email" placeholder="you@yourfirm.com"/>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Password</label>
-        <input class="form-input" type="password" placeholder="••••••••"/>
-      </div>
+      <div class="form-group"><label class="form-label">Work Email</label><input class="form-input" type="email" placeholder="you@yourfirm.com"/></div>
+      <div class="form-group"><label class="form-label">Password</label><input class="form-input" type="password" placeholder="••••••••"/></div>
       <button class="btn-form" onclick="window.location.href='https://app.questionpilot.com'">Sign In</button>
       <div class="auth-divider">or</div>
       <button class="btn-form" style="background:var(--bg);color:var(--ink);border:1px solid var(--rule-mid);" onclick="window.location.href='https://app.questionpilot.com'">Continue with Google</button>
@@ -1589,51 +697,26 @@
   </div>
 </div>
 
-
-<!-- ═══════════ SIGNUP PAGE ═══════════ -->
+<!-- ═══════════ SIGNUP ═══════════ -->
 <div class="page" id="page-signup">
   <div class="auth-page">
     <div class="auth-card">
       <div class="auth-logo">Question<span>Pilot</span></div>
       <h2>Create your account</h2>
       <p class="sub">Get your first deal live in minutes.</p>
-
       <div class="form-group">
         <label class="form-label">Select a Plan</label>
-        <div class="plan-select" id="planSelect">
-          <div class="plan-opt sel" onclick="selectPlan(this)">
-            <div class="plan-opt-name">Starter</div>
-            <div class="plan-opt-price">$750 / tracker</div>
-          </div>
-          <div class="plan-opt" onclick="selectPlan(this)">
-            <div class="plan-opt-name">Standard</div>
-            <div class="plan-opt-price">$1,750 / deal</div>
-          </div>
-          <div class="plan-opt" onclick="selectPlan(this)">
-            <div class="plan-opt-name">Enterprise</div>
-            <div class="plan-opt-price">Custom</div>
-          </div>
+        <div class="plan-select">
+          <div class="plan-opt sel" onclick="selectPlan(this)"><div class="plan-opt-name">Starter</div><div class="plan-opt-price">$750 / tracker</div></div>
+          <div class="plan-opt" onclick="selectPlan(this)"><div class="plan-opt-name">Standard</div><div class="plan-opt-price">$1,750 / deal</div></div>
+          <div class="plan-opt" onclick="selectPlan(this)"><div class="plan-opt-name">Enterprise</div><div class="plan-opt-price">Custom</div></div>
         </div>
       </div>
-
-      <div class="form-group">
-        <label class="form-label">Full Name</label>
-        <input class="form-input" type="text" placeholder="Jane Smith"/>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Work Email</label>
-        <input class="form-input" type="email" placeholder="you@yourfirm.com"/>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Firm Name</label>
-        <input class="form-input" type="text" placeholder="Your Advisory Firm LLC"/>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Password</label>
-        <input class="form-input" type="password" placeholder="Create a password"/>
-      </div>
-
-      <!-- CLICKWRAP LEGAL CONSENT -->
+      <div class="form-group"><label class="form-label">Full Name</label><input class="form-input" type="text" placeholder="Jane Smith"/></div>
+      <div class="form-group"><label class="form-label">Work Email</label><input class="form-input" type="email" placeholder="you@yourfirm.com"/></div>
+      <div class="form-group"><label class="form-label">Firm Name</label><input class="form-input" type="text" placeholder="Your Advisory Firm LLC"/></div>
+      <div class="form-group"><label class="form-label">Password</label><input class="form-input" type="password" placeholder="Create a password"/></div>
+      <!-- CLICKWRAP -->
       <div class="clickwrap" id="clickwrapBox">
         <input type="checkbox" class="clickwrap-check" id="legalConsent" onchange="handleConsentChange()"/>
         <label class="clickwrap-label" for="legalConsent">
@@ -1645,14 +728,11 @@
         </label>
       </div>
       <div class="clickwrap-error" id="consentError">You must agree to the Terms of Use and Privacy Policy to create an account.</div>
-      <!-- END CLICKWRAP -->
-
       <button class="btn-form" onclick="handleSignup()">Create Account</button>
       <p class="auth-link">Already have an account? <a onclick="showPage('login')">Sign in</a></p>
     </div>
   </div>
 </div>
-
 
 <script>
   function showPage(name) {
@@ -1663,40 +743,24 @@
     var navEl = document.getElementById('nav-' + name);
     if (navEl) navEl.classList.add('active');
   }
-
   function selectPlan(el) {
     document.querySelectorAll('.plan-opt').forEach(function(o) { o.classList.remove('sel'); });
     el.classList.add('sel');
   }
-
   function handleConsentChange() {
     var cb = document.getElementById('legalConsent');
     var box = document.getElementById('clickwrapBox');
     var err = document.getElementById('consentError');
-    if (cb.checked) {
-      box.classList.remove('error');
-      box.classList.add('accepted');
-      err.classList.remove('visible');
-    } else {
-      box.classList.remove('accepted');
-    }
+    if (cb.checked) { box.classList.remove('error'); box.classList.add('accepted'); err.classList.remove('visible'); }
+    else { box.classList.remove('accepted'); }
   }
-
   function handleSignup() {
     var cb = document.getElementById('legalConsent');
     var box = document.getElementById('clickwrapBox');
     var err = document.getElementById('consentError');
-    if (!cb.checked) {
-      box.classList.add('error');
-      box.classList.remove('accepted');
-      err.classList.add('visible');
-      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return;
-    }
-    // Proceed to app
+    if (!cb.checked) { box.classList.add('error'); box.classList.remove('accepted'); err.classList.add('visible'); box.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
     window.location.href = 'https://app.questionpilot.com';
   }
 </script>
-
 </body>
 </html>
