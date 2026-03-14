@@ -39,7 +39,6 @@
       overflow-x: hidden;
     }
 
-    /* hide all pages except active */
     .page { display: none; }
     .page.active { display: block; }
 
@@ -126,7 +125,7 @@
     }
     .section-sub { color: var(--ink-soft); font-size: 1rem; line-height: 1.75; max-width: 520px; }
 
-    /* ─── HOME: HERO ─── */
+    /* ─── HERO ─── */
     .hero {
       padding: 9rem 0 5rem;
       background: var(--white);
@@ -206,7 +205,7 @@
     }
     .btn-secondary:hover { background: var(--bg); border-color: var(--ink-faint); }
 
-    /* Hero right: tracker mockup */
+    /* Hero visual mockup */
     .hero-visual {
       background: var(--white);
       border: 1px solid var(--rule-mid);
@@ -407,7 +406,6 @@
     .msg-body strong { color: #222; font-weight: 600; }
     .inbox-msg:not(.unread) .msg-body strong { font-weight: 400; }
     .msg-attach { font-size: 0.65rem; color: #1a73e8; text-align: right; white-space: nowrap; }
-    .msg-time { font-size: 0.62rem; color: #aaa; }
     .inbox-footer-bar {
       padding: 0.5rem 1rem;
       background: #fff8e6;
@@ -580,7 +578,7 @@
     .proof-name { font-size: 0.82rem; font-weight: 700; color: var(--ink); }
     .proof-title { font-size: 0.75rem; color: var(--ink-faint); margin-top: 0.1rem; }
 
-    /* ─── PRICING SECTION (home) ─── */
+    /* ─── PRICING STRIP ─── */
     .pricing-strip {
       padding: 5rem 0;
       background: var(--white);
@@ -633,23 +631,6 @@
     }
     .cta-banner h2 span { color: #6ecfcb; }
     .cta-banner p { color: rgba(255,255,255,0.55); font-size: 0.95rem; margin-bottom: 2.5rem; }
-    .cta-form { display: flex; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.12); }
-    .cta-form input {
-      flex: 1; background: rgba(255,255,255,0.08);
-      border: none; padding: 0.9rem 1.25rem;
-      color: var(--white); font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 0.875rem; outline: none;
-    }
-    .cta-form input::placeholder { color: rgba(255,255,255,0.3); }
-    .cta-form button {
-      background: var(--gold); color: var(--white);
-      border: none; padding: 0.9rem 1.6rem;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 700; font-size: 0.85rem; cursor: pointer;
-      white-space: nowrap; transition: background 0.15s;
-    }
-    .cta-form button:hover { background: var(--gold-light); }
-    .cta-note { margin-top: 1rem; font-size: 0.75rem; color: rgba(255,255,255,0.3); }
 
     /* ─── FOOTER ─── */
     footer {
@@ -681,28 +662,11 @@
       border-bottom: 1px solid var(--rule);
       text-align: center;
     }
-    .solutions-hero .eyebrow { justify-content: center; display: flex; }
-    .solutions-hero h1 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 700; letter-spacing: -0.03em;
-      margin-bottom: 1rem; color: var(--ink);
-    }
+    .solutions-hero h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 1rem; color: var(--ink); }
     .solutions-hero p { color: var(--ink-soft); max-width: 560px; margin: 0 auto; font-size: 1rem; }
-    .solutions-cards {
-      padding: 5rem 0;
-      background: var(--bg);
-    }
-    .sol-grid {
-      max-width: 1200px; margin: 0 auto; padding: 0 5%;
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
-    }
-    .sol-card {
-      background: var(--white);
-      border: 1px solid var(--rule);
-      border-radius: 10px;
-      padding: 2.5rem;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
+    .solutions-cards { padding: 5rem 0; background: var(--bg); }
+    .sol-grid { max-width: 1200px; margin: 0 auto; padding: 0 5%; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .sol-card { background: var(--white); border: 1px solid var(--rule); border-radius: 10px; padding: 2.5rem; transition: box-shadow 0.2s, transform 0.2s; }
     .sol-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
     .sol-icon { font-size: 2rem; margin-bottom: 1rem; }
     .sol-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; letter-spacing: -0.02em; }
@@ -712,42 +676,15 @@
     .sol-list li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; }
 
     /* ─── PRICING PAGE ─── */
-    .pricing-hero {
-      padding: 8rem 0 5rem;
-      background: var(--white);
-      border-bottom: 1px solid var(--rule);
-      text-align: center;
-    }
+    .pricing-hero { padding: 8rem 0 5rem; background: var(--white); border-bottom: 1px solid var(--rule); text-align: center; }
     .pricing-hero h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 1rem; color: var(--ink); }
     .pricing-hero p { color: var(--ink-soft); max-width: 500px; margin: 0 auto; }
-    .pricing-cards {
-      padding: 5rem 0;
-      background: var(--bg);
-    }
-    .pricing-grid {
-      max-width: 1000px; margin: 0 auto; padding: 0 5%;
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
-    }
-    .price-card {
-      background: var(--white);
-      border: 1px solid var(--rule);
-      border-radius: 10px;
-      padding: 2rem;
-      position: relative;
-      transition: box-shadow 0.2s;
-    }
+    .pricing-cards { padding: 5rem 0; background: var(--bg); }
+    .pricing-grid { max-width: 1000px; margin: 0 auto; padding: 0 5%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .price-card { background: var(--white); border: 1px solid var(--rule); border-radius: 10px; padding: 2rem; position: relative; transition: box-shadow 0.2s; }
     .price-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
-    .price-card.featured {
-      border-color: var(--teal);
-      box-shadow: 0 0 0 1px var(--teal);
-    }
-    .price-badge {
-      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-      background: var(--teal); color: var(--white);
-      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; padding: 0.25rem 0.85rem;
-      border-radius: 100px; white-space: nowrap;
-    }
+    .price-card.featured { border-color: var(--teal); box-shadow: 0 0 0 1px var(--teal); }
+    .price-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--teal); color: var(--white); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.85rem; border-radius: 100px; white-space: nowrap; }
     .price-tier { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.75rem; }
     .price-amount { font-size: 2.5rem; font-weight: 800; color: var(--ink); line-height: 1; letter-spacing: -0.04em; }
     .price-unit { font-size: 0.8rem; color: var(--ink-faint); font-weight: 400; margin-top: 0.25rem; margin-bottom: 1.5rem; }
@@ -755,28 +692,17 @@
     .price-feats li { font-size: 0.83rem; color: var(--ink-mid); padding: 0.4rem 0; display: flex; gap: 0.6rem; border-bottom: 1px solid var(--rule); }
     .price-feats li:last-child { border-bottom: none; }
     .price-feats li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; }
-    .btn-tier {
-      width: 100%; padding: 0.75rem; border-radius: 7px;
-      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700;
-      font-size: 0.875rem; cursor: pointer; transition: all 0.15s; border: none;
-    }
+    .btn-tier { width: 100%; padding: 0.75rem; border-radius: 7px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.875rem; cursor: pointer; transition: all 0.15s; border: none; }
     .btn-tier-outline { background: transparent; border: 1px solid var(--rule-mid); color: var(--ink); }
     .btn-tier-outline:hover { background: var(--bg); }
     .btn-tier-solid { background: var(--teal); color: var(--white); }
     .btn-tier-solid:hover { background: var(--teal-light); }
-    .pricing-note-box {
-      max-width: 700px; margin: 3rem auto 0; padding: 0 5%;
-      text-align: center;
-    }
+    .pricing-note-box { max-width: 700px; margin: 3rem auto 0; padding: 0 5%; text-align: center; }
     .pricing-note-box p { font-size: 0.875rem; color: var(--ink-soft); line-height: 1.7; }
     .pricing-note-box a { color: var(--teal); text-decoration: none; font-weight: 600; }
 
     /* ─── ABOUT PAGE ─── */
-    .about-hero {
-      padding: 8rem 0 5rem;
-      background: var(--white);
-      border-bottom: 1px solid var(--rule);
-    }
+    .about-hero { padding: 8rem 0 5rem; background: var(--white); border-bottom: 1px solid var(--rule); }
     .about-inner { max-width: 1200px; margin: 0 auto; padding: 0 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
     .about-hero h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 1rem; color: var(--ink); }
     .about-hero p { color: var(--ink-soft); font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; }
@@ -789,7 +715,7 @@
     .about-mission h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 1.25rem; color: var(--ink); }
     .about-mission p { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.85; margin-bottom: 1rem; }
 
-    /* ─── LOGIN / SIGNUP PAGES ─── */
+    /* ─── AUTH PAGES ─── */
     .auth-page {
       min-height: 100vh;
       display: flex; align-items: center; justify-content: center;
@@ -836,17 +762,82 @@
     .auth-link { text-align: center; font-size: 0.82rem; color: var(--ink-soft); margin-top: 1.5rem; }
     .auth-link a { color: var(--teal); text-decoration: none; font-weight: 600; cursor: pointer; }
     .plan-select { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; margin-bottom: 1.25rem; }
-    .plan-opt {
-      border: 1px solid var(--rule-mid);
-      border-radius: 7px;
-      padding: 0.75rem 0.5rem;
-      text-align: center; cursor: pointer;
-      transition: all 0.15s;
-    }
+    .plan-opt { border: 1px solid var(--rule-mid); border-radius: 7px; padding: 0.75rem 0.5rem; text-align: center; cursor: pointer; transition: all 0.15s; }
     .plan-opt:hover { border-color: var(--teal); }
     .plan-opt.sel { border-color: var(--teal); background: rgba(42,92,89,0.05); }
     .plan-opt-name { font-size: 0.78rem; font-weight: 700; color: var(--ink); }
     .plan-opt-price { font-size: 0.68rem; color: var(--ink-faint); margin-top: 0.15rem; }
+
+    /* ─── CLICKWRAP ─── */
+    .clickwrap {
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-start;
+      padding: 0.9rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--rule-mid);
+      border-radius: 7px;
+      margin-bottom: 0.5rem;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .clickwrap.error {
+      border-color: #b91c1c;
+      box-shadow: 0 0 0 3px rgba(185,28,28,0.08);
+    }
+    .clickwrap.accepted {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(42,92,89,0.08);
+    }
+    .clickwrap-check {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 17px; height: 17px;
+      min-width: 17px;
+      border: 1.5px solid var(--ink-faint);
+      border-radius: 4px;
+      background: var(--white);
+      cursor: pointer;
+      margin-top: 2px;
+      flex-shrink: 0;
+      transition: all 0.15s;
+      position: relative;
+    }
+    .clickwrap-check:checked {
+      background: var(--teal);
+      border-color: var(--teal);
+    }
+    .clickwrap-check:checked::after {
+      content: '';
+      position: absolute;
+      left: 4px; top: 1px;
+      width: 5px; height: 9px;
+      border: 2px solid #fff;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg);
+    }
+    .clickwrap-label {
+      font-size: 0.79rem;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      cursor: pointer;
+      user-select: none;
+    }
+    .clickwrap-label a {
+      color: var(--teal);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .clickwrap-label a:hover { text-decoration: underline; }
+    .clickwrap-error {
+      display: none;
+      font-size: 0.75rem;
+      color: #b91c1c;
+      margin-top: 0.3rem;
+      margin-bottom: 0.75rem;
+      padding-left: 0.25rem;
+    }
+    .clickwrap-error.visible { display: block; }
 
     /* ─── ANIMATIONS ─── */
     @keyframes fadeUp {
@@ -896,18 +887,95 @@
     </ul>
     <div class="nav-right">
       <button class="btn-login" onclick="window.location.href='https://app.questionpilot.com'">Log In</button>
-      <button class="btn-cta" onclick="window.location.href='https://app.questionpilot.com'">Get Started</button>
+      <button class="btn-cta" onclick="showPage('signup')">Get Started</button>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- HERO TICKER (restored) -->
-  <div class="ticker-wrap"><div class="ticker">Audited financials FY2021–2023</td><td><span class="sp sp-pub">Published</span></td></tr>
-            <tr><td><span class="cp cp-a">Buyer A</span></td><td><span class="cat">Legal</span></td><td><span class="qnum">3.4</span></td><td style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Pending or threatened litigation</td><td><span class="sp sp-rev">In Review</span></td></tr>
-            <tr><td><span class="cp cp-b">Buyer B</span></td><td><span class="cat">Operations</span></td><td><span class="qnum">4.2</span></td><td style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Customer concentration risks</td><td><span class="sp sp-dft">Draft</span></td></tr>
-            <tr><td><span class="cp cp-b">Buyer B</span></td><td><span class="cat">HR</span></td><td><span class="qnum">5.16</span></td><td style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Org chart and retention agreements</td><td><span class="sp sp-open">Open</span></td></tr>
-            <tr><td><span class="cp cp-c">Buyer C</span></td><td><span class="cat">Financial</span></td><td><span class="qnum">2.7</span></td><td style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Off-balance sheet obligations</td><td><span class="sp sp-open">Open</span></td></tr>
-          </tbody>
-        </table>
+<!-- ═══════════ HOME PAGE ═══════════ -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content-left">
+        <div class="hero-badge">Purpose-Built for Transaction Professionals</div>
+        <h1>The Q&A portal your <span>deal process</span> deserves.</h1>
+        <p class="hero-sub">Question Pilot replaces the spreadsheet-and-email chaos of buy-side diligence with a clean, secure portal. Every buyer isolated. Every response controlled. Every answer published on your timeline.</p>
+        <div class="hero-btns">
+          <button class="btn-primary" onclick="showPage('signup')">Get Started</button>
+          <button class="btn-secondary" onclick="document.getElementById('demo-anchor').scrollIntoView({behavior:'smooth'})">See How It Works</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hv-bar">
+          <div class="hv-dot" style="background:#ff5f57"></div>
+          <div class="hv-dot" style="background:#febc2e"></div>
+          <div class="hv-dot" style="background:#28c840"></div>
+          <div class="hv-url">app.questionpilot.com — Project Atlas</div>
+        </div>
+        <div class="hv-tabs">
+          <div class="hv-tab on">Advisor View</div>
+          <div class="hv-tab">Buyer A</div>
+          <div class="hv-tab">Buyer B</div>
+          <div class="hv-tab">Buyer C</div>
+        </div>
+        <div class="hv-stats">
+          <div class="hv-stat"><div class="hv-stat-n">47</div><div class="hv-stat-l">Total</div></div>
+          <div class="hv-stat"><div class="hv-stat-n" style="color:#1e40af">12</div><div class="hv-stat-l">Open</div></div>
+          <div class="hv-stat"><div class="hv-stat-n" style="color:#92400e">8</div><div class="hv-stat-l">Review</div></div>
+          <div class="hv-stat"><div class="hv-stat-n" style="color:#065f46">22</div><div class="hv-stat-l">Published</div></div>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="hv-table">
+            <thead>
+              <tr>
+                <th>Buyer</th>
+                <th>Category</th>
+                <th>Q #</th>
+                <th>Question</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="cp cp-a">Buyer A</span></td>
+                <td><span class="cat">Financial</span></td>
+                <td><span class="qnum">2.1</span></td>
+                <td>Audited financials FY2021–2023</td>
+                <td><span class="sp sp-pub">Published</span></td>
+              </tr>
+              <tr>
+                <td><span class="cp cp-a">Buyer A</span></td>
+                <td><span class="cat">Legal</span></td>
+                <td><span class="qnum">3.4</span></td>
+                <td>Pending or threatened litigation</td>
+                <td><span class="sp sp-rev">In Review</span></td>
+              </tr>
+              <tr>
+                <td><span class="cp cp-b">Buyer B</span></td>
+                <td><span class="cat">Operations</span></td>
+                <td><span class="qnum">4.2</span></td>
+                <td>Customer concentration risks</td>
+                <td><span class="sp sp-dft">Draft</span></td>
+              </tr>
+              <tr>
+                <td><span class="cp cp-b">Buyer B</span></td>
+                <td><span class="cat">HR</span></td>
+                <td><span class="qnum">5.16</span></td>
+                <td>Org chart and retention agreements</td>
+                <td><span class="sp sp-open">Open</span></td>
+              </tr>
+              <tr>
+                <td><span class="cp cp-c">Buyer C</span></td>
+                <td><span class="cat">Financial</span></td>
+                <td><span class="qnum">2.7</span></td>
+                <td>Off-balance sheet obligations</td>
+                <td><span class="sp sp-open">Open</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>
@@ -932,30 +1000,12 @@
         <h2 class="section-h">Structured transactions deserve a better tool.</h2>
         <p class="section-sub">Requiring clients and counterparties to work in error-prone spreadsheets creates friction, risk, and a poor impression at every stage of the process.</p>
         <ul class="pain-list">
-          <li>
-            <span class="pain-icon">!</span>
-            Version management issues arise from back-and-forth emails across internal deal teams, sellers, and buyers, each working from their own copy of the file.
-          </li>
-          <li>
-            <span class="pain-icon">!</span>
-            No audit trail. Who responded, when, and what was shared is impossible to reconstruct cleanly after the fact.
-          </li>
-          <li>
-            <span class="pain-icon">!</span>
-            Getting answers from your client requires a separate email thread. They are not living in your tracker, and coordinating responses across parties adds significant overhead to every deal.
-          </li>
-          <li>
-            <span class="pain-icon">!</span>
-            Exchanging spreadsheets with multiple parties via email lacks security controls and creates ongoing opportunity for misdirected files and data errors.
-          </li>
-          <li>
-            <span class="pain-icon">!</span>
-            Buyers ask the same questions across multiple groups. Without a shared system, your team answers them multiple times, with no guarantee of consistency.
-          </li>
-          <li>
-            <span class="pain-icon">!</span>
-            Your process is a direct reflection of your firm. Counterparties notice when an advisor is organized, professional, and running a clean deal.
-          </li>
+          <li><span class="pain-icon">!</span>Version management issues arise from back-and-forth emails across internal deal teams, sellers, and buyers, each working from their own copy of the file.</li>
+          <li><span class="pain-icon">!</span>No audit trail. Who responded, when, and what was shared is impossible to reconstruct cleanly after the fact.</li>
+          <li><span class="pain-icon">!</span>Getting answers from your client requires a separate email thread. They are not living in your tracker, and coordinating responses across parties adds significant overhead to every deal.</li>
+          <li><span class="pain-icon">!</span>Exchanging spreadsheets with multiple parties via email lacks security controls and creates ongoing opportunity for misdirected files and data errors.</li>
+          <li><span class="pain-icon">!</span>Buyers ask the same questions across multiple groups. Without a shared system, your team answers them multiple times, with no guarantee of consistency.</li>
+          <li><span class="pain-icon">!</span>Your process is a direct reflection of your firm. Counterparties notice when an advisor is organized, professional, and running a clean deal.</li>
         </ul>
       </div>
       <div>
@@ -1111,8 +1161,6 @@
           </div>
         </div>
       </div>
-
-      <!-- TRACKER DEMO -->
       <div class="tracker">
         <div class="tracker-top">
           <div>
@@ -1145,7 +1193,7 @@
                 <td><span class="cat">Financial</span></td>
                 <td><span class="qnum">2.1</span></td>
                 <td>Provide audited financials for FY2021–2023</td>
-                <td style="font-size:0.68rem; color:var(--ink-faint); font-family:monospace;">2.1</td>
+                <td style="font-size:0.68rem;color:var(--ink-faint);font-family:monospace;">2.1</td>
                 <td><span class="sp sp-pub">Published</span></td>
               </tr>
               <tr>
@@ -1153,7 +1201,7 @@
                 <td><span class="cat">Legal</span></td>
                 <td><span class="qnum">3.4</span></td>
                 <td>List all pending or threatened litigation</td>
-                <td style="font-size:0.68rem; color:var(--ink-faint); font-family:monospace;">3.4</td>
+                <td style="font-size:0.68rem;color:var(--ink-faint);font-family:monospace;">3.4</td>
                 <td><span class="sp sp-rev">In Review</span></td>
               </tr>
               <tr>
@@ -1161,7 +1209,7 @@
                 <td><span class="cat">Operations</span></td>
                 <td><span class="qnum">4.2</span></td>
                 <td>Customer concentration and expiring contracts</td>
-                <td style="font-size:0.68rem; color:var(--ink-faint); font-family:monospace;">4.2</td>
+                <td style="font-size:0.68rem;color:var(--ink-faint);font-family:monospace;">4.2</td>
                 <td><span class="sp sp-dft">Draft</span></td>
               </tr>
               <tr>
@@ -1169,7 +1217,7 @@
                 <td><span class="cat">HR</span></td>
                 <td><span class="qnum">5.16</span></td>
                 <td>Org chart and key employee retention agreements</td>
-                <td style="font-size:0.68rem; color:var(--ink-faint); font-family:monospace;">—</td>
+                <td style="font-size:0.68rem;color:var(--ink-faint);font-family:monospace;">—</td>
                 <td><span class="sp sp-open">Open</span></td>
               </tr>
               <tr>
@@ -1177,7 +1225,7 @@
                 <td><span class="cat">Financial</span></td>
                 <td><span class="qnum">2.7</span></td>
                 <td>Off-balance sheet obligations and contingent liabilities</td>
-                <td style="font-size:0.68rem; color:var(--ink-faint); font-family:monospace;">2.7</td>
+                <td style="font-size:0.68rem;color:var(--ink-faint);font-family:monospace;">2.7</td>
                 <td><span class="sp sp-open">Open</span></td>
               </tr>
             </tbody>
@@ -1225,7 +1273,7 @@
         <p class="eyebrow">Pricing</p>
         <h2 class="section-h">Pay per tracker.<br>Not per seat.</h2>
         <p class="section-sub">No subscriptions, no annual commitments, no per-user overhead. Question Pilot is priced the way you work. Need it on an ongoing basis? Volume and subscription arrangements are available.</p>
-        <button class="btn-primary" style="margin-top:1.75rem;" href="https://app.questionpilot.com").scrollIntoView({behavior:'smooth'})">Get Started</button>
+        <button class="btn-primary" style="margin-top:1.75rem;" onclick="showPage('pricing')">See Pricing</button>
       </div>
       <div class="pricing-items">
         <div class="pricing-item">
@@ -1260,12 +1308,11 @@
       <h2>Ready to streamline your <span>deal process?</span></h2>
       <p>Question Pilot is live. Create an account and launch your first deal in minutes.</p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem">
-        <a href="https://app.questionpilot.com" style="display:inline-block;padding:.9rem 2.25rem;background:var(--teal,#2a5c59);color:#fff;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none">Create Account</a>
-        <a href="https://app.questionpilot.com" style="display:inline-block;padding:.9rem 2.25rem;background:transparent;color:var(--teal,#2a5c59);border:2px solid var(--teal,#2a5c59);border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none">Sign In</a>
+        <button onclick="showPage('signup')" style="display:inline-block;padding:.9rem 2.25rem;background:var(--teal-light);color:#fff;border:none;border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;">Create Account</button>
+        <button onclick="window.location.href='https://app.questionpilot.com'" style="display:inline-block;padding:.9rem 2.25rem;background:transparent;color:rgba(255,255,255,0.8);border:2px solid rgba(255,255,255,0.3);border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;">Sign In</button>
       </div>
     </div>
   </section>
-
 
   <!-- FOOTER -->
   <footer>
@@ -1279,30 +1326,31 @@
         <a onclick="showPage('home')">Home</a>
         <a onclick="showPage('solutions')">Solutions</a>
         <a onclick="showPage('pricing')">Pricing</a>
-        <a onclick="window.location.href='https://app.questionpilot.com'">Get Started</a>
+        <a onclick="showPage('signup')">Get Started</a>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <a onclick="showPage('about')">About</a>
-        <a href="/cdn-cgi/l/email-protection#4028252c2c2f003135253334292f2e30292c2f346e232f2d">Contact</a>
-        <a>Privacy Policy</a>
-        <a>Terms of Service</a>
+        <a href="mailto:hello@questionpilot.com">Contact</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Use</a>
       </div>
       <div class="footer-col">
         <h4>Use Cases</h4>
-        <a>M&A Advisory</a>
-        <a>Quality of Earnings</a>
-        <a>Transaction Counsel</a>
-        <a>Real Estate</a>
+        <a onclick="showPage('solutions')">M&amp;A Advisory</a>
+        <a onclick="showPage('solutions')">Quality of Earnings</a>
+        <a onclick="showPage('solutions')">Transaction Counsel</a>
+        <a onclick="showPage('solutions')">Real Estate</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Question Pilot LLC. All rights reserved.</span>
+      <span>© 2026 Question Pilot LLC. All rights reserved.</span>
       <span>Built for transaction professionals.</span>
     </div>
   </footer>
 
-</div><!-- end home -->
+</div><!-- end page-home -->
+
 
 <!-- ═══════════ SOLUTIONS PAGE ═══════════ -->
 <div class="page" id="page-solutions">
@@ -1367,9 +1415,9 @@
       <p class="eyebrow">Get Started</p>
       <h2>Ready to run a <span>better process?</span></h2>
       <p>Question Pilot is live. Create an account and start your first deal today.</p>
-      <div style="display:flex; gap:0.75rem; justify-content:center; margin-top:0.5rem;">
-        <button class="btn-primary" href="https://app.questionpilot.com").scrollIntoView({behavior:'smooth'}),100)">Get Started</button>
-        <button class="btn-secondary" style="color:rgba(255,255,255,0.7); border-color:rgba(255,255,255,0.2);" onclick="showPage('pricing')">View Pricing</button>
+      <div style="display:flex;gap:0.75rem;justify-content:center;margin-top:1.5rem;">
+        <button class="btn-primary" onclick="showPage('signup')">Get Started</button>
+        <button class="btn-secondary" style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.2);" onclick="showPage('pricing')">View Pricing</button>
       </div>
     </div>
   </section>
@@ -1377,12 +1425,13 @@
     <div class="footer-inner">
       <div><div class="footer-logo">Question<span>Pilot</span></div><div class="footer-tagline">Purpose-built Q&A portals for complex transactions.</div></div>
       <div class="footer-col"><h4>Product</h4><a onclick="showPage('home')">Home</a><a onclick="showPage('solutions')">Solutions</a><a onclick="showPage('pricing')">Pricing</a></div>
-      <div class="footer-col"><h4>Company</h4><a onclick="showPage('about')">About</a><a>Contact</a><a>Privacy Policy</a></div>
-      <div class="footer-col"><h4>Use Cases</h4><a>M&A Advisory</a><a>Quality of Earnings</a><a>Transaction Counsel</a><a>Real Estate</a></div>
+      <div class="footer-col"><h4>Company</h4><a onclick="showPage('about')">About</a><a href="mailto:hello@questionpilot.com">Contact</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
+      <div class="footer-col"><h4>Use Cases</h4><a onclick="showPage('solutions')">M&amp;A Advisory</a><a onclick="showPage('solutions')">Quality of Earnings</a><a onclick="showPage('solutions')">Transaction Counsel</a><a onclick="showPage('solutions')">Real Estate</a></div>
     </div>
-    <div class="footer-bottom"><span>© 2025 Question Pilot LLC.</span><span>Built for transaction professionals.</span></div>
+    <div class="footer-bottom"><span>© 2026 Question Pilot LLC. All rights reserved.</span><span>Built for transaction professionals.</span></div>
   </footer>
 </div>
+
 
 <!-- ═══════════ PRICING PAGE ═══════════ -->
 <div class="page" id="page-pricing">
@@ -1407,7 +1456,7 @@
           <li>Full audit trail</li>
           <li>Email support</li>
         </ul>
-        <button class="btn-tier btn-tier-outline" onclick="window.location.href='https://app.questionpilot.com'">Get Started</button>
+        <button class="btn-tier btn-tier-outline" onclick="showPage('signup')">Get Started</button>
       </div>
       <div class="price-card featured">
         <div class="price-badge">Most Popular</div>
@@ -1423,7 +1472,7 @@
           <li>Full audit trail</li>
           <li>Priority support</li>
         </ul>
-        <button class="btn-tier btn-tier-solid" onclick="window.location.href='https://app.questionpilot.com'">Get Started</button>
+        <button class="btn-tier btn-tier-solid" onclick="showPage('signup')">Get Started</button>
       </div>
       <div class="price-card">
         <div class="price-tier">Enterprise</div>
@@ -1437,20 +1486,20 @@
           <li>Volume discounts</li>
           <li>Priority onboarding</li>
         </ul>
-        <button class="btn-tier btn-tier-outline" onclick="window.location.href='https://app.questionpilot.com'">Contact Us</button>
+        <button class="btn-tier btn-tier-outline" href="mailto:hello@questionpilot.com">Contact Us</button>
       </div>
     </div>
     <div class="pricing-note-box">
-      <p>All plans include full platform access with no hidden fees. Starter and Standard plans are charged per transaction. Enterprise subscribers pay a flat monthly or annual rate regardless of deal volume. <a href="#">Contact us</a> to discuss the right arrangement for your firm.</p>
+      <p>All plans include full platform access with no hidden fees. Starter and Standard plans are charged per transaction. Enterprise subscribers pay a flat monthly or annual rate regardless of deal volume. <a href="mailto:hello@questionpilot.com">Contact us</a> to discuss the right arrangement for your firm.</p>
     </div>
   </section>
   <section class="cta-banner">
     <div class="cta-banner-inner">
       <p class="eyebrow">Get Started</p>
       <h2>Start your first <span>deal today.</span></h2>
-      <p>Question Pilot is in private beta. We are onboarding firms personally. Join the list and we will be in touch.</p>
-      <div style="display:flex; gap:0.75rem; justify-content:center; margin-top:0.5rem;">
-        <button class="btn-primary" href="https://app.questionpilot.com").scrollIntoView({behavior:'smooth'}),100)">Get Started</button>
+      <p>Create an account and be live in minutes.</p>
+      <div style="display:flex;gap:0.75rem;justify-content:center;margin-top:1.5rem;">
+        <button class="btn-primary" onclick="showPage('signup')">Get Started</button>
       </div>
     </div>
   </section>
@@ -1458,12 +1507,13 @@
     <div class="footer-inner">
       <div><div class="footer-logo">Question<span>Pilot</span></div><div class="footer-tagline">Purpose-built Q&A portals for complex transactions.</div></div>
       <div class="footer-col"><h4>Product</h4><a onclick="showPage('home')">Home</a><a onclick="showPage('solutions')">Solutions</a><a onclick="showPage('pricing')">Pricing</a></div>
-      <div class="footer-col"><h4>Company</h4><a onclick="showPage('about')">About</a><a>Contact</a><a>Privacy Policy</a></div>
-      <div class="footer-col"><h4>Use Cases</h4><a>M&A Advisory</a><a>Quality of Earnings</a><a>Transaction Counsel</a><a>Real Estate</a></div>
+      <div class="footer-col"><h4>Company</h4><a onclick="showPage('about')">About</a><a href="mailto:hello@questionpilot.com">Contact</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
+      <div class="footer-col"><h4>Use Cases</h4><a onclick="showPage('solutions')">M&amp;A Advisory</a><a onclick="showPage('solutions')">Quality of Earnings</a><a onclick="showPage('solutions')">Transaction Counsel</a><a onclick="showPage('solutions')">Real Estate</a></div>
     </div>
-    <div class="footer-bottom"><span>© 2025 Question Pilot LLC.</span></div>
+    <div class="footer-bottom"><span>© 2026 Question Pilot LLC. All rights reserved.</span></div>
   </footer>
 </div>
+
 
 <!-- ═══════════ ABOUT PAGE ═══════════ -->
 <div class="page" id="page-about">
@@ -1497,9 +1547,9 @@
       <p class="eyebrow">Get in Touch</p>
       <h2>Questions? <span>We are here.</span></h2>
       <p>Reach out with questions about the product, pricing, or your specific use case.</p>
-      <div style="display:flex; gap:0.75rem; justify-content:center; margin-top:0.5rem;">
-        <button class="btn-primary" onclick="window.location.href='https://app.questionpilot.com'">Get Started</button>
-        <button class="btn-secondary" style="color:rgba(255,255,255,0.7); border-color:rgba(255,255,255,0.2);">Contact Us</button>
+      <div style="display:flex;gap:0.75rem;justify-content:center;margin-top:1.5rem;">
+        <button class="btn-primary" onclick="showPage('signup')">Get Started</button>
+        <button class="btn-secondary" style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.2);" onclick="window.location.href='mailto:hello@questionpilot.com'">Contact Us</button>
       </div>
     </div>
   </section>
@@ -1507,12 +1557,13 @@
     <div class="footer-inner">
       <div><div class="footer-logo">Question<span>Pilot</span></div><div class="footer-tagline">Purpose-built Q&A portals for complex transactions.</div></div>
       <div class="footer-col"><h4>Product</h4><a onclick="showPage('home')">Home</a><a onclick="showPage('solutions')">Solutions</a><a onclick="showPage('pricing')">Pricing</a></div>
-      <div class="footer-col"><h4>Company</h4><a onclick="showPage('about')">About</a><a>Contact</a><a>Privacy Policy</a></div>
-      <div class="footer-col"><h4>Use Cases</h4><a>M&A Advisory</a><a>Quality of Earnings</a><a>Transaction Counsel</a><a>Real Estate</a></div>
+      <div class="footer-col"><h4>Company</h4><a onclick="showPage('about')">About</a><a href="mailto:hello@questionpilot.com">Contact</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
+      <div class="footer-col"><h4>Use Cases</h4><a onclick="showPage('solutions')">M&amp;A Advisory</a><a onclick="showPage('solutions')">Quality of Earnings</a><a onclick="showPage('solutions')">Transaction Counsel</a><a onclick="showPage('solutions')">Real Estate</a></div>
     </div>
-    <div class="footer-bottom"><span>© 2025 Question Pilot LLC.</span></div>
+    <div class="footer-bottom"><span>© 2026 Question Pilot LLC. All rights reserved.</span></div>
   </footer>
 </div>
+
 
 <!-- ═══════════ LOGIN PAGE ═══════════ -->
 <div class="page" id="page-login">
@@ -1529,14 +1580,15 @@
         <label class="form-label">Password</label>
         <input class="form-input" type="password" placeholder="••••••••"/>
       </div>
-      <button class="btn-form">Sign In</button>
+      <button class="btn-form" onclick="window.location.href='https://app.questionpilot.com'">Sign In</button>
       <div class="auth-divider">or</div>
-      <button class="btn-form" style="background:var(--bg); color:var(--ink); border:1px solid var(--rule-mid);">Continue with Google</button>
-      <p class="auth-link">Don't have an account? <a onclick="window.location.href='https://app.questionpilot.com'">Sign up free</a></p>
-      <p class="auth-link" style="margin-top:0.5rem;"><a style="color:var(--ink-faint); font-weight:400;">Forgot password?</a></p>
+      <button class="btn-form" style="background:var(--bg);color:var(--ink);border:1px solid var(--rule-mid);" onclick="window.location.href='https://app.questionpilot.com'">Continue with Google</button>
+      <p class="auth-link">Don't have an account? <a onclick="showPage('signup')">Sign up free</a></p>
+      <p class="auth-link" style="margin-top:0.5rem;"><a style="color:var(--ink-faint);font-weight:400;cursor:pointer;">Forgot password?</a></p>
     </div>
   </div>
 </div>
+
 
 <!-- ═══════════ SIGNUP PAGE ═══════════ -->
 <div class="page" id="page-signup">
@@ -1545,23 +1597,25 @@
       <div class="auth-logo">Question<span>Pilot</span></div>
       <h2>Create your account</h2>
       <p class="sub">Get your first deal live in minutes.</p>
+
       <div class="form-group">
         <label class="form-label">Select a Plan</label>
-        <div class="plan-select">
-          <div class="plan-opt sel">
+        <div class="plan-select" id="planSelect">
+          <div class="plan-opt sel" onclick="selectPlan(this)">
             <div class="plan-opt-name">Starter</div>
             <div class="plan-opt-price">$750 / tracker</div>
           </div>
-          <div class="plan-opt">
+          <div class="plan-opt" onclick="selectPlan(this)">
             <div class="plan-opt-name">Standard</div>
             <div class="plan-opt-price">$1,750 / deal</div>
           </div>
-          <div class="plan-opt">
+          <div class="plan-opt" onclick="selectPlan(this)">
             <div class="plan-opt-name">Enterprise</div>
             <div class="plan-opt-price">Custom</div>
           </div>
         </div>
       </div>
+
       <div class="form-group">
         <label class="form-label">Full Name</label>
         <input class="form-input" type="text" placeholder="Jane Smith"/>
@@ -1578,27 +1632,71 @@
         <label class="form-label">Password</label>
         <input class="form-input" type="password" placeholder="Create a password"/>
       </div>
-      <button class="btn-form">Create Account</button>
-      <p class="auth-link">Already have an account? <a onclick="window.location.href='https://app.questionpilot.com'">Sign in</a></p>
+
+      <!-- CLICKWRAP LEGAL CONSENT -->
+      <div class="clickwrap" id="clickwrapBox">
+        <input type="checkbox" class="clickwrap-check" id="legalConsent" onchange="handleConsentChange()"/>
+        <label class="clickwrap-label" for="legalConsent">
+          I have read and agree to the Question Pilot
+          <a href="/terms.html" target="_blank" rel="noopener noreferrer">Terms of Use</a>
+          and
+          <a href="/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+          I understand that deal data I upload remains my firm's property and is kept strictly confidential by Question Pilot LLC.
+        </label>
+      </div>
+      <div class="clickwrap-error" id="consentError">You must agree to the Terms of Use and Privacy Policy to create an account.</div>
+      <!-- END CLICKWRAP -->
+
+      <button class="btn-form" onclick="handleSignup()">Create Account</button>
+      <p class="auth-link">Already have an account? <a onclick="showPage('login')">Sign in</a></p>
     </div>
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// App redirect handler
-document.querySelectorAll('[data-app-link]').forEach(function(el) { el.href = "https://app.questionpilot.com"; });
-  }
 
+<script>
   function showPage(name) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-    const target = document.getElementById('page-' + name);
-    if (target) { target.classList.add('active'); window.scrollTo(0,0); }
-    const navEl = document.getElementById('nav-' + name);
+    document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelectorAll('.nav-links a').forEach(function(a) { a.classList.remove('active'); });
+    var target = document.getElementById('page-' + name);
+    if (target) { target.classList.add('active'); window.scrollTo(0, 0); }
+    var navEl = document.getElementById('nav-' + name);
     if (navEl) navEl.classList.add('active');
   }
 
-  // Plan selector on signup
-  document.querySelectorAll('.plan-opt').forEach(opt => {
-    opt.addEventListener('click', () => {
-     
+  function selectPlan(el) {
+    document.querySelectorAll('.plan-opt').forEach(function(o) { o.classList.remove('sel'); });
+    el.classList.add('sel');
+  }
+
+  function handleConsentChange() {
+    var cb = document.getElementById('legalConsent');
+    var box = document.getElementById('clickwrapBox');
+    var err = document.getElementById('consentError');
+    if (cb.checked) {
+      box.classList.remove('error');
+      box.classList.add('accepted');
+      err.classList.remove('visible');
+    } else {
+      box.classList.remove('accepted');
+    }
+  }
+
+  function handleSignup() {
+    var cb = document.getElementById('legalConsent');
+    var box = document.getElementById('clickwrapBox');
+    var err = document.getElementById('consentError');
+    if (!cb.checked) {
+      box.classList.add('error');
+      box.classList.remove('accepted');
+      err.classList.add('visible');
+      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+    // Proceed to app
+    window.location.href = 'https://app.questionpilot.com';
+  }
+</script>
+
+</body>
+</html>
