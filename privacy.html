@@ -8,37 +8,32 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #f2f4f3; --bg-2: #e8ebe9; --bg-dark: #1c2b2a; --bg-dark-2: #243533;
+      --bg: #f2f4f3; --bg-dark-2: #243533;
       --ink: #141f1e; --ink-mid: #374140; --ink-soft: #5e7270; --ink-faint: #8fa5a3;
-      --gold: #a87c2a; --rule: rgba(0,0,0,0.08); --rule-mid: rgba(0,0,0,0.12);
+      --rule: rgba(0,0,0,0.08); --rule-mid: rgba(0,0,0,0.12);
       --white: #ffffff; --teal: #2a5c59; --teal-light: #3a7673;
     }
     html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--ink); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 400; line-height: 1.65; overflow-x: hidden; }
-
+    body { background: var(--bg); color: var(--ink); font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.65; overflow-x: hidden; }
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(242,244,243,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--rule); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 64px; max-width: 1280px; margin: 0 auto; }
     .nav-logo { font-size: 1.15rem; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
     .nav-logo span { color: var(--teal); }
     .nav-right { display: flex; gap: 0.75rem; align-items: center; }
-    .btn-ghost { background: transparent; color: var(--ink-soft); border: 1px solid var(--rule-mid); padding: 0.45rem 1.1rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; font-size: 0.85rem; cursor: pointer; border-radius: 6px; transition: all 0.15s; text-decoration: none; display: inline-block; }
+    .btn-ghost { background: transparent; color: var(--ink-soft); border: 1px solid var(--rule-mid); padding: 0.45rem 1.1rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; font-size: 0.85rem; border-radius: 6px; text-decoration: none; display: inline-block; }
     .btn-ghost:hover { background: var(--white); color: var(--ink); }
-    .btn-cta { background: var(--teal); color: var(--white); border: none; padding: 0.5rem 1.25rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 0.85rem; cursor: pointer; border-radius: 6px; transition: background 0.15s; text-decoration: none; display: inline-block; }
+    .btn-cta { background: var(--teal); color: var(--white); border: none; padding: 0.5rem 1.25rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 0.85rem; border-radius: 6px; text-decoration: none; display: inline-block; }
     .btn-cta:hover { background: var(--teal-light); }
-
     .page-header { padding: 8rem 0 4rem; background: var(--white); border-bottom: 1px solid var(--rule); }
     .page-header .inner { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
     .eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.85rem; }
     .page-header h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 0.6rem; }
-    .page-header .eff { font-size: 0.82rem; color: var(--ink-faint); font-weight: 500; }
-
+    .page-header .eff { font-size: 0.82rem; color: var(--ink-faint); }
     .layout { max-width: 1200px; margin: 0 auto; padding: 4rem 5% 6rem; display: grid; grid-template-columns: 210px 1fr; gap: 3.5rem; align-items: start; }
-
     .toc { position: sticky; top: 80px; background: var(--white); border: 1px solid var(--rule-mid); border-radius: 10px; padding: 1.5rem 1.25rem; }
     .toc-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.85rem; }
-    .toc a { display: block; font-size: 0.79rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; padding: 0.3rem 0.6rem; border-radius: 5px; border-left: 2px solid transparent; transition: all 0.15s; line-height: 1.4; }
+    .toc a { display: block; font-size: 0.79rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; padding: 0.3rem 0.6rem; border-radius: 5px; border-left: 2px solid transparent; transition: all 0.15s; line-height: 1.4; margin-bottom: 0.1rem; }
     .toc a:hover { color: var(--teal); background: rgba(42,92,89,0.06); border-left-color: var(--teal); }
-
     .content { background: var(--white); border: 1px solid var(--rule-mid); border-radius: 10px; padding: 3rem 3.5rem; }
     .section { margin-bottom: 2.75rem; padding-bottom: 2.75rem; border-bottom: 1px solid var(--rule); }
     .section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
@@ -52,27 +47,21 @@
     .section ul { list-style: none; margin: 0.65rem 0; }
     .section ul li { font-size: 0.855rem; color: var(--ink-soft); padding: 0.3rem 0 0.3rem 1.2rem; position: relative; line-height: 1.7; }
     .section ul li::before { content: ''; position: absolute; left: 0; top: 0.72rem; width: 5px; height: 5px; background: var(--teal); border-radius: 50%; }
-
-    /* CCPA rights grid */
-    .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 1rem 0; }
-    .right-card { background: var(--bg); border: 1px solid var(--rule-mid); border-radius: 8px; padding: 1rem 1.1rem; }
-    .right-card-title { font-size: 0.78rem; font-weight: 700; color: var(--ink); margin-bottom: 0.3rem; }
-    .right-card p { font-size: 0.795rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 0; }
-
     .hl-box { background: rgba(42,92,89,0.05); border-left: 3px solid var(--teal); border-radius: 0 6px 6px 0; padding: 1rem 1.25rem; margin: 1rem 0; font-size: 0.855rem; color: var(--ink-mid); line-height: 1.75; }
-    .warn-box { background: #fef9ec; border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; padding: 1rem 1.25rem; margin: 1rem 0; font-size: 0.855rem; color: var(--ink-mid); line-height: 1.75; }
-
-    footer { padding: 3rem 0 2rem; background: var(--bg-dark-2); color: rgba(255,255,255,0.4); }
+    .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 1rem 0; }
+    .rights-card { background: var(--bg); border: 1px solid var(--rule-mid); border-radius: 8px; padding: 1rem 1.1rem; }
+    .rights-card strong { display: block; font-size: 0.8rem; font-weight: 700; color: var(--ink); margin-bottom: 0.25rem; }
+    .rights-card span { font-size: 0.78rem; color: var(--ink-soft); line-height: 1.5; }
+    footer { padding: 3rem 0 2rem; background: var(--bg-dark-2); }
     .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 5%; display: grid; grid-template-columns: 200px 1fr 1fr 1fr; gap: 3rem; }
-    .footer-logo { font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
+    .footer-logo { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; }
     .footer-logo span { color: #6ecfcb; }
-    .footer-tagline { font-size: 0.78rem; line-height: 1.6; }
+    .footer-tagline { font-size: 0.78rem; line-height: 1.6; color: rgba(255,255,255,0.4); }
     .footer-col h4 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 1rem; }
-    .footer-col a { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.4); text-decoration: none; margin-bottom: 0.5rem; transition: color 0.15s; }
+    .footer-col a { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.4); text-decoration: none; margin-bottom: 0.5rem; }
     .footer-col a:hover { color: rgba(255,255,255,0.8); }
-    .footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding: 1.5rem 5% 0; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.75rem; display: flex; justify-content: space-between; align-items: center; }
-
-    @media (max-width: 900px) { .layout { grid-template-columns: 1fr; gap: 2rem; } .toc { position: static; } .content { padding: 2rem 1.5rem; } .rights-grid { grid-template-columns: 1fr; } .footer-inner { grid-template-columns: 1fr 1fr; } }
+    .footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding: 1.5rem 5% 0; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.75rem; color: rgba(255,255,255,0.4); display: flex; justify-content: space-between; align-items: center; }
+    @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } .toc { position: static; } .content { padding: 2rem 1.5rem; } .rights-grid { grid-template-columns: 1fr; } .footer-inner { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 600px) { .content { padding: 1.5rem 1.1rem; } .footer-inner { grid-template-columns: 1fr; } }
   </style>
 </head>
@@ -100,18 +89,18 @@
   <aside class="toc">
     <div class="toc-label">Contents</div>
     <a href="#s1">Overview</a>
-    <a href="#s2">California Privacy Rights</a>
-    <a href="#s3">Information We Collect</a>
-    <a href="#s4">Use of Your Information</a>
-    <a href="#s5">Confidentiality &amp; Data</a>
-    <a href="#s6">Sharing with Third Parties</a>
-    <a href="#s7">Tracking &amp; Analytics</a>
-    <a href="#s8">Cookies</a>
+    <a href="#s2">Information We Collect</a>
+    <a href="#s3">How We Use Information</a>
+    <a href="#s4">Deal Data &amp; Confidentiality</a>
+    <a href="#s5">AI Processing</a>
+    <a href="#s6">Subprocessors</a>
+    <a href="#s7">Sharing Information</a>
+    <a href="#s8">Data Retention</a>
     <a href="#s9">Security</a>
-    <a href="#s10">Right to Deletion</a>
-    <a href="#s11">Children Under 13</a>
-    <a href="#s12">Email Communications</a>
-    <a href="#s13">External Data Storage</a>
+    <a href="#s10">Cookies</a>
+    <a href="#s11">California Privacy Rights</a>
+    <a href="#s12">Children</a>
+    <a href="#s13">Email Communications</a>
     <a href="#s14">Changes to Policy</a>
     <a href="#s15">Contact</a>
   </aside>
@@ -121,153 +110,130 @@
     <div class="section" id="s1">
       <div class="section-num">01</div>
       <h2>Overview</h2>
-      <p>This Privacy Policy ("Policy") applies to QuestionPilot.com, and Question Pilot LLC ("Company") and governs data collection and usage. For the purposes of this Privacy Policy, unless otherwise noted, all references to the Company include QuestionPilot.com. The Company's website is a software-as-a-service site. By using the Company website, you consent to the data practices described in this statement.</p>
+      <p>This Privacy Policy ("Policy") applies to QuestionPilot.com and Question Pilot LLC ("Company," "we," "us," or "our") and governs how we collect, use, and protect information. By using the Question Pilot platform, you consent to the data practices described in this Policy.</p>
+      <p>Question Pilot is a software-as-a-service platform used by transaction advisory professionals to manage structured diligence processes. Given the sensitive nature of deal data processed on our platform, we take data confidentiality seriously and have designed our practices accordingly.</p>
     </div>
 
     <div class="section" id="s2">
       <div class="section-num">02</div>
-      <h2>California Consumer Privacy Act &amp; California Privacy Rights Act</h2>
-      <p>If you are a California resident, you have the following rights under the California Consumer Privacy Act ("CCPA") and California Privacy Rights Act ("CPRA"):</p>
-      <div class="rights-grid">
-        <div class="right-card">
-          <div class="right-card-title">Right to Know</div>
-          <p>Request details on what personal data we collect, use, and share.</p>
-        </div>
-        <div class="right-card">
-          <div class="right-card-title">Right to Delete</div>
-          <p>Request deletion of personal data, subject to certain legal exceptions.</p>
-        </div>
-        <div class="right-card">
-          <div class="right-card-title">Right to Correct</div>
-          <p>Request corrections to inaccurate personal information.</p>
-        </div>
-        <div class="right-card">
-          <div class="right-card-title">Right to Opt-Out</div>
-          <p>Opt out of the sale or sharing of personal data for advertising purposes.</p>
-        </div>
-        <div class="right-card">
-          <div class="right-card-title">Right to Restrict</div>
-          <p>Limit the use of sensitive personal information.</p>
-        </div>
-        <div class="right-card">
-          <div class="right-card-title">Right Against Retaliation</div>
-          <p>The Company will not discriminate against you for exercising your rights.</p>
-        </div>
-      </div>
+      <h2>Information We Collect</h2>
+      <p><strong>Account Information.</strong> When you create an account, we collect your name, email address, firm name, and account credentials.</p>
+      <p><strong>Payment Information.</strong> When you purchase a deal plan, billing and payment information is collected and processed by our payment processor, Stripe, Inc. Question Pilot LLC does not store full credit card numbers or sensitive payment credentials on our systems.</p>
+      <p><strong>Deal Data.</strong> Transaction information, diligence questions, responses, and related materials you upload or generate within the Platform. See Section 4 for how we treat this data.</p>
+      <p><strong>Usage Information.</strong> We may automatically collect information about how you interact with the Platform, including IP address, browser type, pages visited, and access timestamps. This information is used to maintain service quality and improve the Platform.</p>
+      <p>We do not collect personal information unless voluntarily provided by you in connection with your use of the Platform.</p>
     </div>
 
     <div class="section" id="s3">
       <div class="section-num">03</div>
-      <h2>Information We Collect</h2>
-      <p>In order to better provide you with products and services offered, the Company may collect personally identifiable information, such as your:</p>
+      <h2>How We Use Information</h2>
+      <p>We use the information we collect for the following purposes:</p>
       <ul>
-        <li>First and last name</li>
-        <li>Email address</li>
-        <li>Employer</li>
-        <li>Job title</li>
-        <li>Billing and credit card information (for purchases only)</li>
+        <li>To create and manage your account and provide Platform services</li>
+        <li>To process payments and fulfill your deal portal purchases</li>
+        <li>To communicate with you regarding your account, transactions, and Platform updates</li>
+        <li>To provide customer support and respond to inquiries</li>
+        <li>To improve and maintain the Platform</li>
+        <li>To comply with applicable legal obligations</li>
       </ul>
-      <p>We do not collect any personal information about you unless you voluntarily provide it to us. However, you may be required to provide certain personal information when you elect to use certain products or services — including when registering for an account, sending us an email, or submitting payment information when ordering products and services.</p>
-      <p>Please keep in mind that if you directly disclose personally identifiable information through the Company's public message boards, this information may be collected and used by others.</p>
+      <p>We will not use your information for purposes materially different from those described in this Policy without your consent.</p>
     </div>
 
     <div class="section" id="s4">
       <div class="section-num">04</div>
-      <h2>Use of Your Personal Information</h2>
-      <p>The Company collects and uses your personal information in the following ways:</p>
-      <ul>
-        <li>To operate and deliver the services you have requested</li>
-        <li>To provide you with information, products, or services that you request from us</li>
-        <li>To provide you with notices about your account</li>
-        <li>To carry out the Company's obligations and enforce our rights arising from any contracts entered between you and us, including for billing and collection</li>
-        <li>To notify you about changes to QuestionPilot.com or any products or services we offer</li>
-        <li>For any other purpose with your consent</li>
-      </ul>
-      <p>The Company may also use your personally identifiable information to inform you of other products or services available from the Company and its affiliates.</p>
+      <h2>Deal Data &amp; Confidentiality</h2>
+      <div class="hl-box">Deal data — including transaction information, diligence questions, and responses — remains the sole property of the subscribing firm at all times.</div>
+      <p>Question Pilot LLC acknowledges that Deal Data may contain material non-public information and confidential business information. We will not access, view, or use Deal Data except as necessary to provide Platform services or as required by law. We will not disclose Deal Data to third parties without your express written consent, except to subprocessors bound by equivalent confidentiality obligations.</p>
     </div>
 
     <div class="section" id="s5">
       <div class="section-num">05</div>
-      <h2>Confidentiality &amp; Data Handling</h2>
-      <p><strong>User Data:</strong> All deal data, transaction information, questions, responses, and related materials uploaded to or generated within the Question Pilot platform ("Deal Data") are and remain the sole property of the subscribing firm. Question Pilot LLC does not claim any ownership interest in Deal Data.</p>
-      <p><strong>Confidentiality Obligations of Question Pilot LLC:</strong> Question Pilot LLC acknowledges that Deal Data may contain material non-public information, confidential business information, and proprietary transaction data. Question Pilot LLC agrees to:</p>
-      <ul>
-        <li>Maintain the confidentiality of all Deal Data</li>
-        <li>Not access, view, or use Deal Data except as necessary to provide the platform services or as required by law</li>
-        <li>Not disclose Deal Data to any third party without the express written consent of the subscribing firm, except to service providers bound by equivalent confidentiality obligations</li>
-        <li>Implement and maintain commercially reasonable technical and organizational security measures to protect Deal Data from unauthorized access or disclosure</li>
-      </ul>
-      <p><strong>User Confidentiality Obligations:</strong> Users are solely responsible for maintaining the confidentiality of their account credentials and for all activity that occurs under their account. Users agree not to share buyer portal access links with unauthorized parties and to notify Question Pilot LLC immediately upon becoming aware of any unauthorized access to their account or deal portals.</p>
-      <p><strong>Survival:</strong> The confidentiality obligations set forth in this section shall survive the termination or expiration of these Terms of Service.</p>
+      <h2>AI Processing</h2>
+      <p>Question Pilot uses artificial intelligence features powered by Anthropic, PBC to assist with question import and categorization. When you use AI-assisted features, portions of your Deal Data are transmitted to Anthropic's API for processing.</p>
+      <p>Question Pilot LLC does not use your Deal Data to train AI models. We contractually require that our AI service providers not use your Deal Data for model training purposes. AI processing is used solely to provide the categorization and import assistance features you have requested.</p>
+      <p>For full details on our AI data practices, see our <a href="/ai-terms.html">AI Terms of Use</a>.</p>
     </div>
 
     <div class="section" id="s6">
       <div class="section-num">06</div>
-      <h2>Sharing Information with Third Parties</h2>
-      <p>The Company does not sell, rent, or lease its customer lists to third parties.</p>
-      <p>The Company may share data with trusted partners to help perform statistical analysis, send you email or postal mail, provide customer support, or arrange for deliveries. All such third parties are prohibited from using your personal information except to provide these services to the Company, and they are required to maintain the confidentiality of your information.</p>
-      <p>The Company may disclose your personal information, without notice, if required to do so by law or in the good faith belief that such action is necessary to: (a) conform to the edicts of the law or comply with legal process served on the Company or the site; (b) protect and defend the rights or property of the Company; and/or (c) act under exigent circumstances to protect the personal safety of users of the Company, or the public.</p>
+      <h2>Subprocessors</h2>
+      <p>Question Pilot LLC works with the following third-party service providers ("subprocessors") in delivering the Platform. Each is bound by data handling and confidentiality obligations consistent with this Policy:</p>
+      <ul>
+        <li><strong>Supabase, Inc.</strong> — Database infrastructure, authentication, and file storage</li>
+        <li><strong>Anthropic, PBC</strong> — AI-assisted question processing and categorization</li>
+        <li><strong>Stripe, Inc.</strong> — Payment processing</li>
+        <li><strong>Netlify, Inc.</strong> — Web application hosting</li>
+        <li><strong>Microsoft Corporation</strong> — Business email services</li>
+      </ul>
+      <p>We will update this list as subprocessors are added or removed. We do not sell, rent, or lease customer data to third parties.</p>
     </div>
 
     <div class="section" id="s7">
       <div class="section-num">07</div>
-      <h2>Tracking User Behavior</h2>
-      <p>The Company may keep track of the websites and pages our users visit within the Company, in order to determine what the Company services are the most popular. This data is used to deliver customized content and advertising within the Company to customers whose behavior indicates that they are interested in a particular subject area.</p>
-      <p>The Company may automatically collect information about your computer hardware and software. This information can include your IP address, browser type, domain names, access times, and referring website addresses. This information is used for the operation of the service, to maintain quality of the service, and to provide general statistics regarding the use of the Company's website.</p>
+      <h2>Sharing Information</h2>
+      <p>We do not sell, rent, or lease your personal information or Deal Data to third parties.</p>
+      <p>We may share information with trusted service providers who assist us in operating the Platform, subject to confidentiality obligations. We may disclose information when required by law, legal process, or governmental request, or to protect the rights and safety of the Company or its users.</p>
     </div>
 
     <div class="section" id="s8">
       <div class="section-num">08</div>
-      <h2>Use of Cookies</h2>
-      <p>The Company's website may use "cookies" to help you personalize your online experience. A cookie is a text file that is placed on your hard disk by a web page server. Cookies cannot be used to run programs or deliver viruses to your computer. Cookies are uniquely assigned to you, and can only be read by a web server in the domain that issued the cookie to you.</p>
-      <p>One of the primary purposes of cookies is to provide a convenience feature to save you time. The purpose of a cookie is to tell the web server that you have returned to a specific page. When you return to the same website, the information you previously provided can be retrieved so you can easily use the Company's features that you customized.</p>
-      <p>You have the ability to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser settings to decline cookies if you prefer. If you choose to decline cookies, you may not be able to fully experience the interactive features of the Company's services or websites you visit.</p>
+      <h2>Data Retention</h2>
+      <p>We retain account information for as long as your account is active. Deal Data associated with active deal portals is retained for the duration of the portal access period (twelve months from creation, unless extended). Upon account termination or portal expiration, data may be retained for up to 90 days for backup and recovery purposes, after which it is permanently deleted from our systems.</p>
+      <p>You may request deletion of your personal information or Deal Data at any time by contacting <a href="mailto:hello@questionpilot.com">hello@questionpilot.com</a>. We will fulfill deletion requests subject to any legal obligations to retain certain records.</p>
     </div>
 
     <div class="section" id="s9">
       <div class="section-num">09</div>
-      <h2>Security of Your Personal Information</h2>
-      <p>The Company secures your personal information from unauthorized access, use, or disclosure using SSL Protocol. When personal information (such as a credit card number) is transmitted to other websites, it is protected through the use of encryption, such as the Secure Sockets Layer (SSL) protocol.</p>
-      <div class="warn-box">While we strive to protect your personal information, no data transmission over the Internet or any wireless network can be guaranteed to be 100% secure. You acknowledge that: (a) there are security and privacy limitations inherent to the Internet that are beyond our control; and (b) the security, integrity, and privacy of any and all information and data exchanged between you and us through this site cannot be guaranteed.</div>
+      <h2>Security</h2>
+      <p>We implement commercially reasonable technical and organizational security measures to protect your information from unauthorized access, disclosure, alteration, or destruction. These measures include SSL/TLS encryption for data in transit and industry-standard security practices at our infrastructure providers.</p>
+      <p>No data transmission over the Internet can be guaranteed 100% secure. You acknowledge that there are inherent security limitations to Internet-based services. In the event of a security incident affecting your data, we will notify you in accordance with applicable law.</p>
     </div>
 
     <div class="section" id="s10">
       <div class="section-num">10</div>
-      <h2>Right to Deletion</h2>
-      <p>Under the CCPA and CPRA, you have the right to request that the Company, and any third parties with whom your personal information is sold or shared, delete any personal information that has been collected about you. To exercise your rights, contact us at <a href="mailto:hello@questionpilot.com">hello@questionpilot.com</a>. On receipt of a verifiable request, we will delete your personal information from our records and direct any service providers to do the same.</p>
-      <p>Please note that we may not be able to comply with requests to delete your personal information if it is necessary to: complete a transaction for which the personal information was collected; detect security incidents or protect against fraudulent or illegal activity; comply with an existing legal obligation; or otherwise use your personal information internally in a lawful manner compatible with the context in which you provided the information.</p>
+      <h2>Cookies</h2>
+      <p>The Platform may use cookies and similar technologies to maintain session state, remember your preferences, and improve your experience. Cookies are small text files stored on your device and cannot execute programs or deliver malicious software.</p>
+      <p>You may configure your browser to decline cookies, though doing so may affect your ability to use certain Platform features. We do not use cookies for cross-site tracking or advertising purposes.</p>
     </div>
 
     <div class="section" id="s11">
       <div class="section-num">11</div>
-      <h2>Children Under Thirteen</h2>
-      <p>The Company does not knowingly collect personally identifiable information from children under the age of 13. If you are under the age of 13, you must ask your parent or guardian for permission to use this website.</p>
+      <h2>California Privacy Rights (CCPA / CPRA)</h2>
+      <p>If you are a California resident, you have the following rights under the California Consumer Privacy Act and California Privacy Rights Act:</p>
+      <div class="rights-grid">
+        <div class="rights-card"><strong>Right to Know</strong><span>Request details on what personal data we collect, use, and share.</span></div>
+        <div class="rights-card"><strong>Right to Delete</strong><span>Request deletion of personal data, subject to certain legal exceptions.</span></div>
+        <div class="rights-card"><strong>Right to Correct</strong><span>Request corrections to inaccurate personal information we hold.</span></div>
+        <div class="rights-card"><strong>Right to Opt-Out</strong><span>Opt out of the sale or sharing of personal data. Note: we do not sell personal data.</span></div>
+        <div class="rights-card"><strong>Right to Restrict</strong><span>Limit the use of sensitive personal information.</span></div>
+        <div class="rights-card"><strong>Non-Retaliation</strong><span>We will not discriminate against you for exercising your privacy rights.</span></div>
+      </div>
+      <p>To exercise any of these rights, contact us at <a href="mailto:hello@questionpilot.com">hello@questionpilot.com</a>.</p>
     </div>
 
     <div class="section" id="s12">
       <div class="section-num">12</div>
-      <h2>Email Communications</h2>
-      <p>From time to time, the Company may contact you via email for the purpose of providing announcements, promotional offers, alerts, confirmations, surveys, and/or other general communication. If you would like to stop receiving marketing or promotional communications via email from the Company, you may opt out by clicking on the unsubscribe button.</p>
+      <h2>Children</h2>
+      <p>The Platform is intended for use by professional business users. Question Pilot LLC does not knowingly collect personal information from individuals under the age of 18. If we become aware that we have inadvertently collected such information, we will promptly delete it.</p>
     </div>
 
     <div class="section" id="s13">
       <div class="section-num">13</div>
-      <h2>External Data Storage Sites</h2>
-      <p>We may store your data on servers provided by third-party hosting vendors with whom we have contracted.</p>
+      <h2>Email Communications</h2>
+      <p>We may contact you by email to provide transactional notices, account updates, and service-related communications. If you wish to stop receiving marketing or promotional communications, you may opt out by clicking the unsubscribe link in any such email or by contacting us directly. Transactional and account-related emails cannot be opted out of while your account is active.</p>
     </div>
 
     <div class="section" id="s14">
       <div class="section-num">14</div>
-      <h2>Changes to This Statement</h2>
-      <p>The Company reserves the right to change this Policy from time to time. For example, when there are changes in our services, changes in our data protection practices, or changes in the law. When changes to this Policy are significant, we will inform you via the primary email address specified in your account or by placing a prominent notice on our website.</p>
-      <p>Your continued use of the website and/or services available after such modifications will constitute your acknowledgment of the modified Policy and agreement to abide and be bound by that Policy.</p>
+      <h2>Changes to This Policy</h2>
+      <p>We reserve the right to update this Policy from time to time to reflect changes in our services, data practices, or applicable law. When material changes are made, we will notify you via email or by prominent notice on the Platform. Your continued use of the Platform after such notice constitutes your acceptance of the revised Policy.</p>
     </div>
 
     <div class="section" id="s15">
       <div class="section-num">15</div>
-      <h2>Contact Information</h2>
-      <p>The Company welcomes your questions or comments regarding this Policy. If you believe that the Company has not adhered to this Policy, please contact us at:</p>
-      <div class="hl-box"><strong>Question Pilot LLC</strong><br><a href="mailto:hello@questionpilot.com">hello@questionpilot.com</a></div>
+      <h2>Contact</h2>
+      <p>If you have questions or concerns about this Privacy Policy, or if you believe we have not adhered to it, please contact us at:</p>
+      <p><strong>Question Pilot LLC</strong><br/><a href="mailto:hello@questionpilot.com">hello@questionpilot.com</a></p>
     </div>
 
   </main>
@@ -275,12 +241,33 @@
 
 <footer>
   <div class="footer-inner">
-    <div><div class="footer-logo">Question<span>Pilot</span></div><div class="footer-tagline">Purpose-built Q&A portals for complex transactions.</div></div>
-    <div class="footer-col"><h4>Product</h4><a href="/">Home</a><a href="/">Solutions</a><a href="/">Pricing</a><a href="https://app.questionpilot.com">Get Started</a></div>
-    <div class="footer-col"><h4>Company</h4><a href="/">About</a><a href="mailto:hello@questionpilot.com">Contact</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
-    <div class="footer-col"><h4>Use Cases</h4><a>M&amp;A Advisory</a><a>Quality of Earnings</a><a>Transaction Counsel</a><a>Real Estate</a></div>
+    <div>
+      <div class="footer-logo">Question<span>Pilot</span></div>
+      <div class="footer-tagline">Transaction diligence Q&amp;A portal for advisory professionals.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="/#features">Features</a>
+      <a href="/#how-it-works">How It Works</a>
+      <a href="/#pricing">Pricing</a>
+    </div>
+    <div class="footer-col">
+      <h4>Solutions</h4>
+      <a href="/solutions/investment-banking.html">Investment Banking</a>
+      <a href="/solutions/accounting.html">QoE &amp; Accounting</a>
+      <a href="/solutions/legal.html">Legal Advisory</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="/terms.html">Terms of Use</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/ai-terms.html">AI Terms of Use</a>
+    </div>
   </div>
-  <div class="footer-bottom"><span>© 2026 Question Pilot LLC. All rights reserved.</span><span>Built for transaction professionals.</span></div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Question Pilot LLC. All rights reserved.</span>
+    <span><a href="mailto:hello@questionpilot.com" style="color:rgba(255,255,255,0.4);text-decoration:none;">hello@questionpilot.com</a></span>
+  </div>
 </footer>
 
 </body>
