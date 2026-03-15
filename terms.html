@@ -8,37 +8,32 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #f2f4f3; --bg-2: #e8ebe9; --bg-dark: #1c2b2a; --bg-dark-2: #243533;
+      --bg: #f2f4f3; --bg-dark-2: #243533;
       --ink: #141f1e; --ink-mid: #374140; --ink-soft: #5e7270; --ink-faint: #8fa5a3;
-      --gold: #a87c2a; --rule: rgba(0,0,0,0.08); --rule-mid: rgba(0,0,0,0.12);
+      --rule: rgba(0,0,0,0.08); --rule-mid: rgba(0,0,0,0.12);
       --white: #ffffff; --teal: #2a5c59; --teal-light: #3a7673;
     }
     html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--ink); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 400; line-height: 1.65; overflow-x: hidden; }
-
+    body { background: var(--bg); color: var(--ink); font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.65; overflow-x: hidden; }
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(242,244,243,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--rule); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 64px; max-width: 1280px; margin: 0 auto; }
     .nav-logo { font-size: 1.15rem; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
     .nav-logo span { color: var(--teal); }
     .nav-right { display: flex; gap: 0.75rem; align-items: center; }
-    .btn-ghost { background: transparent; color: var(--ink-soft); border: 1px solid var(--rule-mid); padding: 0.45rem 1.1rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; font-size: 0.85rem; cursor: pointer; border-radius: 6px; transition: all 0.15s; text-decoration: none; display: inline-block; }
+    .btn-ghost { background: transparent; color: var(--ink-soft); border: 1px solid var(--rule-mid); padding: 0.45rem 1.1rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; font-size: 0.85rem; border-radius: 6px; text-decoration: none; display: inline-block; }
     .btn-ghost:hover { background: var(--white); color: var(--ink); }
-    .btn-cta { background: var(--teal); color: var(--white); border: none; padding: 0.5rem 1.25rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 0.85rem; cursor: pointer; border-radius: 6px; transition: background 0.15s; text-decoration: none; display: inline-block; }
+    .btn-cta { background: var(--teal); color: var(--white); border: none; padding: 0.5rem 1.25rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 0.85rem; border-radius: 6px; text-decoration: none; display: inline-block; }
     .btn-cta:hover { background: var(--teal-light); }
-
     .page-header { padding: 8rem 0 4rem; background: var(--white); border-bottom: 1px solid var(--rule); }
     .page-header .inner { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
     .eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.85rem; }
     .page-header h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 0.6rem; }
-    .page-header .eff { font-size: 0.82rem; color: var(--ink-faint); font-weight: 500; }
-
+    .page-header .eff { font-size: 0.82rem; color: var(--ink-faint); }
     .layout { max-width: 1200px; margin: 0 auto; padding: 4rem 5% 6rem; display: grid; grid-template-columns: 210px 1fr; gap: 3.5rem; align-items: start; }
-
     .toc { position: sticky; top: 80px; background: var(--white); border: 1px solid var(--rule-mid); border-radius: 10px; padding: 1.5rem 1.25rem; }
     .toc-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.85rem; }
-    .toc a { display: block; font-size: 0.79rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; padding: 0.3rem 0.6rem; border-radius: 5px; border-left: 2px solid transparent; transition: all 0.15s; line-height: 1.4; }
+    .toc a { display: block; font-size: 0.79rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; padding: 0.3rem 0.6rem; border-radius: 5px; border-left: 2px solid transparent; transition: all 0.15s; line-height: 1.4; margin-bottom: 0.1rem; }
     .toc a:hover { color: var(--teal); background: rgba(42,92,89,0.06); border-left-color: var(--teal); }
-
     .content { background: var(--white); border: 1px solid var(--rule-mid); border-radius: 10px; padding: 3rem 3.5rem; }
     .section { margin-bottom: 2.75rem; padding-bottom: 2.75rem; border-bottom: 1px solid var(--rule); }
     .section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
@@ -52,21 +47,18 @@
     .section ul { list-style: none; margin: 0.65rem 0; }
     .section ul li { font-size: 0.855rem; color: var(--ink-soft); padding: 0.3rem 0 0.3rem 1.2rem; position: relative; line-height: 1.7; }
     .section ul li::before { content: ''; position: absolute; left: 0; top: 0.72rem; width: 5px; height: 5px; background: var(--teal); border-radius: 50%; }
-
     .hl-box { background: rgba(42,92,89,0.05); border-left: 3px solid var(--teal); border-radius: 0 6px 6px 0; padding: 1rem 1.25rem; margin: 1rem 0; font-size: 0.855rem; color: var(--ink-mid); line-height: 1.75; }
     .caps-box { background: var(--bg); border: 1px solid var(--rule-mid); border-radius: 7px; padding: 1.25rem 1.5rem; font-size: 0.775rem; color: var(--ink-soft); line-height: 1.75; font-weight: 500; }
-
-    footer { padding: 3rem 0 2rem; background: var(--bg-dark-2); color: rgba(255,255,255,0.4); }
+    footer { padding: 3rem 0 2rem; background: var(--bg-dark-2); }
     .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 5%; display: grid; grid-template-columns: 200px 1fr 1fr 1fr; gap: 3rem; }
-    .footer-logo { font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
+    .footer-logo { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; }
     .footer-logo span { color: #6ecfcb; }
-    .footer-tagline { font-size: 0.78rem; line-height: 1.6; }
+    .footer-tagline { font-size: 0.78rem; line-height: 1.6; color: rgba(255,255,255,0.4); }
     .footer-col h4 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 1rem; }
-    .footer-col a { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.4); text-decoration: none; margin-bottom: 0.5rem; transition: color 0.15s; }
+    .footer-col a { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.4); text-decoration: none; margin-bottom: 0.5rem; }
     .footer-col a:hover { color: rgba(255,255,255,0.8); }
-    .footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding: 1.5rem 5% 0; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.75rem; display: flex; justify-content: space-between; align-items: center; }
-
-    @media (max-width: 900px) { .layout { grid-template-columns: 1fr; gap: 2rem; } .toc { position: static; } .content { padding: 2rem 1.5rem; } .footer-inner { grid-template-columns: 1fr 1fr; } }
+    .footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding: 1.5rem 5% 0; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.75rem; color: rgba(255,255,255,0.4); display: flex; justify-content: space-between; align-items: center; }
+    @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } .toc { position: static; } .content { padding: 2rem 1.5rem; } .footer-inner { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 600px) { .content { padding: 1.5rem 1.1rem; } .footer-inner { grid-template-columns: 1fr; } }
   </style>
 </head>
@@ -94,158 +86,161 @@
   <aside class="toc">
     <div class="toc-label">Contents</div>
     <a href="#s1">Agreement</a>
-    <a href="#s2">Confidentiality &amp; Data</a>
-    <a href="#s3">Privacy</a>
-    <a href="#s4">Your Account</a>
-    <a href="#s5">Refund &amp; Cancellation</a>
-    <a href="#s6">Third-Party Links</a>
+    <a href="#s2">The Platform</a>
+    <a href="#s3">Confidentiality &amp; Data</a>
+    <a href="#s4">Artificial Intelligence</a>
+    <a href="#s5">Your Account</a>
+    <a href="#s6">Refund &amp; Cancellation</a>
     <a href="#s7">Intellectual Property</a>
-    <a href="#s8">Communication Services</a>
-    <a href="#s9">Submissions</a>
-    <a href="#s10">International Users</a>
-    <a href="#s11">Indemnification</a>
-    <a href="#s12">Arbitration</a>
-    <a href="#s13">Class Action Waiver</a>
-    <a href="#s14">Liability Disclaimer</a>
-    <a href="#s15">Termination</a>
-    <a href="#s16">Changes to Terms</a>
-    <a href="#s17">Contact</a>
+    <a href="#s8">Third-Party Services</a>
+    <a href="#s9">Platform Availability</a>
+    <a href="#s10">Acceptable Use</a>
+    <a href="#s11">International Users</a>
+    <a href="#s12">Indemnification</a>
+    <a href="#s13">Arbitration</a>
+    <a href="#s14">Class Action Waiver</a>
+    <a href="#s15">Liability Disclaimer</a>
+    <a href="#s16">Termination</a>
+    <a href="#s17">Changes to Terms</a>
+    <a href="#s18">Contact</a>
   </aside>
 
   <main class="content">
 
     <div class="section" id="s1">
       <div class="section-num">01</div>
-      <h2>Agreement between User and QuestionPilot.com</h2>
-      <p>Welcome to QuestionPilot.com. The QuestionPilot.com website (the "Site") is comprised of various web pages operated by Question Pilot LLC. QuestionPilot.com is offered to you conditioned on your acceptance without modification of the terms, conditions, and notices contained herein (the "Terms"). Your use of QuestionPilot.com constitutes your agreement to all such Terms. Please read these terms carefully, and keep a copy of them for your reference.</p>
-      <div class="hl-box">Question Pilot is a software-as-a-service (SaaS) platform designed for transaction advisory professionals, including investment bankers, M&A advisors, accounting firms, law firms, and other deal professionals. The platform provides a structured, web-based portal for managing buyer due diligence question-and-answer processes in connection with mergers, acquisitions, and other corporate transactions. Services include deal portal creation, question tracking and categorization, document reference management, secure buyer portal access, advisor-to-buyer and internal team communication tools, AI-assisted question import and categorization, and transaction data export functionality.</div>
+      <h2>Agreement</h2>
+      <p>Welcome to QuestionPilot.com. This website and application (the "Site" and "Platform") are operated by Question Pilot LLC ("Company," "we," "us," or "our"). By accessing or using Question Pilot, you agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, you may not use the Platform.</p>
+      <p>These Terms apply to all users of the Platform, including advisory firm users, counterparty portal users, and client portal users.</p>
     </div>
 
     <div class="section" id="s2">
       <div class="section-num">02</div>
-      <h2>Confidentiality &amp; Data Handling</h2>
-      <p><strong>User Data:</strong> All deal data, transaction information, questions, responses, and related materials uploaded to or generated within the Question Pilot platform ("Deal Data") are and remain the sole property of the subscribing firm. Question Pilot LLC does not claim any ownership interest in Deal Data.</p>
-      <p><strong>Confidentiality Obligations of Question Pilot LLC:</strong> Question Pilot LLC acknowledges that Deal Data may contain material non-public information, confidential business information, and proprietary transaction data. Question Pilot LLC agrees to:</p>
-      <ul>
-        <li>Maintain the confidentiality of all Deal Data</li>
-        <li>Not access, view, or use Deal Data except as necessary to provide the platform services or as required by law</li>
-        <li>Not disclose Deal Data to any third party without the express written consent of the subscribing firm, except to service providers bound by equivalent confidentiality obligations</li>
-        <li>Implement and maintain commercially reasonable technical and organizational security measures to protect Deal Data from unauthorized access or disclosure</li>
-      </ul>
-      <p><strong>User Confidentiality Obligations:</strong> Users are solely responsible for maintaining the confidentiality of their account credentials and for all activity that occurs under their account. Users agree not to share buyer portal access links with unauthorized parties and to notify Question Pilot LLC immediately upon becoming aware of any unauthorized access to their account or deal portals.</p>
-      <p><strong>Survival:</strong> The confidentiality obligations set forth in this section shall survive the termination or expiration of these Terms of Service.</p>
+      <h2>The Platform</h2>
+      <p>Question Pilot is a software-as-a-service platform designed for transaction advisory professionals, including investment bankers, M&amp;A advisors, accounting firms, law firms, and other deal professionals. The Platform provides a structured, web-based portal for managing diligence question-and-answer processes in connection with mergers, acquisitions, and other corporate transactions.</p>
+      <p>Services include deal portal creation, question tracking and categorization, document reference management, secure counterparty and client portal access, advisor-to-counterparty and internal team communication tools, AI-assisted question import and categorization, and transaction data export. The Platform is intended for use by professional business entities and their authorized personnel in the conduct of legitimate commercial transaction advisory activities.</p>
     </div>
 
     <div class="section" id="s3">
       <div class="section-num">03</div>
-      <h2>Privacy</h2>
-      <p>Your use of QuestionPilot.com is subject to Question Pilot LLC's <a href="/privacy.html">Privacy Policy</a>. Please review our Privacy Policy, which also governs the Site and informs users of our data collection practices.</p>
-      <p>Visiting QuestionPilot.com or sending emails to Question Pilot LLC constitutes electronic communications. You consent to receive electronic communications and you agree that all agreements, notices, disclosures and other communications that we provide to you electronically satisfy any legal requirement that such communications be in writing.</p>
+      <h2>Confidentiality &amp; Data Handling</h2>
+      <div class="hl-box">All deal data uploaded to or generated within Question Pilot remains the sole property of the subscribing firm. Question Pilot LLC does not claim any ownership interest in your deal data.</div>
+      <p><strong>User Data Ownership.</strong> All deal data, transaction information, questions, responses, and related materials uploaded to or generated within the Platform ("Deal Data") are and remain the sole property of the subscribing firm.</p>
+      <p><strong>Our Confidentiality Obligations.</strong> Question Pilot LLC acknowledges that Deal Data may contain material non-public information, confidential business information, and proprietary transaction data. We agree to: (i) maintain the confidentiality of all Deal Data; (ii) not access, view, or use Deal Data except as necessary to provide the Platform services or as required by law; (iii) not disclose Deal Data to any third party without the express written consent of the subscribing firm, except to service providers bound by equivalent confidentiality obligations; and (iv) implement and maintain commercially reasonable technical and organizational security measures to protect Deal Data from unauthorized access or disclosure.</p>
+      <p><strong>Your Confidentiality Obligations.</strong> You are solely responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. You agree not to share portal access links with unauthorized parties and to notify Question Pilot LLC immediately upon becoming aware of any unauthorized access to your account or deal portals.</p>
+      <p><strong>Data Retention.</strong> Deal Data is retained for the duration of your active subscription or deal portal access period. Upon account termination or deal portal expiration, Deal Data may be retained for up to 90 days for backup and recovery purposes, after which it will be permanently deleted. You may request earlier deletion by contacting <a href="mailto:hello@questionpilot.com">hello@questionpilot.com</a>.</p>
+      <p><strong>Survival.</strong> The confidentiality obligations set forth in this section shall survive the termination or expiration of these Terms.</p>
     </div>
 
     <div class="section" id="s4">
       <div class="section-num">04</div>
-      <h2>Your Account</h2>
-      <p>If you use this site, you are responsible for maintaining the confidentiality of your account and password and for restricting access to your computer, and you agree to accept responsibility for all activities that occur under your account or password. You may not assign or otherwise transfer your account to any other person or entity.</p>
-      <p>You acknowledge that Question Pilot LLC is not responsible for third party access to your account that results from theft or misappropriation of your account. Question Pilot LLC and its associates reserve the right to refuse or cancel service, terminate accounts, or remove or edit content in our sole discretion.</p>
-      <p>Question Pilot LLC does not knowingly collect, either online or offline, personal information from persons under the age of thirteen. If you are under 18, you may use QuestionPilot.com only with permission of a parent or guardian.</p>
+      <h2>Artificial Intelligence Features</h2>
+      <p>Question Pilot uses third-party AI services, including Anthropic, PBC ("Anthropic"), to provide question import, categorization, and processing assistance. By using AI-powered features on the Platform, you acknowledge and agree to the following:</p>
+      <ul>
+        <li>Deal Data submitted through AI-assisted features is processed by Anthropic's API and is subject to Anthropic's usage policies and data handling practices.</li>
+        <li>Question Pilot LLC does not use your Deal Data to train AI models, and we do not permit our AI service providers to use your Deal Data for model training purposes.</li>
+        <li>AI-generated categorizations and outputs are provided as assistance tools only. You are solely responsible for reviewing, verifying, and approving any AI-generated output before use in a transaction context.</li>
+        <li>Question Pilot LLC makes no representations regarding the accuracy or completeness of AI-generated outputs and shall not be liable for any reliance placed on such outputs.</li>
+      </ul>
+      <p>Use of AI-powered features is further governed by our <a href="/ai-terms.html">AI Terms of Use</a>, which are incorporated herein by reference.</p>
     </div>
 
     <div class="section" id="s5">
       <div class="section-num">05</div>
-      <h2>Refund &amp; Cancellation Policy</h2>
-      <p><strong>Per-Deal Purchases:</strong> All per-deal purchases are final and non-refundable upon deal creation. By completing a per-deal purchase, you acknowledge that the deal portal has been provisioned and made available for use. Question Pilot LLC does not provide refunds for per-deal purchases except in cases of documented technical failure attributable solely to Question Pilot LLC that renders the platform materially unusable, as determined at Question Pilot LLC's sole discretion.</p>
-      <p><strong>Subscription Plans:</strong> For customers on a subscription plan, you may cancel your subscription at any time by contacting us at <a href="mailto:hello@questionpilot.com">hello@questionpilot.com</a>. Cancellations take effect at the end of the current billing period. Question Pilot LLC does not provide prorated refunds for unused portions of a subscription term, except where required by applicable law. Upon cancellation, your account and associated deal portals will remain accessible through the end of the paid billing period, after which access will be downgraded or terminated in accordance with your plan terms.</p>
-      <p><strong>Deal Portal Access:</strong> Active deal portals provisioned under a per-deal purchase remain accessible for a period of twelve (12) months from the date of creation, after which they may be archived or deactivated at Question Pilot LLC's discretion. Archived deals are not eligible for refund or credit.</p>
-      <p><strong>Exceptions:</strong> Question Pilot LLC reserves the right to issue refunds or credits at its sole discretion on a case-by-case basis. The issuance of a refund or credit in one instance does not obligate Question Pilot LLC to issue refunds or credits in any future instance. Refund and cancellation requests should be directed to <a href="mailto:hello@questionpilot.com">hello@questionpilot.com</a>.</p>
+      <h2>Your Account</h2>
+      <p>You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. You may not assign or transfer your account to any other person or entity without our prior written consent. Question Pilot LLC reserves the right to refuse or cancel service, terminate accounts, or remove content at our discretion. Notify us immediately of any unauthorized use of your account.</p>
     </div>
 
     <div class="section" id="s6">
       <div class="section-num">06</div>
-      <h2>Links to Third-Party Sites &amp; Services</h2>
-      <p>QuestionPilot.com may contain links to other websites ("Linked Sites"). The Linked Sites are not under the control of Question Pilot LLC and Question Pilot LLC is not responsible for the contents of any Linked Site, including without limitation any link contained in a Linked Site, or any changes or updates to a Linked Site. Question Pilot LLC is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement by Question Pilot LLC of the site or any association with its operators.</p>
-      <p>Certain services made available via QuestionPilot.com are delivered by third party sites and organizations. By using any product, service or functionality originating from the QuestionPilot.com domain, you hereby acknowledge and consent that Question Pilot LLC may share such information and data with any third party with whom Question Pilot LLC has a contractual relationship to provide the requested product, service or functionality on behalf of QuestionPilot.com users and customers.</p>
+      <h2>Refund &amp; Cancellation Policy</h2>
+      <p><strong>Per-Deal Purchases.</strong> All per-deal purchases are final and non-refundable upon deal creation. By completing a purchase, you acknowledge that the deal portal has been provisioned and made available for use. Refunds will not be issued except in cases of documented technical failure attributable solely to Question Pilot LLC that renders the platform materially unusable, as determined at our sole discretion.</p>
+      <p><strong>Deal Portal Access.</strong> Active deal portals remain accessible for twelve (12) months from the date of creation, after which they may be archived or deactivated at our discretion.</p>
+      <p><strong>Exceptions.</strong> Question Pilot LLC reserves the right to issue refunds or credits at its sole discretion on a case-by-case basis. Issuance of a refund in one instance does not obligate us to do so in the future. Refund and cancellation requests should be directed to <a href="mailto:hello@questionpilot.com">hello@questionpilot.com</a>.</p>
     </div>
 
     <div class="section" id="s7">
       <div class="section-num">07</div>
-      <h2>No Unlawful Use / Intellectual Property</h2>
-      <p>You are granted a non-exclusive, non-transferable, revocable license to access and use QuestionPilot.com strictly in accordance with these terms of use. As a condition of your use of the Site, you warrant to Question Pilot LLC that you will not use the Site for any purpose that is unlawful or prohibited by these Terms. You may not use the Site in any manner which could damage, disable, overburden, or impair the Site or interfere with any other party's use and enjoyment of the Site.</p>
-      <p>All content included as part of the Service, such as text, graphics, logos, images, as well as the compilation thereof, and any software used on the Site, is the property of Question Pilot LLC or its suppliers and protected by copyright and other laws that protect intellectual property and proprietary rights. You will not modify, publish, transmit, reverse engineer, participate in the transfer or sale, create derivative works, or in any way exploit any of the content, in whole or in part, found on the Site. Question Pilot LLC content is not for resale. We do not grant you any licenses, express or implied, to the intellectual property of Question Pilot LLC or our licensors except as expressly authorized by these Terms.</p>
+      <h2>Intellectual Property</h2>
+      <p>All Platform content — including text, graphics, logos, software, and the compilation thereof — is the property of Question Pilot LLC or its licensors and is protected by applicable intellectual property laws. You may not copy, modify, distribute, or create derivative works from Platform content without our prior written consent.</p>
+      <p>You retain all ownership rights to Deal Data you submit to the Platform. Nothing in these Terms transfers ownership of your Deal Data to Question Pilot LLC.</p>
     </div>
 
     <div class="section" id="s8">
       <div class="section-num">08</div>
-      <h2>Use of Communication Services</h2>
-      <p>The Site may contain bulletin board services, chat areas, news groups, forums, communities, personal web pages, calendars, and/or other message or communication facilities designed to enable you to communicate with the public at large or with a group (collectively, "Communication Services"). You agree to use the Communication Services only to post, send and receive messages and material that are proper and related to the particular Communication Service.</p>
-      <p>You agree that when using a Communication Service, you will not:</p>
-      <ul>
-        <li>Defame, abuse, harass, stalk, threaten or otherwise violate the legal rights of others</li>
-        <li>Publish, post, upload, distribute or disseminate any inappropriate, profane, defamatory, infringing, obscene, indecent or unlawful topic, name, material or information</li>
-        <li>Upload files that contain software or other material protected by intellectual property laws unless you own or control the rights thereto or have received all necessary consents</li>
-        <li>Upload files that contain viruses, corrupted files, or any other similar software or programs that may damage the operation of another's computer</li>
-        <li>Harvest or otherwise collect information about others, including e-mail addresses, without their consent</li>
-        <li>Violate any applicable laws or regulations</li>
-      </ul>
-      <p>Question Pilot LLC reserves the right to review materials posted to a Communication Service and to remove any materials in its sole discretion, and to terminate your access to any or all of the Communication Services at any time without notice for any reason whatsoever.</p>
+      <h2>Third-Party Services</h2>
+      <p>The Platform is built on and integrates with third-party services including Supabase, Inc. (database and authentication infrastructure) and Anthropic, PBC (AI processing). Use of the Platform involves data being processed by these service providers, who are bound by confidentiality obligations consistent with these Terms. Question Pilot LLC is not responsible for the independent practices or content of third-party providers.</p>
+      <p>The Platform may contain links to external websites for convenience only. Question Pilot LLC is not responsible for the content or privacy practices of linked sites.</p>
     </div>
 
     <div class="section" id="s9">
       <div class="section-num">09</div>
-      <h2>Materials Provided to QuestionPilot.com</h2>
-      <p>Question Pilot LLC does not claim ownership of the materials you provide to QuestionPilot.com (including feedback and suggestions) or post, upload, input or submit to any Question Pilot LLC Site or our associated services (collectively "Submissions"). However, by posting, uploading, inputting, providing or submitting your Submission you are granting Question Pilot LLC, our affiliated companies and necessary sublicensees permission to use your Submission in connection with the operation of their Internet businesses including, without limitation, the rights to: copy, distribute, transmit, publicly display, publicly perform, reproduce, edit, translate and reformat your Submission; and to publish your name in connection with your Submission.</p>
-      <p>No compensation will be paid with respect to the use of your Submission. Question Pilot LLC is under no obligation to post or use any Submission you may provide and may remove any Submission at any time in Question Pilot LLC's sole discretion.</p>
+      <h2>Platform Availability</h2>
+      <p>Question Pilot LLC makes commercially reasonable efforts to maintain platform availability but does not guarantee uninterrupted or error-free service. The Platform is provided on an "as is" and "as available" basis. We reserve the right to perform maintenance, updates, or modifications at any time with or without notice. Question Pilot LLC shall not be liable for losses or damages arising from platform downtime or service interruptions.</p>
     </div>
 
     <div class="section" id="s10">
       <div class="section-num">10</div>
-      <h2>International Users</h2>
-      <p>The Service is controlled, operated and administered by Question Pilot LLC from our offices within the USA. If you access the Service from a location outside the USA, you are responsible for compliance with all local laws. You agree that you will not use the Question Pilot LLC Content accessed through QuestionPilot.com in any country or in any manner prohibited by any applicable laws, restrictions or regulations.</p>
+      <h2>Acceptable Use</h2>
+      <p>You agree to use the Platform only for lawful purposes in connection with legitimate commercial transaction advisory activities. You agree not to:</p>
+      <ul>
+        <li>Use the Platform in violation of applicable securities laws or regulations</li>
+        <li>Attempt to gain unauthorized access to any portion of the Platform or its systems</li>
+        <li>Interfere with or disrupt the operation of the Platform or other users' access</li>
+        <li>Use the Platform to develop competing products or services</li>
+        <li>Share portal access links or credentials with unauthorized parties</li>
+        <li>Reverse engineer or attempt to extract the source code of the Platform</li>
+        <li>Use the Platform for any purpose that is unlawful or prohibited by these Terms</li>
+      </ul>
     </div>
 
     <div class="section" id="s11">
       <div class="section-num">11</div>
-      <h2>Indemnification</h2>
-      <p>You agree to indemnify, defend and hold harmless Question Pilot LLC, its officers, directors, employees, agents and third parties, for any losses, costs, liabilities and expenses (including reasonable attorney's fees) relating to or arising out of your use of or inability to use the Site or services, any user postings made by you, your violation of any terms of this Agreement or your violation of any rights of a third party, or your violation of any applicable laws, rules or regulations. Question Pilot LLC reserves the right, at its own cost, to assume the exclusive defense and control of any matter otherwise subject to indemnification by you, in which event you will fully cooperate with Question Pilot LLC in asserting any available defenses.</p>
+      <h2>International Users</h2>
+      <p>The Platform is controlled and operated by Question Pilot LLC from the United States. If you access the Platform from outside the United States, you are responsible for compliance with all applicable local laws and regulations.</p>
     </div>
 
     <div class="section" id="s12">
       <div class="section-num">12</div>
-      <h2>Arbitration</h2>
-      <p>In the event the parties are not able to resolve any dispute between them arising out of or concerning these Terms and Conditions, or any provisions hereof, whether in contract, tort, or otherwise at law or in equity for damages or any other relief, then such dispute shall be resolved only by final and binding arbitration pursuant to the Federal Arbitration Act, conducted by a single neutral arbitrator and administered by the American Arbitration Association, or a similar arbitration service selected by the parties, in a location mutually agreed upon by the parties. The arbitrator's award shall be final, and judgment may be entered upon it in any court having jurisdiction.</p>
-      <p>In the event that any legal or equitable action, proceeding or arbitration arises out of or concerns these Terms and Conditions, the prevailing party shall be entitled to recover its costs and reasonable attorney's fees. The parties agree to arbitrate all disputes and claims in regards to these Terms and Conditions or any disputes arising as a result of these Terms and Conditions, whether directly or indirectly, including Tort claims. This arbitration provision shall survive the termination of these Terms and Conditions.</p>
+      <h2>Indemnification</h2>
+      <p>You agree to indemnify, defend, and hold harmless Question Pilot LLC, its officers, directors, employees, and agents from any losses, costs, liabilities, and expenses (including reasonable attorney's fees) arising out of or relating to your use of the Platform, your violation of these Terms, or your violation of any rights of a third party.</p>
     </div>
 
     <div class="section" id="s13">
       <div class="section-num">13</div>
-      <h2>Class Action Waiver</h2>
-      <div class="caps-box">Any arbitration under these Terms and Conditions will take place on an individual basis; class arbitrations and class/representative/collective actions are not permitted. THE PARTIES AGREE THAT A PARTY MAY BRING CLAIMS AGAINST THE OTHER ONLY IN EACH'S INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PUTATIVE CLASS, COLLECTIVE AND/OR REPRESENTATIVE PROCEEDING, SUCH AS IN THE FORM OF A PRIVATE ATTORNEY GENERAL ACTION AGAINST THE OTHER. Further, unless both you and Question Pilot LLC agree otherwise, the arbitrator may not consolidate more than one person's claims, and may not otherwise preside over any form of a representative or class proceeding.</div>
+      <h2>Arbitration</h2>
+      <p>Any dispute arising out of or relating to these Terms or your use of the Platform that cannot be resolved through good-faith negotiation shall be resolved by final and binding arbitration under the rules of the American Arbitration Association, conducted by a single neutral arbitrator in a location mutually agreed upon by the parties. The arbitrator's award shall be final and may be entered as judgment in any court of competent jurisdiction. The prevailing party shall be entitled to recover reasonable attorney's fees and costs.</p>
     </div>
 
     <div class="section" id="s14">
       <div class="section-num">14</div>
-      <h2>Liability Disclaimer</h2>
-      <div class="caps-box">THE INFORMATION, SOFTWARE, PRODUCTS, AND SERVICES INCLUDED IN OR AVAILABLE THROUGH THE SITE MAY INCLUDE INACCURACIES OR TYPOGRAPHICAL ERRORS. CHANGES ARE PERIODICALLY ADDED TO THE INFORMATION HEREIN. QUESTION PILOT LLC AND/OR ITS SUPPLIERS MAY MAKE IMPROVEMENTS AND/OR CHANGES IN THE SITE AT ANY TIME.<br><br>QUESTION PILOT LLC AND/OR ITS SUPPLIERS MAKE NO REPRESENTATIONS ABOUT THE SUITABILITY, RELIABILITY, AVAILABILITY, TIMELINESS, AND ACCURACY OF THE INFORMATION, SOFTWARE, PRODUCTS, SERVICES AND RELATED GRAPHICS CONTAINED ON THE SITE FOR ANY PURPOSE. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, ALL SUCH INFORMATION, SOFTWARE, PRODUCTS, SERVICES AND RELATED GRAPHICS ARE PROVIDED "AS IS" WITHOUT WARRANTY OR CONDITION OF ANY KIND. QUESTION PILOT LLC AND/OR ITS SUPPLIERS HEREBY DISCLAIM ALL WARRANTIES AND CONDITIONS WITH REGARD TO THIS INFORMATION, SOFTWARE, PRODUCTS, SERVICES AND RELATED GRAPHICS, INCLUDING ALL IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT.<br><br>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL QUESTION PILOT LLC AND/OR ITS SUPPLIERS BE LIABLE FOR ANY DIRECT, INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL, CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF USE, DATA OR PROFITS, ARISING OUT OF OR IN ANY WAY CONNECTED WITH THE USE OR PERFORMANCE OF THE SITE. IF YOU ARE DISSATISFIED WITH ANY PORTION OF THE SITE, OR WITH ANY OF THESE TERMS OF USE, YOUR SOLE AND EXCLUSIVE REMEDY IS TO DISCONTINUE USING THE SITE.</div>
+      <h2>Class Action Waiver</h2>
+      <div class="caps-box">ANY ARBITRATION OR LEGAL PROCEEDING SHALL TAKE PLACE ON AN INDIVIDUAL BASIS ONLY. CLASS ARBITRATIONS AND CLASS OR REPRESENTATIVE ACTIONS ARE NOT PERMITTED. YOU AND QUESTION PILOT LLC EACH WAIVE THE RIGHT TO PARTICIPATE IN A CLASS ACTION OR REPRESENTATIVE PROCEEDING.</div>
     </div>
 
     <div class="section" id="s15">
       <div class="section-num">15</div>
-      <h2>Termination / Access Restriction</h2>
-      <p>Question Pilot LLC reserves the right, in its sole discretion, to terminate your access to the Site and the related services or any portion thereof at any time, without notice. To the maximum extent permitted by law, this agreement is governed by the laws of the State of North Carolina and you hereby consent to the exclusive jurisdiction and venue of courts in North Carolina in all disputes arising out of or relating to the use of the Site.</p>
-      <p>You agree that no joint venture, partnership, employment, or agency relationship exists between you and Question Pilot LLC as a result of this agreement or use of the Site. Unless otherwise specified herein, this agreement constitutes the entire agreement between the user and Question Pilot LLC with respect to the Site and it supersedes all prior or contemporaneous communications and proposals, whether electronic, oral or written, between the user and Question Pilot LLC with respect to the Site.</p>
+      <h2>Liability Disclaimer</h2>
+      <div class="caps-box">THE PLATFORM IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, QUESTION PILOT LLC DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. QUESTION PILOT LLC SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF OR INABILITY TO USE THE PLATFORM, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</div>
     </div>
 
     <div class="section" id="s16">
       <div class="section-num">16</div>
-      <h2>Changes to Terms</h2>
-      <p>Question Pilot LLC reserves the right, in its sole discretion, to change the Terms under which QuestionPilot.com is offered. The most current version of the Terms will supersede all previous versions. Question Pilot LLC encourages you to periodically review the Terms to stay informed of our updates.</p>
+      <h2>Termination</h2>
+      <p>Question Pilot LLC reserves the right to terminate or suspend your access to the Platform at any time, with or without cause and with or without notice. These Terms are governed by the laws of the State of North Carolina. You consent to the exclusive jurisdiction of courts located in North Carolina for any disputes not subject to arbitration.</p>
     </div>
 
     <div class="section" id="s17">
       <div class="section-num">17</div>
-      <h2>Contact Us</h2>
-      <p>Question Pilot LLC welcomes your questions or comments regarding these Terms.</p>
-      <div class="hl-box"><strong>Question Pilot LLC</strong><br><a href="mailto:hello@questionpilot.com">hello@questionpilot.com</a></div>
+      <h2>Changes to Terms</h2>
+      <p>Question Pilot LLC reserves the right to update these Terms at any time. Material changes will be communicated via email to the address associated with your account or by prominent notice on the Platform. Your continued use of the Platform after such notice constitutes your acceptance of the revised Terms.</p>
+    </div>
+
+    <div class="section" id="s18">
+      <div class="section-num">18</div>
+      <h2>Contact</h2>
+      <p>Questions or comments regarding these Terms should be directed to:</p>
+      <p><strong>Question Pilot LLC</strong><br/><a href="mailto:hello@questionpilot.com">hello@questionpilot.com</a></p>
     </div>
 
   </main>
@@ -253,12 +248,33 @@
 
 <footer>
   <div class="footer-inner">
-    <div><div class="footer-logo">Question<span>Pilot</span></div><div class="footer-tagline">Purpose-built Q&A portals for complex transactions.</div></div>
-    <div class="footer-col"><h4>Product</h4><a href="/">Home</a><a href="/">Solutions</a><a href="/">Pricing</a><a href="https://app.questionpilot.com">Get Started</a></div>
-    <div class="footer-col"><h4>Company</h4><a href="/">About</a><a href="mailto:hello@questionpilot.com">Contact</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
-    <div class="footer-col"><h4>Use Cases</h4><a>M&amp;A Advisory</a><a>Quality of Earnings</a><a>Transaction Counsel</a><a>Real Estate</a></div>
+    <div>
+      <div class="footer-logo">Question<span>Pilot</span></div>
+      <div class="footer-tagline">Transaction diligence Q&amp;A portal for advisory professionals.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="/#features">Features</a>
+      <a href="/#how-it-works">How It Works</a>
+      <a href="/#pricing">Pricing</a>
+    </div>
+    <div class="footer-col">
+      <h4>Solutions</h4>
+      <a href="/solutions/investment-banking.html">Investment Banking</a>
+      <a href="/solutions/accounting.html">QoE &amp; Accounting</a>
+      <a href="/solutions/legal.html">Legal Advisory</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="/terms.html">Terms of Use</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/ai-terms.html">AI Terms of Use</a>
+    </div>
   </div>
-  <div class="footer-bottom"><span>© 2026 Question Pilot LLC. All rights reserved.</span><span>Built for transaction professionals.</span></div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Question Pilot LLC. All rights reserved.</span>
+    <span><a href="mailto:hello@questionpilot.com" style="color:rgba(255,255,255,0.4);text-decoration:none;">hello@questionpilot.com</a></span>
+  </div>
 </footer>
 
 </body>
