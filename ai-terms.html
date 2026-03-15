@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Terms of Use — Question Pilot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f2f4f3; --bg-dark-2: #243533;
+      --ink: #141f1e; --ink-mid: #374140; --ink-soft: #5e7270; --ink-faint: #8fa5a3;
+      --rule: rgba(0,0,0,0.08); --rule-mid: rgba(0,0,0,0.12);
+      --white: #ffffff; --teal: #2a5c59; --teal-light: #3a7673;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.65; overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(242,244,243,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--rule); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 64px; max-width: 1280px; margin: 0 auto; }
+    .nav-logo { font-size: 1.15rem; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo span { color: var(--teal); }
+    .nav-right { display: flex; gap: 0.75rem; align-items: center; }
+    .btn-ghost { background: transparent; color: var(--ink-soft); border: 1px solid var(--rule-mid); padding: 0.45rem 1.1rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; font-size: 0.85rem; border-radius: 6px; text-decoration: none; display: inline-block; }
+    .btn-ghost:hover { background: var(--white); color: var(--ink); }
+    .btn-cta { background: var(--teal); color: var(--white); border: none; padding: 0.5rem 1.25rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 0.85rem; border-radius: 6px; text-decoration: none; display: inline-block; }
+    .btn-cta:hover { background: var(--teal-light); }
+    .page-header { padding: 8rem 0 4rem; background: var(--white); border-bottom: 1px solid var(--rule); }
+    .page-header .inner { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+    .eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.85rem; }
+    .page-header h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 0.6rem; }
+    .page-header .eff { font-size: 0.82rem; color: var(--ink-faint); }
+    .layout { max-width: 1200px; margin: 0 auto; padding: 4rem 5% 6rem; display: grid; grid-template-columns: 210px 1fr; gap: 3.5rem; align-items: start; }
+    .toc { position: sticky; top: 80px; background: var(--white); border: 1px solid var(--rule-mid); border-radius: 10px; padding: 1.5rem 1.25rem; }
+    .toc-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.85rem; }
+    .toc a { display: block; font-size: 0.79rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; padding: 0.3rem 0.6rem; border-radius: 5px; border-left: 2px solid transparent; transition: all 0.15s; line-height: 1.4; margin-bottom: 0.1rem; }
+    .toc a:hover { color: var(--teal); background: rgba(42,92,89,0.06); border-left-color: var(--teal); }
+    .content { background: var(--white); border: 1px solid var(--rule-mid); border-radius: 10px; padding: 3rem 3.5rem; }
+    .section { margin-bottom: 2.75rem; padding-bottom: 2.75rem; border-bottom: 1px solid var(--rule); }
+    .section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .section-num { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.35rem; }
+    .section h2 { font-size: 1.1rem; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 0.9rem; line-height: 1.3; }
+    .section p { font-size: 0.875rem; color: var(--ink-soft); line-height: 1.8; margin-bottom: 0.8rem; }
+    .section p:last-child { margin-bottom: 0; }
+    .section strong { color: var(--ink-mid); font-weight: 600; }
+    .section a { color: var(--teal); font-weight: 600; text-decoration: none; }
+    .section a:hover { text-decoration: underline; }
+    .section ul { list-style: none; margin: 0.65rem 0; }
+    .section ul li { font-size: 0.855rem; color: var(--ink-soft); padding: 0.3rem 0 0.3rem 1.2rem; position: relative; line-height: 1.7; }
+    .section ul li::before { content: ''; position: absolute; left: 0; top: 0.72rem; width: 5px; height: 5px; background: var(--teal); border-radius: 50%; }
+    .hl-box { background: rgba(42,92,89,0.05); border-left: 3px solid var(--teal); border-radius: 0 6px 6px 0; padding: 1rem 1.25rem; margin: 1rem 0; font-size: 0.855rem; color: var(--ink-mid); line-height: 1.75; }
+    .caps-box { background: var(--bg); border: 1px solid var(--rule-mid); border-radius: 7px; padding: 1.25rem 1.5rem; font-size: 0.775rem; color: var(--ink-soft); line-height: 1.75; font-weight: 500; }
+    footer { padding: 3rem 0 2rem; background: var(--bg-dark-2); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 5%; display: grid; grid-template-columns: 200px 1fr 1fr 1fr; gap: 3rem; }
+    .footer-logo { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; }
+    .footer-logo span { color: #6ecfcb; }
+    .footer-tagline { font-size: 0.78rem; line-height: 1.6; color: rgba(255,255,255,0.4); }
+    .footer-col h4 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 1rem; }
+    .footer-col a { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.4); text-decoration: none; margin-bottom: 0.5rem; }
+    .footer-col a:hover { color: rgba(255,255,255,0.8); }
+    .footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding: 1.5rem 5% 0; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.75rem; color: rgba(255,255,255,0.4); display: flex; justify-content: space-between; align-items: center; }
+    @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } .toc { position: static; } .content { padding: 2rem 1.5rem; } .footer-inner { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .content { padding: 1.5rem 1.1rem; } .footer-inner { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Question<span>Pilot</span></a>
+    <div class="nav-right">
+      <a href="/terms.html" class="btn-ghost">Terms of Use</a>
+      <a href="https://app.questionpilot.com" class="btn-cta">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="inner">
+    <p class="eyebrow">Legal</p>
+    <h1>AI Terms of Use</h1>
+    <p class="eff">Effective as of March 13, 2026</p>
+  </div>
+</div>
+
+<div class="layout">
+  <aside class="toc">
+    <div class="toc-label">Contents</div>
+    <a href="#s1">Acceptance</a>
+    <a href="#s2">What AI Does</a>
+    <a href="#s3">Data &amp; Ownership</a>
+    <a href="#s4">No Model Training</a>
+    <a href="#s5">Acceptable Use</a>
+    <a href="#s6">Output Accuracy</a>
+    <a href="#s7">Intellectual Property</a>
+    <a href="#s8">Liability</a>
+    <a href="#s9">Indemnification</a>
+    <a href="#s10">Termination</a>
+    <a href="#s11">Arbitration</a>
+    <a href="#s12">Governing Law</a>
+    <a href="#s13">Changes</a>
+    <a href="#s14">Contact</a>
+  </aside>
+
+  <main class="content">
+
+    <div class="section" id="s1">
+      <div class="section-num">01</div>
+      <h2>Acceptance</h2>
+      <p>These AI Terms of Use ("AI Terms") govern your use of artificial intelligence features within the Question Pilot platform, operated by Question Pilot LLC ("Company," "we," "us," or "our"). By using any AI-assisted feature on the Platform, you agree to be bound by these AI Terms in addition to our <a href="/terms.html">Terms of Use</a> and <a href="/privacy.html">Privacy Policy</a>. If you do not agree, do not use AI-assisted features. You must be 18 years or older to use these features.</p>
+    </div>
+
+    <div class="section" id="s2">
+      <div class="section-num">02</div>
+      <h2>What Our AI Features Do</h2>
+      <p>Question Pilot uses AI services provided by Anthropic, PBC ("Anthropic") to assist with the following platform functions:</p>
+      <ul>
+        <li>Parsing and importing diligence question lists from Excel and CSV files</li>
+        <li>Automatically categorizing questions into standard diligence workstreams</li>
+        <li>Standardizing category names across imported datasets</li>
+      </ul>
+      <p>AI features are tools designed to assist advisory professionals — they do not make decisions, publish responses, or take any action within a deal without explicit human review and approval. All AI-generated output requires advisor review before it is used in a transaction context.</p>
+    </div>
+
+    <div class="section" id="s3">
+      <div class="section-num">03</div>
+      <h2>Data Handling &amp; Ownership</h2>
+      <div class="hl-box">Your deal data remains yours. We do not claim ownership of any content you submit for AI processing, and AI-assisted outputs derived from your deal data remain your property.</div>
+      <p>When you use AI-assisted features, the relevant portions of your input data are transmitted to Anthropic's API for processing. This transmission is conducted over encrypted connections and is subject to Anthropic's data handling policies and confidentiality obligations.</p>
+      <p>Question Pilot LLC treats all data submitted through AI features as Deal Data subject to the confidentiality obligations set forth in our <a href="/terms.html">Terms of Use</a>. We will not access, share, or use your submitted data for any purpose other than providing the AI-assisted features you have requested.</p>
+    </div>
+
+    <div class="section" id="s4">
+      <div class="section-num">04</div>
+      <h2>No Model Training</h2>
+      <p>Question Pilot LLC does not use your Deal Data to train, fine-tune, or improve AI models — ours or anyone else's. We do not permit Anthropic or any other AI service provider to use your Deal Data for model training purposes as part of our service arrangement.</p>
+      <p>You agree not to use AI features on the Platform to develop, train, or benchmark competing AI models or technologies.</p>
+    </div>
+
+    <div class="section" id="s5">
+      <div class="section-num">05</div>
+      <h2>Acceptable Use</h2>
+      <p>You agree to use AI features only in connection with legitimate transaction advisory activities. You agree not to:</p>
+      <ul>
+        <li>Submit data through AI features in violation of applicable securities laws or regulations governing material non-public information</li>
+        <li>Attempt to extract, reverse engineer, or replicate the underlying AI models or prompting logic</li>
+        <li>Use AI features to generate content intended to deceive, mislead, or defraud any party to a transaction</li>
+        <li>Submit data belonging to third parties without appropriate authorization</li>
+        <li>Use AI features in any manner that violates our <a href="/terms.html">Terms of Use</a> or applicable law</li>
+      </ul>
+    </div>
+
+    <div class="section" id="s6">
+      <div class="section-num">06</div>
+      <h2>Output Accuracy &amp; User Responsibility</h2>
+      <p>AI-generated outputs — including question categorizations, column mappings, and category suggestions — are provided as assistance tools and may not always be accurate, complete, or appropriate for your specific transaction context.</p>
+      <p><strong>You are solely responsible for reviewing, verifying, and approving all AI-generated output before use.</strong> Question Pilot LLC makes no representations or warranties regarding the accuracy, reliability, or suitability of AI-generated outputs for any particular purpose. Reliance on AI output without independent review is at your own risk.</p>
+      <p>Given the sensitive nature of M&amp;A diligence processes, we strongly recommend that all AI-assisted imports and categorizations be reviewed by a qualified professional before being shared with counterparties or clients.</p>
+    </div>
+
+    <div class="section" id="s7">
+      <div class="section-num">07</div>
+      <h2>Intellectual Property</h2>
+      <p>You retain ownership of all Deal Data you submit for AI processing. AI-assisted outputs derived from your Deal Data — such as categorized question lists — are considered your property and are not claimed by Question Pilot LLC.</p>
+      <p>The AI processing logic, prompting methodology, and platform infrastructure used to deliver AI features are proprietary to Question Pilot LLC. You may not copy, reproduce, or reverse engineer these components.</p>
+    </div>
+
+    <div class="section" id="s8">
+      <div class="section-num">08</div>
+      <h2>Limitation of Liability</h2>
+      <div class="caps-box">AI FEATURES ARE PROVIDED "AS IS." QUESTION PILOT LLC MAKES NO WARRANTIES REGARDING THE ACCURACY, COMPLETENESS, OR FITNESS FOR PURPOSE OF AI-GENERATED OUTPUTS. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, QUESTION PILOT LLC SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF OR RELIANCE ON AI FEATURES OR THEIR OUTPUTS.</div>
+    </div>
+
+    <div class="section" id="s9">
+      <div class="section-num">09</div>
+      <h2>Indemnification</h2>
+      <p>You agree to indemnify and hold harmless Question Pilot LLC, its officers, directors, employees, and agents from any claims, losses, expenses, and fees (including attorney's fees) arising from your use of AI features, your violation of these AI Terms, or any transaction decisions made in reliance on AI-generated outputs.</p>
+    </div>
+
+    <div class="section" id="s10">
+      <div class="section-num">10</div>
+      <h2>Termination</h2>
+      <p>Question Pilot LLC reserves the right to suspend or terminate your access to AI features at any time, without prior notice, for violation of these AI Terms or for any other reason at our discretion.</p>
+    </div>
+
+    <div class="section" id="s11">
+      <div class="section-num">11</div>
+      <h2>Arbitration</h2>
+      <p>Any dispute arising out of or relating to these AI Terms that cannot be resolved through good-faith negotiation shall be resolved by final and binding arbitration under the rules of the American Arbitration Association, conducted by a single neutral arbitrator. The arbitrator's decision will be final and may be entered as judgment in any court of competent jurisdiction.</p>
+    </div>
+
+    <div class="section" id="s12">
+      <div class="section-num">12</div>
+      <h2>Governing Law</h2>
+      <p>These AI Terms are governed by and construed in accordance with the laws of the State of North Carolina, without regard to conflict of law principles.</p>
+    </div>
+
+    <div class="section" id="s13">
+      <div class="section-num">13</div>
+      <h2>Changes to These Terms</h2>
+      <p>Question Pilot LLC reserves the right to update these AI Terms at any time. Material changes will be communicated via email or by notice on the Platform. Your continued use of AI features after such notice constitutes acceptance of the revised terms.</p>
+    </div>
+
+    <div class="section" id="s14">
+      <div class="section-num">14</div>
+      <h2>Contact</h2>
+      <p>Questions regarding these AI Terms should be directed to:</p>
+      <p><strong>Question Pilot LLC</strong><br/><a href="mailto:hello@questionpilot.com">hello@questionpilot.com</a></p>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Question<span>Pilot</span></div>
+      <div class="footer-tagline">Transaction diligence Q&amp;A portal for advisory professionals.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="/#features">Features</a>
+      <a href="/#how-it-works">How It Works</a>
+      <a href="/#pricing">Pricing</a>
+    </div>
+    <div class="footer-col">
+      <h4>Solutions</h4>
+      <a href="/solutions/investment-banking.html">Investment Banking</a>
+      <a href="/solutions/accounting.html">QoE &amp; Accounting</a>
+      <a href="/solutions/legal.html">Legal Advisory</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="/terms.html">Terms of Use</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/ai-terms.html">AI Terms of Use</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Question Pilot LLC. All rights reserved.</span>
+    <span><a href="mailto:hello@questionpilot.com" style="color:rgba(255,255,255,0.4);text-decoration:none;">hello@questionpilot.com</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
